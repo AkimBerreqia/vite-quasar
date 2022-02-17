@@ -13,7 +13,7 @@
             </div>
 
             <div class="q-px-sm">
-            Your selection is: <strong>{{ shape }}</strong>
+            Your selection is: <strong>{{ answers[index] }}</strong>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@ const myQuestions = reactive([
   }
 ])
 
-const answers = reactive({})
+const answers = reactive([])
 
 </script>
 
