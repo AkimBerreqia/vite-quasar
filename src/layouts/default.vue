@@ -5,10 +5,7 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          Title
+          Nom du site
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -27,7 +24,10 @@
     </q-drawer>
 
     <q-page-container>
-      <div class="py-2 mx-auto text-center text-sm">[Default Layout]</div>
+      <div v-if="false" class="py-2 mx-auto text-center text-sm">[Default Layout]</div>
+      <pre v-if="false">
+      {{generatedRoutes}}
+      </pre>
       <router-view v-slot="{ Component }">
         <transition name="slide-fade" mode="out-in">
           <component :is="Component" />
@@ -43,6 +43,12 @@
 
   import generatedRoutes from 'virtual:generated-pages'
   const router = useRouter()
+
+  const pages = generatedRoutes.sort((p1, p2) => {
+    if (p1.name < p2.name) {
+      
+    }
+  })
 
   const leftDrawerOpen = ref<boolean>(false)
   const toggleLeftDrawer = () => {
