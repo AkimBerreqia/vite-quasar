@@ -7,7 +7,7 @@
     Il s’agit d’une <b>méthode de chiffrement</b> qui permet de transformer un message intelligible et facilement lisible (<b>texte en clair</b>) en un <b>texte chiffré</b> inintelligible.</p>
     
     <h2>Énigme 1</h2>
-    <p >Robert utilise le chiffre de César pour chiffrer le message <p style="color:red;">RENDEZVOUSAUKIOSKATROISHEURES</p> et obtient le message chiffré <p style="color:red;">SFOEFAWPVTBVLJPTLBUSPJTIFVSFT</p>. 
+    <p>Robert utilise le chiffre de César pour chiffrer le message <p style="color:red;">RENDEZVOUSAUKIOSKATROISHEURES</p> et obtient le message chiffré <p style="color:red;">SFOEFAWPVTBVLJPTLBUSPJTIFVSFT</p>. 
     Vous remarquerez que le message chiffré est écrit en majuscules, sans accent, sans espace ni ponctuation. 
     Cela permet d’une part de faciliter le chiffrement et, d’autre part, de révéler moins d’information (notamment la longueur des mots formant le message).</p>
 
@@ -20,9 +20,19 @@
     <h4>Q-1: Sauriez-vous expliquer comment fonctionne cette méthode de chiffrement?</h4>
     <input v-model="textArea">
     <button v-on:click="showtext">Afficher la réponse</button>
-    <p v-if="isClick === true" color="green">Il y a un décalage qui se forme pour chaque lettre entre les deux messages. Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.</p>
+    <p v-if="isClick === true" style="color:darkblue;">Il y a un décalage qui se forme pour chaque lettre entre les deux messages. Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.</p>
 
-    <!-- Q-Rodolphe: Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice -->
+    <p>Rodolphe utilise la même méthode de chiffrement que Robert pour chiffrer un message. Voici le message chiffré qu’il envoie à Julie. Essayez de déchiffrer ce message:</p>
+    <p class="Message">
+    KFUJOWJUFBVDJOFNBEFNBJOTPJSBWJOHUIFVSFTSFKPJOTNPJBMBHBSF
+    </p>
+    <q-input v-model="answers.rodolphe" />
+    <q-btn @click="returnResult">Valider</q-btn>
+    
+    <div v-show="answers.rodolphe !== ''">
+    <p v-if="answers.rodolphe === correctAnswer">Bonne réponse !</p>
+    <p v-if="answers.rodolphe !== correctAnswer">Mauvaise réponse...</p>
+    </div>
     
     <h2>Fonctionnement</h2>
     <p>Comme vous avez sans doute pu le deviner, le chiffre de César est très simple. 
@@ -112,39 +122,42 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue"
+import { ref, reactive } from 'vue'
 
 const isClick = ref(false)
 
 function showtext() {
   isClick.value = !isClick.value
 }
+
+  const correctAnswer = 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
+
 const myQuestions = reactive([
   {
-      id: 0,
-    question: "What is 10/2?",
+    id: 0,
+    question: 'What is 10/2?',
     answers: {
       a: '3',
       b: '5',
       c: '115',
-
     },
-    correctAnswer: 'b'
+    correctAnswer: 'b',
   },
   {
-      id: 1,
-    question: "What is 30/3?",
+    id: 1,
+    question: 'What is 30/3?',
     answers: {
       a: '3',
       b: '5',
-      c: '10'
+      c: '10',
     },
     correctAnswer: 'c',
-  }
+  },
 ])
 
-const answers = reactive([])
-
+const answers = reactive({
+  rodolphe: '',
+})
 </script>
 
 <style lang="scss" scoped></style>
