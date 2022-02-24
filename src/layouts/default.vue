@@ -70,4 +70,8 @@
     transform: translateX(-10px);
     opacity: 0;
   }
+
+  .q-page-container {
+    max-width: 700px;
+  }
 </style>

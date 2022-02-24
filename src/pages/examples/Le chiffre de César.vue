@@ -7,7 +7,7 @@
     Il s’agit d’une <b>méthode de chiffrement</b> qui permet de transformer un message intelligible et facilement lisible (<b>texte en clair</b>) en un <b>texte chiffré</b> inintelligible.</p>
     
     <h2>Énigme 1</h2>
-    <p>Robert utilise le chiffre de César pour chiffrer le message <p style="color:red;">RENDEZVOUSAUKIOSKATROISHEURES</p> et obtient le message chiffré <p style="color:red;">SFOEFAWPVTBVLJPTLBUSPJTIFVSFT</p>. 
+    <p >Robert utilise le chiffre de César pour chiffrer le message <p style="color:red;">RENDEZVOUSAUKIOSKATROISHEURES</p> et obtient le message chiffré <p style="color:red;">SFOEFAWPVTBVLJPTLBUSPJTIFVSFT</p>. 
     Vous remarquerez que le message chiffré est écrit en majuscules, sans accent, sans espace ni ponctuation. 
     Cela permet d’une part de faciliter le chiffrement et, d’autre part, de révéler moins d’information (notamment la longueur des mots formant le message).</p>
 
@@ -17,7 +17,10 @@
     </p>
 
     <h3>Short Answer</h3>
-    <!-- Q-1: Il faut faire une fonction qui contrôle si l'utilisateur écrit certains mots souhaités -->
+    <h4>Q-1: Sauriez-vous expliquer comment fonctionne cette méthode de chiffrement?</h4>
+    <input v-model="textArea">
+    <button v-on:click="showtext">Afficher la réponse</button>
+    <p v-if="isClick === true" color="green">Il y a un décalage qui se forme pour chaque lettre entre les deux messages. Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.</p>
 
     <!-- Q-Rodolphe: Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice -->
     
@@ -111,6 +114,11 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue"
 
+const isClick = ref(false)
+
+function showtext() {
+  isClick.value = !isClick.value
+}
 const myQuestions = reactive([
   {
       id: 0,
