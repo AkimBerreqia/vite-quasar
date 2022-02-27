@@ -1,51 +1,40 @@
 <template>
-  <q-page class="pa-4 text-center">
-    <h1>1.5 Petit lexique de la cryptologie</h1>
+  <div class="q-pa-md">
+    <q-table
+      grid
+      title="Termes"
+      :rows="rows"
+      row-key="name"
+      :filter="filter"
+    >
+      <template v-slot:top-right>
+        <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+          <template v-slot:append>
+            <q-icon name="search" />
+          </template>
+        </q-input>
+      </template>
 
-    <div class="q-pa-md">
-        <q-table
-        grid
-        :card-container-class="cardContainerClass"
-        title="Lexique de la cryptologie"
-        :rows="rows"
-        :columns="columns"
-        row-key="name"
-        :filter="filter"
-        hide-header
-        v-model:pagination="pagination"
-        :rows-per-page-options="rowsPerPageOptions"
-        >
-        <template v-slot:top-right>
-            <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
-            <template v-slot:append>
-                <q-icon name="search" />
-            </template>
-            </q-input>
-        </template>
-
-        <template v-slot:item="props">
-            <div class="q-pa-xs col-xs-12 col-sm-6 col-md-4">
-            <q-card>
-                <q-card-section class="text-center">
-                Terme
-                <br>
-                <strong>{{ props.row.name }}</strong>
-                </q-card-section>
-                <q-separator />
-                <q-card-section class="flex flex-center" :style="{ fontSize: props.row.calories + 'px' }">
-                <div>{{ props.row.signification }} signification : </div>
-                </q-card-section>
-            </q-card>
-            </div>
-        </template>
-        </q-table>
-    </div>
-  </q-page>
+      <template v-slot:item="props">
+        <div class="card">
+          <q-card>
+            <q-card-section class="text-center">
+              <strong>{{ props.row.nameTitle }}</strong>
+            </q-card-section>
+            <q-separator />
+            <q-card-section class="flex flex-center" :style="{ fontSize: props.row.nameArticle + 'px' }">
+              <div>Signification : {{ props.row.nameArticle }} </div>
+            </q-card-section>
+          </q-card>
+        </div>
+      </template>
+    </q-table>
+  </div>
 </template>
 
 <script>
 import { useQuasar } from 'quasar'
-import { ref, computed, watch } from 'vue'
+import { ref } from 'vue'
 
 const terme = [
   'Cryptographie',
@@ -75,63 +64,20 @@ const signification = [
 
 const rows = []
 
-terme.forEach(name => {
-  for (let i = 0; i < 10; i++) {
-    rows.push({ name: name })
-  }
-})
-
-signification.forEach(name => {
-  for (let i = 0; i < 10; i++) {
-    rows.push({ name: name })
-  }
+  terme.forEach(nameTitle => {
+    rows.push({ nameTitle: nameTitle, nameArticle: signification[terme.indexOf(nameTitle)] })
 })
 
 export default {
   setup () {
     const $q = useQuasar()
 
-    function getItemsPerPage () {
-      if ($q.screen.lt.sm) {
-        return 3
-      }
-      if ($q.screen.lt.md) {
-        return 6
-      }
-      return 9
-    }
-
     const filter = ref('')
-    const pagination = ref({
-      page: 1,
-      rowsPerPage: getItemsPerPage()
-    })
-
-    watch(() => $q.screen.name, () => {
-      pagination.value.rowsPerPage = getItemsPerPage()
-    })
 
     return {
+      rows,
 
       filter,
-      pagination,
-
-      columns: [
-        { name: 'name', label: 'Name', field: 'name' },
-        { name: 'signification', label: 'Signification', field: 'signification' }
-      ],
-
-      cardContainerClass: computed(() => {
-        return $q.screen.gt.xs
-          ? 'grid-masonry grid-masonry--' + ($q.screen.gt.sm ? '3' : '2')
-          : null
-      }),
-
-      rowsPerPageOptions: computed(() => {
-        return $q.screen.gt.xs
-          ? $q.screen.gt.sm ? [ 3, 6, 9 ] : [ 3, 6 ]
-          : [3]
-      })
     }
   }
 }
@@ -169,4 +115,7 @@ export default {
       flex: 1 0 100% !important
       width: 0 !important
       order: 2
+
+.card
+  margin: 10px
 </style>
