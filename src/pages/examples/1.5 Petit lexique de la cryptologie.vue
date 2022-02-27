@@ -19,11 +19,11 @@
         <div class="card">
           <q-card>
             <q-card-section class="text-center">
-              <strong>{{ props.row.nameTitle }}</strong>
+              <strong>{{ props.row.titleName }}</strong>
             </q-card-section>
             <q-separator />
-            <q-card-section class="flex flex-center" :style="{ fontSize: props.row.nameArticle + 'px' }">
-              <div>Signification : {{ props.row.nameArticle }} </div>
+            <q-card-section class="flex flex-center" :style="{ fontSize: props.row.articleName + 'px' }">
+              <div>Signification : {{ props.row.articleName }} </div>
             </q-card-section>
           </q-card>
         </div>
@@ -64,8 +64,8 @@ const signification = [
 
 const rows = []
 
-  terme.forEach(nameTitle => {
-    rows.push({ nameTitle: nameTitle, nameArticle: signification[terme.indexOf(nameTitle)] })
+  terme.forEach(titleName => {
+    rows.push({ titleName: titleName, articleName: signification[terme.indexOf(titleName)] })
 })
 
 export default {
