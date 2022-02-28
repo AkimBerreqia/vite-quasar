@@ -18,22 +18,51 @@
 
     <h3>Short Answer</h3>
     <h4>Q-1: Sauriez-vous expliquer comment fonctionne cette méthode de chiffrement?</h4>
-    <input v-model="textArea">
-    <q-btn @click="showtext" style="color:darkblue;">Afficher la réponse</q-btn>
-    <p v-if="isClick === true" style="color:darkblue;">Il y a un décalage qui se forme pour chaque lettre entre les deux messages. Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.</p>
+    <!-- Stoquer la réponse -->
+    
+    <q-input
+      v-model="text"
+      filled
+      type="textarea"
+    />
+
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:darkblue;" @click="dialogVisible = true" />
+
+    <q-dialog v-model="dialogVisible" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:darkblue;">Clé de chiffrement</strong>
+          <q-space />
+          <q-btn v-close-popup icon="close" flat round dense />
+        </q-card-section>
+
+        <q-card-section style="color:darkblue;">
+          Il y a un décalage qui se forme pour chaque lettre entre les deux messages. 
+          Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.
+        </q-card-section>
+      </q-card>
+    </q-dialog>
 
     <p>Rodolphe utilise la même méthode de chiffrement que Robert pour chiffrer un message. Voici le message chiffré qu’il envoie à Julie. Essayez de déchiffrer ce message:</p>
+    
+    <!-- Stoquer la réponse -->
     <p class="Message">
     KFUJOWJUFBVDJOFNBEFNBJOTPJSBWJOHUIFVSFTSFKPJOTNPJBMBHBSF
     </p>
-    <q-input v-model="answers.rodolphe" />
-    <q-btn @click="returnResult">Valider</q-btn>
-    
-    <!-- Finir Ex. réponse Rodolphe -->
-    <div v-show="answers.rodolphe !== ''">
-    <p v-if="answers.rodolphe === correctAnswer">Bonne réponse !</p>
-    <p v-if="answers.rodolphe !== correctAnswer">Mauvaise réponse...</p>
+    <div class="q-pa-md">
+      <div class="q-gutter-y-md column" style="max-width: 1050px">
+        <q-input bottom-slots v-model="answers.rodolphe" label="Réponse :" counter maxlength="56" :dense="dense" style='text-transform:uppercase'>
+          <template v-slot:append>
+            <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
+          </template>
+          <template v-slot:hint>
+          <p>{{respondAnswer()}}</p>
+          </template>
+        </q-input>
+      </div>
     </div>
+  
+    
     
     <h2>1.2.2 Fonctionnement</h2>
     <p>Comme vous avez sans doute pu le deviner, le chiffre de César est très simple. 
@@ -125,13 +154,23 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 
+let dialogVisible = ref(false)
+
+function onHide() {
+  dialogVisible.value = false
+}
+
+const text = ref('')
+const ph = ref('')
+const dense = ref(false)
+
 const isClick = ref(false)
 
 function showtext() {
   isClick.value = !isClick.value
 }
 
-  const correctAnswer = 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
+const correctAnswer = 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
 
 const myQuestions = reactive([
   {
@@ -157,8 +196,24 @@ const myQuestions = reactive([
 ])
 
 const answers = reactive({
-  rodolphe: '',
+  rodolphe: ''
 })
+
+function respondAnswer() {
+  if (answers.rodolphe.length === 56) {
+    if (answers.rodolphe.toUpperCase() === correctAnswer) {
+      return "Bonne réponse"
+  }
+    else if (answers.rodolphe.toUpperCase() !== correctAnswer) {
+      return "Mauvaise réponse"
+    }
+  }
+
+  else if (answers.rodolphe.length !== 56) {
+    return "..."
+  }
+}
+
 </script>
 
 <style lang="scss" scoped></style>
