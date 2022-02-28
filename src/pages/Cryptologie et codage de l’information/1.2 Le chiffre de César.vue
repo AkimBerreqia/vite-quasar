@@ -28,9 +28,9 @@
       type="textarea"
     />
 
-    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.first = true" />
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond1 = true" />
 
-    <q-dialog v-model="dialogVisible.first" @hide="onHide">
+    <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
           <strong class="text-h6" style="color:orange;">Clé de chiffrement</strong>
@@ -42,14 +42,13 @@
           Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.
         </q-card-section>
         <q-card-actions align="right">
-            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.first = false" />
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond1 = false" />
           </q-card-actions>
       </q-card>
     </q-dialog>
 
     <p>Rodolphe utilise la même méthode de chiffrement que Robert pour chiffrer un message. Voici le message chiffré qu’il envoie à Julie. Essayez de déchiffrer ce message:</p>
     
-    <!-- Stoquer la réponse -->
     <p class="Message">
     KFUJOWJUFBVDJOFNBEFNBJOTPJSBWJOHUIFVSFTSFKPJOTNPJBMBHBSF
     </p>
@@ -67,34 +66,31 @@
       </div>
     </div>
 
-    <div class="q-pa-md q-gutter-sm">
-      <q-btn label="Indice" style="color:green;" @click="indice = true" />
-      <q-dialog v-model="indice">
-        <q-card>
-          <q-card-section>
-            <strong class="text-h6" style="color:green;">Déchiffrement</strong>
-          </q-card-section>
+    <q-btn label="Indice" style="color:green;" @click="dialogVisible.indice1 = true" />
 
-          <q-separator />
+    <q-dialog v-model="dialogVisible.indice1" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:green;">Déchiffrement</strong>
+          <q-space />
+        </q-card-section>
 
-          <q-card-section style="max-height: 50vh" class="scroll">
-            <ul style="color:green;">
-              <li>Toutes les lettres se suivent sans espace.</li><br>
-              <li>Il te sera plus simple de décrypter cette phrase en te servant d'une feuille et d'un crayon.</li><br>
-              <li>Le début du texte en clair est : "<strong>JETINVITE</strong>".</li>
-            </ul>
-          </q-card-section>
-
-          <q-card-actions align="right">
-            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.second = false" />
+        <q-card-section style="color:green;">
+          <ul style="color:green;">
+            <li>Toutes les lettres se suivent sans espace.</li><br>
+            <li>Il te sera plus simple de décrypter cette phrase en te servant d'une feuille et d'un crayon.</li><br>
+            <li>Le début du texte en clair est : "<strong>JETINVITE</strong>".</li>
+          </ul>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.indice1 = false" />
           </q-card-actions>
-        </q-card>
-      </q-dialog>
-    </div>
+      </q-card>
+    </q-dialog>
 
-    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.third = true" />
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond2 = true" />
 
-    <q-dialog v-model="dialogVisible.third" @hide="onHide">
+    <q-dialog v-model="dialogVisible.respond2" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
           <strong class="text-h6" style="color:orange;">Déchiffrement</strong>
@@ -105,7 +101,7 @@
           <strong>JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE</strong>
         </q-card-section>
         <q-card-actions align="right">
-            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.third = false" />
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond2 = false" />
           </q-card-actions>
       </q-card>
     </q-dialog>
@@ -132,28 +128,54 @@
     Fonctionnement du chiffre Cesar(1) qui décale toutes les lettres de 1 position dans l’alphabet latin.<br><br>
     La première ligne correspond à l’alphabet en clair et la deuxième ligne montre par quelle lettre chaque lettre de la première ligne est chiffrée.
     </p>
+    
+    <q-btn label="Remarque" style="color:purple;" @click="dialogVisible.remarque = true" />
 
-    <div class="Remarque">
-    <h4>Remarque</h4>
-    <p>Vous remarquerez qu’une fois arrivé à la fin de l’alphabet, on recommence au début. 
-    Ainsi, le Z est chiffré par le A.</p>
-    </div>
+    <q-dialog v-model="dialogVisible.remarque" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:purple;">Remarque</strong>
+          <q-space />
+        </q-card-section>
 
-    <div class="Nouvelle notion">
-    <h4>Nouvelle notion (chiffrement monoalphabétique)</h4>
-    <p>Le chiffre de César est un exemple typique de chiffre monoalphabétique. 
-    Les codes secrets ou chiffres monoalphabétiques consistent à remplacer chaque lettre du message en clair par une autre lettre de l’alphabet. 
-    La particularité des chiffres monoalphabétiques tels que le chiffre de César est que chaque lettre du message en clair est toujours chiffré par la même lettre.</p>
-    </div>
+        <q-card-section style="color:purple;">
+          <p>Vous remarquerez qu’une fois arrivé à la fin de l’alphabet, on recommence au début. 
+          Ainsi, le Z est chiffré par le A.</p>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.remarque = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <q-btn label="Nouvelle notion" style="color:purple;" @click="dialogVisible.nouvelleNotion = true" />
+
+    <q-dialog v-model="dialogVisible.nouvelleNotion" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:purple;">Nouvelle notion</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:purple;">
+          <p>Le chiffre de César est un exemple typique de <strong>chiffre monoalphabétique</strong>. 
+          Les codes secrets ou chiffres monoalphabétiques consistent à remplacer chaque lettre du message en clair par une autre lettre de l’alphabet. 
+          particularité des chiffres monoalphabétiques tels que le chiffre de César est que chaque lettre du message en clair est toujours chiffré par la même lettre.</p>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.nouvelleNotion = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog>
 
     <p>On peut aussi représenter le chiffre de César(1) de la manière suivante avec deux “roues”. 
     Si le décalage vaut d, on tourne la roue extérieure de d crans vers la gauche. 
     Dans le cas présent, on a tourné la roue extérieure de 1 cran vers la gauche. 
     L’alphabet du centre correspond aux lettres en clair et celles du cercle extérieur aux lettres chiffrées.</p>
 
-
-
     <!-- Si besoin, image roue César -->
+
+
 
     <h2>1.2.3 Cryptosystèmes et clés de chiffrement</h2>
     <p>Il existe en réalité 25 chiffres de César différents correspondant aux 25 décalages possibles dans l’alphabet. 
@@ -213,9 +235,11 @@ import { ref, reactive } from 'vue'
 let indice = ref(false)
 
 let dialogVisible = reactive({
-  first: ref(false),
-  second: ref(false),
-  third: ref(false)
+  respond1: ref(false),
+  indice1: ref(false),
+  respond2: ref(false),
+  remarque: ref(false),
+  nouvelleNotion: ref(false)
 })
 
 function onHide(order) {
