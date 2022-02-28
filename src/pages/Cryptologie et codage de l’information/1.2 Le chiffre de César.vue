@@ -226,12 +226,6 @@ const text = ref('')
 const ph = ref('')
 const dense = ref(false)
 
-const isClick = ref(false)
-
-function showtext() {
-  isClick.value = !isClick.value
-}
-
 const correctAnswer = 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
 
 const myQuestions = reactive([
