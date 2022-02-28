@@ -28,20 +28,22 @@
       type="textarea"
     />
 
-    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible = true" />
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.first = true" />
 
-    <q-dialog v-model="dialogVisible" @hide="onHide">
+    <q-dialog v-model="dialogVisible.first" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
           <strong class="text-h6" style="color:orange;">Clé de chiffrement</strong>
           <q-space />
-          <q-btn v-close-popup icon="close" flat round dense />
         </q-card-section>
 
         <q-card-section style="color:orange;">
           Il y a un décalage qui se forme pour chaque lettre entre les deux messages. 
           Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.
         </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.first = false" />
+          </q-card-actions>
       </q-card>
     </q-dialog>
 
@@ -84,25 +86,27 @@
           </q-card-section>
 
           <q-card-actions align="right">
-            <q-btn flat label="ok" color="primary" v-close-popup />
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.second = false" />
           </q-card-actions>
         </q-card>
       </q-dialog>
     </div>
 
-    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible = true" />
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.third = true" />
 
-    <q-dialog v-model="dialogVisible" @hide="onHide">
+    <q-dialog v-model="dialogVisible.third" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
           <strong class="text-h6" style="color:orange;">Déchiffrement</strong>
           <q-space />
-          <q-btn v-close-popup icon="close" flat round dense />
         </q-card-section>
 
         <q-card-section style="color:orange;">
-        JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE
+          <strong>JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE</strong>
         </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.third = false" />
+          </q-card-actions>
       </q-card>
     </q-dialog>
   
@@ -208,10 +212,14 @@ import { ref, reactive } from 'vue'
 
 let indice = ref(false)
 
-let dialogVisible = ref(false)
+let dialogVisible = reactive({
+  first: ref(false),
+  second: ref(false),
+  third: ref(false)
+})
 
-function onHide() {
-  dialogVisible.value = false
+function onHide(order) {
+  dialogVisible.order.value = false
 }
 
 const text = ref('')
