@@ -56,7 +56,7 @@
             <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
           </template>
           <template v-slot:hint>
-          <p>{{respondAnswer(rodolphe)}}</p>
+          <p>{{respondAnswer()}}</p>
           </template>
         </q-input>
       </div>
@@ -199,17 +199,17 @@ const answers = reactive({
   rodolphe: ''
 })
 
-function respondAnswer(answerQ) {
-  if (answers.answerQ.length === 56) {
-    if (answers.answerQ.toUpperCase() === correctAnswer) {
+function respondAnswer() {
+  if (answers.rodolphe.length === 56) {
+    if (answers.rodolphe.toUpperCase() === correctAnswer) {
       return "Bonne réponse"
   }
-    else if (answers.answerQ.toUpperCase() !== correctAnswer) {
+    else if (answers.rodolphe.toUpperCase() !== correctAnswer) {
       return "Mauvaise réponse"
     }
   }
 
-  else if (answers.answerQ.length !== 56) {
+  else if (answers.rodolphe.length !== 56) {
     return "..."
   }
 }
