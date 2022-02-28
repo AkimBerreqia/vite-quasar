@@ -6,6 +6,8 @@
     En cryptographie, un <b>chiffre</b> est en réalité un synonyme de <b>code secret</b>. 
     Il s’agit d’une <b>méthode de chiffrement</b> qui permet de transformer un message intelligible et facilement lisible (<b>texte en clair</b>) en un <b>texte chiffré</b> inintelligible.</p>
     
+
+
     <h2>1.2.1 Énigme 1</h2>
     <p>Robert utilise le chiffre de César pour chiffrer le message <p style="color:red;">RENDEZVOUSAUKIOSKATROISHEURES</p> et obtient le message chiffré <p style="color:red;">SFOEFAWPVTBVLJPTLBUSPJTIFVSFT</p>. 
     Vous remarquerez que le message chiffré est écrit en majuscules, sans accent, sans espace ni ponctuation. 
@@ -26,17 +28,17 @@
       type="textarea"
     />
 
-    <q-btn label="AFFICHER LA RÉPONSE" style="color:darkblue;" @click="dialogVisible = true" />
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible = true" />
 
     <q-dialog v-model="dialogVisible" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
-          <strong class="text-h6" style="color:darkblue;">Clé de chiffrement</strong>
+          <strong class="text-h6" style="color:orange;">Clé de chiffrement</strong>
           <q-space />
           <q-btn v-close-popup icon="close" flat round dense />
         </q-card-section>
 
-        <q-card-section style="color:darkblue;">
+        <q-card-section style="color:orange;">
           Il y a un décalage qui se forme pour chaque lettre entre les deux messages. 
           Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.
         </q-card-section>
@@ -49,6 +51,7 @@
     <p class="Message">
     KFUJOWJUFBVDJOFNBEFNBJOTPJSBWJOHUIFVSFTSFKPJOTNPJBMBHBSF
     </p>
+    
     <div class="q-pa-md">
       <div class="q-gutter-y-md column" style="max-width: 1050px">
         <q-input bottom-slots v-model="answers.rodolphe" label="Réponse :" counter maxlength="56" :dense="dense" style='text-transform:uppercase'>
@@ -61,6 +64,47 @@
         </q-input>
       </div>
     </div>
+
+    <div class="q-pa-md q-gutter-sm">
+      <q-btn label="Indice" style="color:green;" @click="indice = true" />
+      <q-dialog v-model="indice">
+        <q-card>
+          <q-card-section>
+            <strong class="text-h6" style="color:green;">Déchiffrement</strong>
+          </q-card-section>
+
+          <q-separator />
+
+          <q-card-section style="max-height: 50vh" class="scroll">
+            <ul style="color:green;">
+              <li>Toutes les lettres se suivent sans espace.</li><br>
+              <li>Il te sera plus simple de décrypter cette phrase en te servant d'une feuille et d'un crayon.</li><br>
+              <li>Le début du texte en clair est : "<strong>JETINVITE</strong>".</li>
+            </ul>
+          </q-card-section>
+
+          <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup />
+          </q-card-actions>
+        </q-card>
+      </q-dialog>
+    </div>
+
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible = true" />
+
+    <q-dialog v-model="dialogVisible" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Déchiffrement</strong>
+          <q-space />
+          <q-btn v-close-popup icon="close" flat round dense />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+        JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   
     
     
@@ -103,6 +147,8 @@
     Dans le cas présent, on a tourné la roue extérieure de 1 cran vers la gauche. 
     L’alphabet du centre correspond aux lettres en clair et celles du cercle extérieur aux lettres chiffrées.</p>
 
+
+
     <!-- Si besoin, image roue César -->
 
     <h2>1.2.3 Cryptosystèmes et clés de chiffrement</h2>
@@ -132,6 +178,8 @@
     Alphabet chiffré : A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
     </p><br>
 
+
+
     <h2>1.2.4 Activité 1</h2>
     <!-- Activité-1: Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice, pour une clé de CESAR(4) [chiffrement] -->
 
@@ -147,12 +195,18 @@
     + Q-4: Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice -->
 
 
-
+    <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
+      <div class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
+        Retourner au début de la page
+      </div>
+    </q-page-scroller>
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+
+let indice = ref(false)
 
 let dialogVisible = ref(false)
 

@@ -72,6 +72,8 @@
   }
 
   .q-page-container {
-    max-width: 700px;
+    max-width:1500px;
+    margin:50px;
+    
   }
 </style>

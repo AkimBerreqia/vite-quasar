@@ -35,9 +35,12 @@
     Vous pourrez ainsi renforcer les compétences de programmation avec les chaînes de caractères.
     </p>
 
-    <a href="http://localhost:3001/cryptologie%20et%20codage%20de%20l%E2%80%99information/1.2%20le%20chiffre%20de%20c%C3%A9sar"><h3>Suivant</h3></a>
-
-  </q-page>
+    <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
+      <div class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
+        Retourner au début de la page
+      </div>
+    </q-page-scroller>
+    </q-page>
 </template>
 
 <style lang="scss" scoped></style>
