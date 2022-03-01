@@ -39,6 +39,11 @@
         Pour cela, il suffit d’augmenter le nombre de clés possibles.
         </p>
 
+        <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
+        <div class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
+            Retourner au début de la page
+        </div>
+        </q-page-scroller>
     </q-page>
 </template>
 

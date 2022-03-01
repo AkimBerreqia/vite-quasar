@@ -74,9 +74,6 @@
     <div class="q-pa-md">
       <div class="q-gutter-y-md column" style="max-width: 1050px">
         <q-input bottom-slots v-model="answers.rodolphe" label="Réponse :" counter maxlength="56" :dense="dense" style='text-transform:uppercase'>
-          <template v-slot:append>
-            <q-icon v-if="text !== ''" name="close" @click="text = ''" class="cursor-pointer" />
-          </template>
           <template v-slot:hint>
           <p>{{respondAnswer()}}</p>
           </template>
@@ -288,46 +285,48 @@
 
     <h2>1.2.6 Activité 3A (Implémentation du chiffrement de César)</h2>
 
+    <h2>1.2.7 Activité 3B (Implémentation du déchiffrement de César)</h2>
+
+    <h2>1.2.8. Activité 4 (Cryptanalyse)</h2>
+
     <p>
-    Définissez une fonction <span style="color:red;">cesar_encrypt(text, d)</span> qui retourne le texte <span style="color:red;">text</span> chiffré avec le chiffre <strong>CESAR(d)</strong>.
+    Essayez de déchiffrer le message suivant qui a été chiffré avec un chiffre de César dont le décalage est inconnu.
     </p><br>
 
-    <q-btn label="Indications" style="color:purple;" @click="dialogVisible.indications = true" />
+    <p class="Message">
+    FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU
+    </p><br>
 
-    <q-dialog v-model="dialogVisible.indications" @hide="onHide">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-          <strong class="text-h6" style="color:purple;">Indications</strong>
-          <q-space />
-        </q-card-section>
-
-        <q-card-section style="color:purple;">
-          <ul style="color:purple;">
-            <li>
-            Inspirez-vous de la fonction <span style="color:red;">lower(text)</span> définie au cours de programmation qui permet de transformer un texte en minuscules. 
-            Pour cela, on avait décalé toutes les lettres majuscules de 32 positions dans le code ASCII.
-            </li><br>
-
-            <li>
-            L’opérateur modulo (<span style="color:red;">%</span>) est utile pour “revenir au début de l’alphabet” lorsque la lettre décalée de <i>d</i> “dépasse le Z”.
-            </li><br>
-
-            <li>
-            Ces si indications ne vous suffisent pas, vous pouvez également consulter les indices après la zone d’édition.
-            </li>
-          </ul>
-        </q-card-section>
-        <q-card-actions align="right">
-            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.indications = false" />
-          </q-card-actions>
-      </q-card>
-    </q-dialog><br><br>
+    <p>
+    Q-3: Commencez par décrire en gros la stratégie que vous allez utiliser. N’hésitez pas à utiliser la fonction <strong>cesar_decrypt(text, d)</strong> précédemment définie.
+    </p>
 
     <q-input
-      v-model="text.activ3A"
+      v-model="text.q3"
       filled
       type="textarea"
     /><br>
+
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond1 = true" />
+
+    <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Clé de chiffrement</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+          <p>
+          Il y a un décalage qui se forme pour chaque lettre entre les deux messages. 
+          Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.
+          </p>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond1 = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog><br><br><br>
 
     <!-- 1.2.5 Activité-2: Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice, pour une clé de CESAR(4) [déchiffrement] -->
 
@@ -369,36 +368,12 @@ function onHide(order) {
 
 let text = reactive({
   q1: ref(''),
-  activ3A: ref('')
+  q3: ref('')
 })
 
-const ph = ref('')
 const dense = ref(false)
 
 const correctAnswer = 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
-
-const myQuestions = reactive([
-  {
-    id: 0,
-    question: 'What is 10/2?',
-    answers: {
-      a: '3',
-      b: '5',
-      c: '115',
-    },
-    correctAnswer: 'b',
-  },
-  {
-    id: 1,
-    question: 'What is 30/3?',
-    answers: {
-      a: '3',
-      b: '5',
-      c: '10',
-    },
-    correctAnswer: 'c',
-  },
-])
 
 const answers = reactive({
   rodolphe: ''
