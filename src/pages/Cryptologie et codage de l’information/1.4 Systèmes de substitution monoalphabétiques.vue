@@ -216,12 +216,13 @@
           </p><br><br>
 
           <p class="foncion python" style="color:black;">
-          1 <span style="color:purple;">from</span> random <span style="color:purple;">import</span> shuffle<br>
-          2 alphabet = <span style="color:brown;">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span><br>
-          3 chars = <span style="color:purple;">list</span>(alphabet)<br>
-          4 shuffle(chars)<br>
-          5 permutation = <span style="color:brown;">""</span>.join(chars)<br>
-          6 <span style="color:purple;">print</span>(<span style="color:brown;">"Permutation aléatoire:"</span>, permutation)
+          <span style="color:purple;">from</span> random <span style="color:purple;">import</span> shuffle<br>
+          <br>
+          alphabet = <span style="color:brown;">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span><br>
+          chars = <span style="color:purple;">list</span>(alphabet)<br>
+          shuffle(chars)<br>
+          permutation = <span style="color:brown;">""</span>.join(chars)<br>
+          <span style="color:purple;">print</span>(<span style="color:brown;">"Permutation aléatoire:"</span>, permutation)<br>
           </p><br>
 
           <p>
@@ -240,7 +241,122 @@
             <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.exemple1 = false" />
           </q-card-actions>
       </q-card>
+    </q-dialog><br><br>
+
+    <q-btn label="Remarque" style="color:purple;" @click="dialogVisible.remarque = true" />
+
+    <q-dialog v-model="dialogVisible.remarque" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:purple;">Remarque</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:purple;">
+          <p>
+          Il n’est pas nécessaire d’essayer de comprendre ce programme qui contient des éléments encore non étudiés. 
+          Il vous est juste donné pour générer des permutations aléatoires. 
+          Dans le chapitre sur les listes, nous reviendrons sur ce programme.
+          </p>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.remarque = false" />
+          </q-card-actions>
+      </q-card>
     </q-dialog><br><br><br>
+
+
+    <h2>1.4.4 Activité 1</h2>
+
+    <h2>1.4.5 Activité 2</h2>
+
+    <h2>1.4.5.1 Stratégie de résolution (vidéo)</h2>
+
+    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/aPo5WKqB74U"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write;
+    encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe><br><br>
+
+
+    <h2>1.4.5.2 Aide / blocs</h2>
+
+    <p>
+    Q-4: Si vous ne parvenez pas à implémenter le décryptage, vous pouvez vous aider des blocs ci-dessous qu'il faut choisir et réorganiser. 
+    Après avoir réussi à organiser les blocs correctement, essayez de comprendre la solution (par exemple avec le débogueur de Thonny), cachez la solution et essayez de résoudre l'exercice sans aide.
+    </p>
+
+
+    <h2>1.4.6 Activité 3</h2>
+
+    <h2>1.4.7 Activité 4 (factorielle)</h2>
+
+    <h2>1.4.8 Activité 5 (number_permutations)</h2>
+
+    <h2>1.4.9 Activité 6</h2>
+
+    <h3>Short Answer</h3>
+
+    <p>
+    Q-6: En admettant que l’ordinateur soit assez puissant pour essayer 100 millions (108) de clés par seconde dans une attaque par force brute, combien de temps faudrait-il pour tester toutes les clés possibles ?
+    </p>
+
+    <q-input
+      v-model="text.q6"
+      filled
+      type="textarea"
+    /><br>
+
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond6 = true" />
+
+    <q-dialog v-model="dialogVisible.respond6" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Q-2: Réponse</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+          <ul>
+          <li>
+          Nombre de secondes :<br>
+          (4.0329146 * (10 ** 26)) / (10 ** 8) ≈ 4 * (10 ** 18) secondes<br><br>
+          </li>
+          
+          <li>
+          Nombre d’heures :<br>
+          (4.0329146 * (10 ** 26)) / ((10 ** 8) * 3600) ≈ 4 * (10 ** 18) = 1120254058685015.8 heures<br><br>
+          </li>
+
+          <li>
+          Nombre d’années :<br>
+          (4.0329146 * (10 ** 26) / ((10 ** 8) * 3600 *24 * 365.25) ≈ 4 * (10 ** 18) = 127795352348.27924 années<br><br>
+          </li>
+          </ul>
+        </q-card-section>
+        <q-card-actions align="right">
+          <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond6 = false" />
+        </q-card-actions>
+      </q-card>
+    </q-dialog><br><br><br>
+
+
+    <h2>1.4.10 À retenir</h2>
+
+    <p>
+    Dès que la clé de chiffrement est une permutation d’un alphabet donné, le nombre de clés possibles devient très grand, même avec un alphabet relativement modeste. 
+    Si l’alphabet contient <i>n</i> caractères, le nombre de clé qu’il est possible de créer à partir de cet alphabet est donné par le produit.<br><br>
+
+    <strong>n * (n - 1) * (n - 2) * ... * 2 * 1 = n!</strong><br><br>
+
+    Le nombre <strong>n!</strong> s’appelle en mathématiques “n factorielle” ou “la factorielle de n”. 
+    Vos calculatrices disposent d’une touche <span style="color:red;">n!</span> pour calculer facilement ce produit sans devoir écrire un programme comme nous l’avons fait plus haut.<br><br>
+
+    Dès que le nombre de clés devient important, il est totalement illusoire de vouloir casser un code secret par force brute. 
+    Il faut faire preuve d’astuce et utiliser des informations supplémentaire sur le message codé. 
+    Dans la prochaine section, nous allons voir comment casser des chiffres de substitution monoalphabétique par une attaque fréquentielle qui tient compte des spécificités de la langue dans lequel le message en clair est écrite.
+    </p>
 
 
     <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
@@ -257,7 +373,9 @@ import { ref, reactive } from 'vue'
 let dialogVisible = reactive({
   respond1: ref(false),
   respond2: ref(false),
-  exemple1: ref(false)
+  respond6: ref(false),
+  exemple1: ref(false),
+  remarque: ref(false)
 })
 
 function onHide(order) {
@@ -265,7 +383,8 @@ function onHide(order) {
 }
 
 let text = reactive({
-  q2: ref('')
+  q2: ref(''),
+  q6: ref('')
 })
 
 const dense = ref(false)
