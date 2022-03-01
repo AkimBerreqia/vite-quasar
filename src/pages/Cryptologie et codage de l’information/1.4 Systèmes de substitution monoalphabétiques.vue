@@ -1,88 +1,147 @@
 <template>
-    <q-page class="pa-4 text-center">
-        <h1>1.4 Systèmes de substitution monoalphabétiques</h1>
+  <q-page class="pa-4 text-center">
+    <h1>1.4 Systèmes de substitution monoalphabétiques</h1>
 
-        <p>
-        Le chiffre de César est un exemple de <strong>chiffre monoalphabétique</strong> car il consiste à remplacer chaque lettre du message toujours par la même lettre chiffrée. 
-        Par exemple, pour un décalage de <i>d = 1</i>, tous les A, sont remplacés par des B, tous les B par des C etc.<br><br>
+    <p>
+    Le chiffre de César est un exemple de <strong>chiffre monoalphabétique</strong> car il consiste à remplacer chaque lettre du message toujours par la même lettre chiffrée. 
+    Par exemple, pour un décalage de <i>d = 1</i>, tous les A, sont remplacés par des B, tous les B par des C etc.<br><br>
 
-        Il n’est cependant pas nécessaire que le chiffrement soit le résultat d’un décalage constant dans l’alphabet. 
-        En effet, au lieu d’utiliser un décalage de <i>d = 3</i> et obtenir la substitution.
-        </p>
+    Il n’est cependant pas nécessaire que le chiffrement soit le résultat d’un décalage constant dans l’alphabet. 
+    En effet, au lieu d’utiliser un décalage de <i>d = 3</i> et obtenir la substitution.
+    </p>
 
-        <p class="Message">
-        Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
-        Alphabet chiffré : D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
-        </p>
+    <p class="Message">
+    Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+    Alphabet chiffré : D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+    </p>
 
-        <p>
-        On peut très bien mélanger complètement les lettres de l’alphabet chiffré.
-        </p>
+    <p>
+    On peut très bien mélanger complètement les lettres de l’alphabet chiffré.
+    </p>
 
-        <p class="Message">
-        Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
-        Alphabet chiffré : Q O L W N X T M G D K B P R S E U V F Z H J I Y C A
-        </p>
+    <p class="Message">
+    Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+    Alphabet chiffré : Q O L W N X T M G D K B P R S E U V F Z H J I Y C A
+    </p>
 
-        <p>
-        Ce chiffre remplace tous les A par des Q, les B par des O etc. Pour créer l’alphabet chiffré, on a mélangé l’alphabet dans un ordre totalement aléatoire.
-        </p>
+    <p>
+    Ce chiffre remplace tous les A par des Q, les B par des O etc. Pour créer l’alphabet chiffré, on a mélangé l’alphabet dans un ordre totalement aléatoire.
+    </p><br><br>
 
 
 
-        <h2>1.4.1 Énigme 2</h2>
+    <h2>1.4.1 Énigme 2</h2>
 
-        <h3>Short Answer</h3>
+    <h3>Short Answer</h3>
 
-        <p>
-        Q-1: Cindy utilise la substitution...
-        </p>
+    <p>
+    Q-1: Cindy utilise la substitution...
+    </p>
 
-        <p class="Message">
-        Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
-        Alphabet chiffré : Q O L W N X T M G D K B P R S E U V F Z H J I Y C A
-        </p>
+    <p class="Message">
+    Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+    Alphabet chiffré : Q O L W N X T M G D K B P R S E U V F Z H J I Y C A
+    </p>
 
-        <p>
-        ... pour chiffrer un message. Voici le message chiffré par Cindy.
-        </p>
+    <p>
+    ... pour chiffrer un message. Voici le message chiffré par Cindy.
+    </p>
 
-        <p class="Message">
-        DQGPNBNUHGZQZGSR
-        </p>
+    <p class="Message">
+    DQGPNBNUHGZQZGSR
+    </p>
 
-        <p>
-        Déchiffrez ce message secret et écrivez le texte en clair dans le champ ci-dessous.
-        </p>
+    <p>
+    Déchiffrez ce message secret et écrivez le texte en clair dans le champ ci-dessous.
+    </p>
 
-        <div class="q-pa-md">
-            <div class="q-gutter-y-md column" style="max-width: 1050px">
-                <q-input bottom-slots v-model="myQuestions.q1" label="Réponse :" counter maxlength="16" :dense="dense" style='text-transform:uppercase'>
-                    <template v-slot:hint>
-                    <p>{{respondAnswer(myQuestions.q1, myQuestions.q1CorrectAnswer, 16)}}</p>
-                    </template>
-                </q-input>
-            </div>
-        </div>
+    <div class="q-pa-md">
+      <div class="q-gutter-y-md column" style="max-width: 1050px">
+        <q-input bottom-slots v-model="myQuestions.q1" label="Réponse :" counter maxlength="16" :dense="dense" style='text-transform:uppercase'>
+          <template v-slot:hint>
+          <p>{{respondAnswer(myQuestions.q1, myQuestions.q1CorrectAnswer, 16)}}</p>
+          </template>
+        </q-input>
+      </div>
+    </div>
 
-        <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
-        <div class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
-            Retourner au début de la page
-        </div>
-        </q-page-scroller>
-    </q-page>
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond1 = true" />
+
+    <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Q-1: Réponse</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+          <p>
+          JAIMELEQUITATION
+          </p>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond1 = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog><br><br><br>
+
+
+    <h2>1.4.2 Question de compréhension</h2>
+
+    <h3>Short Answer</h3>
+
+    <p>Q-2: Quelle est la clé de chiffrement du message dans ce cas ?</p>
+
+    <q-input
+      v-model="text.q2"
+      filled
+      type="textarea"
+    /><br>
+
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond2 = true" />
+
+    <q-dialog v-model="dialogVisible.respond2" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Q-2: Réponse</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+          <p>
+          La clé de chiffrement est "quelconque" ou "aléatoire".
+          </p>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond2 = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog><br><br><br>
+
+
+    <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
+      <div class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
+      Retourner au début de la page
+      </div>
+    </q-page-scroller>
+  </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 
 let dialogVisible = reactive({
-  respond1: ref(false)
+  respond1: ref(false),
+  respond2: ref(false)
 })
 
 function onHide(order) {
   dialogVisible.order.value = false
 }
+
+let text = reactive({
+  q2: ref('')
+})
 
 const dense = ref(false)
 
