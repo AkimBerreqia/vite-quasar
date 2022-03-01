@@ -29,7 +29,41 @@
         </p>
 
 
+
         <h2>1.4.1 Énigme 2</h2>
+
+        <h3>Short Answer</h3>
+
+        <p>
+        Q-1: Cindy utilise la substitution...
+        </p>
+
+        <p class="Message">
+        Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+        Alphabet chiffré : Q O L W N X T M G D K B P R S E U V F Z H J I Y C A
+        </p>
+
+        <p>
+        ... pour chiffrer un message. Voici le message chiffré par Cindy.
+        </p>
+
+        <p class="Message">
+        DQGPNBNUHGZQZGSR
+        </p>
+
+        <p>
+        Déchiffrez ce message secret et écrivez le texte en clair dans le champ ci-dessous.
+        </p>
+
+        <div class="q-pa-md">
+            <div class="q-gutter-y-md column" style="max-width: 1050px">
+                <q-input bottom-slots v-model="myQuestions.q1" label="Réponse :" counter maxlength="16" :dense="dense" style='text-transform:uppercase'>
+                    <template v-slot:hint>
+                    <p>{{respondAnswer(myQuestions.q1, myQuestions.q1CorrectAnswer, 16)}}</p>
+                    </template>
+                </q-input>
+            </div>
+        </div>
 
         <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
         <div class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
@@ -40,6 +74,37 @@
 </template>
 
 <script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+let dialogVisible = reactive({
+  respond1: ref(false)
+})
+
+function onHide(order) {
+  dialogVisible.order.value = false
+}
+
+const dense = ref(false)
+
+const myQuestions = reactive({
+    q1: '',
+    q1CorrectAnswer: 'JAIMELEQUITATION'
+})
+
+function respondAnswer(exercice, correctAnswer, maxLength){
+  if (exercice.length === maxLength) {
+    if (exercice.toUpperCase() === correctAnswer) {
+      return "Bonne réponse"
+    }
+    else if (exercice.toUpperCase() !== correctAnswer) {
+      return "Mauvaise réponse"
+    }
+  }
+
+  else if (exercice.length !== maxLength) {
+    return "..."
+  }
+}
 
 </script>
 

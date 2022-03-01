@@ -423,8 +423,6 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 
-let indice = ref(false)
-
 let dialogVisible = reactive({
   respond1: ref(false),
   respond2: ref(false),
