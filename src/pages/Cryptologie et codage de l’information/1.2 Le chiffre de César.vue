@@ -40,7 +40,7 @@
     <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
-          <strong class="text-h6" style="color:orange;">Clé de chiffrement</strong>
+          <strong class="text-h6" style="color:orange;">Q-1: Réponse</strong>
           <q-space />
         </q-card-section>
 
@@ -65,20 +65,15 @@
     <p class="Message">
     KFUJOWJUFBVDJOFNBEFNBJOTPJSBWJOHUIFVSFTSFKPJOTNPJBMBHBSF
     </p><br>
-
-    <p>
-    Pour cela, écrivez le message déchiffré dans la variable <span style="color:red;">message_en_clair</span>. 
-    Il suffit d’écrire la réponse à la ligne 2, tout en majuscule, sans espaces et d’exécuter le programme.
-    </p>
     
     <div class="q-pa-md">
-      <div class="q-gutter-y-md column" style="max-width: 1050px">
-        <q-input bottom-slots v-model="answers.rodolphe" label="Réponse :" counter maxlength="56" :dense="dense" style='text-transform:uppercase'>
-          <template v-slot:hint>
-          <p>{{respondAnswer()}}</p>
-          </template>
-        </q-input>
-      </div>
+        <div class="q-gutter-y-md column" style="max-width: 1050px">
+          <q-input bottom-slots v-model="myQuestions.rodolphe" label="Réponse :" counter maxlength="56" :dense="dense" style='text-transform:uppercase'>
+            <template v-slot:hint>
+            <p>{{respondAnswer(myQuestions.rodolphe, myQuestions.rodolpheCorrectAnswer, 56)}}</p>
+            </template>
+          </q-input>
+        </div>
     </div>
 
     <q-btn label="Indice" style="color:green;" @click="dialogVisible.indice1 = true" />
@@ -86,7 +81,7 @@
     <q-dialog v-model="dialogVisible.indice1" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
-          <strong class="text-h6" style="color:green;">Déchiffrement</strong>
+          <strong class="text-h6" style="color:green;">Q-Rodolphe: Indice</strong>
           <q-space />
         </q-card-section>
 
@@ -108,7 +103,7 @@
     <q-dialog v-model="dialogVisible.respond2" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
-          <strong class="text-h6" style="color:orange;">Déchiffrement</strong>
+          <strong class="text-h6" style="color:orange;">Q-Rodolphe: Réponse</strong>
           <q-space />
         </q-card-section>
 
@@ -254,13 +249,33 @@
     CRYPTOGRAPHIE
     </p><br>
 
-    <p>
-    Pour cela, écrivez le message déchiffré dans la variable <span style="color:red;">cyphered_text</span>. 
-    Il suffit d’écrire la réponse à la ligne 2 en majuscules et sans espaces, puis d’exécuter le programme.
-    </p>
+    <div class="q-pa-md">
+      <div class="q-gutter-y-md column" style="max-width: 1050px">
+        <q-input bottom-slots v-model="myQuestions.activ1" label="Réponse :" counter maxlength="13" :dense="dense" style='text-transform:uppercase'>
+          <template v-slot:hint>
+          <p>{{respondAnswer(myQuestions.activ1, myQuestions.activ1CorrectAnswer, 13)}}</p>
+          </template>
+        </q-input>
+      </div>
+    </div>
 
-    <!-- Refaire exercice Rodolphe mais pour cesar4, 
-    PS: en cryptant -->
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond3 = true" />
+
+    <q-dialog v-model="dialogVisible.respond3" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Activité 1: Réponse</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+          <strong>GVCTXSKVETLMI</strong>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond3 = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog><br><br><br>
 
 
 
@@ -274,13 +289,33 @@
     YRIZMIXVERUYMPPIIWXYRIQIVQSVXI
     </p><br>
 
-    <p>
-    Pour cela, écrivez le message déchiffré dans la variable <span style="color:red;">message_en_clair</span>. 
-    Il suffit d’écrire la réponse à la ligne 2 en majuscules et sans espaces, puis d’exécuter le programme.
-    </p>
+    <div class="q-pa-md">
+      <div class="q-gutter-y-md column" style="max-width: 1050px">
+        <q-input bottom-slots v-model="myQuestions.activ2" label="Réponse :" counter maxlength="30" :dense="dense" style='text-transform:uppercase'>
+          <template v-slot:hint>
+          <p>{{respondAnswer(myQuestions.activ2, myQuestions.activ2CorrectAnswer, 30)}}</p>
+          </template>
+        </q-input>
+      </div>
+    </div>
 
-    <!-- Refaire exercice Rodolphe mais pour cesar4, 
-    PS: en décryptant -->
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond4 = true" />
+
+    <q-dialog v-model="dialogVisible.respond4" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Activité 2: Réponse</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+          <strong>UNEVIETRANQUILLEESTUNEMERMORTE</strong>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond4 = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog><br><br><br>
 
 
     <h2>1.2.6 Activité 3A (Implémentation du chiffrement de César)</h2>
@@ -297,8 +332,11 @@
     FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU
     </p><br>
 
+    <h3>Short Answer</h3>
+
     <p>
-    Q-3: Commencez par décrire en gros la stratégie que vous allez utiliser. N’hésitez pas à utiliser la fonction <strong>cesar_decrypt(text, d)</strong> précédemment définie.
+    Q-3: Commencez par décrire en gros la stratégie que vous allez utiliser. 
+    N’hésitez pas à utiliser la fonction <span style="color:red;">cesar_decrypt(text, d)</span> précédemment définie.
     </p>
 
     <q-input
@@ -307,37 +345,71 @@
       type="textarea"
     /><br>
 
-    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond1 = true" />
+    <p>
+    Q-4: Quelle est la bonne clé de chiffrement ?
+    </p>
 
-    <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
+    <div class="q-pa-md">
+      <div class="q-gutter-y-md column" style="max-width: 1050px">
+        <q-input bottom-slots v-model="myQuestions.q4" label="Réponse :" counter maxlength="2" :dense="dense" style='text-transform:uppercase'>
+          <template v-slot:hint>
+          <p>{{respondAnswer(myQuestions.q4, myQuestions.q4CorrectAnswer, 2)}}</p>
+          </template>
+        </q-input>
+      </div>
+    </div>
+
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond5 = true" />
+
+    <q-dialog v-model="dialogVisible.respond5" @hide="onHide">
       <q-card>
         <q-card-section class="row items-center q-pb-none">
-          <strong class="text-h6" style="color:orange;">Clé de chiffrement</strong>
+          <strong class="text-h6" style="color:orange;">Q-4: Réponse</strong>
           <q-space />
         </q-card-section>
 
         <q-card-section style="color:orange;">
           <p>
-          Il y a un décalage qui se forme pour chaque lettre entre les deux messages. 
-          Par exemple, la lettre <i>R</i> devient la lettre <i>S</i>.
+          16
           </p>
         </q-card-section>
         <q-card-actions align="right">
-            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond1 = false" />
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond5 = false" />
           </q-card-actions>
       </q-card>
     </q-dialog><br><br><br>
 
-    <!-- 1.2.5 Activité-2: Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice, pour une clé de CESAR(4) [déchiffrement] -->
+    <p>
+    Saisissez la réponse de l’exercice ci-dessous.
+    </p>
 
-    <!-- 1.2.6 Activité-3A (Implémentation du chiffrement de César): Demander aide à DONNER pour faire correcteur de code pour fonction "cesar_encrypt(text, d)"
-    + Afficher Indice-n si bouton-n est appuyé -->
+    <div class="q-pa-md">
+      <div class="q-gutter-y-md column" style="max-width: 1050px">
+        <q-input bottom-slots v-model="myQuestions.activ4" label="Réponse :" counter maxlength="42" :dense="dense" style='text-transform:uppercase'>
+          <template v-slot:hint>
+          <p>{{respondAnswer(myQuestions.activ4, myQuestions.activ4CorrectAnswer, 42)}}</p>
+          </template>
+        </q-input>
+      </div>
+    </div>
 
-    <!-- 1.2.7 Activité 3B (Implémentation du déchiffrement de César): Demander aide à DONNER pour faire correcteur de code pour fonction "cesar_encrypt(text, d)" -->
+    <q-btn label="AFFICHER LA RÉPONSE" style="color:orange;" @click="dialogVisible.respond6 = true" />
 
-    <!-- 1.2.8 Activité 4 (Cryptanalyse): Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice
-    + Refaire correcteur pour vérifier fonction cryptanalyse CESAR
-    + Q-4: Reprendre la même fonction que pour la Q-1 mais en l'adaptant à l'exercice -->
+    <q-dialog v-model="dialogVisible.respond6" @hide="onHide">
+      <q-card>
+        <q-card-section class="row items-center q-pb-none">
+          <strong class="text-h6" style="color:orange;">Activité 4: Réponse</strong>
+          <q-space />
+        </q-card-section>
+
+        <q-card-section style="color:orange;">
+          <strong>PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE</strong>
+        </q-card-section>
+        <q-card-actions align="right">
+            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond6 = false" />
+          </q-card-actions>
+      </q-card>
+    </q-dialog>
 
 
     <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
@@ -355,8 +427,12 @@ let indice = ref(false)
 
 let dialogVisible = reactive({
   respond1: ref(false),
-  indice1: ref(false),
   respond2: ref(false),
+  respond3: ref(false),
+  respond4: ref(false),
+  respond5: ref(false),
+  respond6: ref(false),
+  indice1: ref(false),
   remarque: ref(false),
   nouvelleNotion: ref(false),
   indications: ref(false)
@@ -368,28 +444,40 @@ function onHide(order) {
 
 let text = reactive({
   q1: ref(''),
-  q3: ref('')
+  q3: ref(''),
+  q4: ref('')
 })
 
 const dense = ref(false)
 
-const correctAnswer = 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
+const myQuestions = reactive({
+  rodolphe: '',
+  rodolpheCorrectAnswer: 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE',
 
-const answers = reactive({
-  rodolphe: ''
+  activ1: '',
+  activ1CorrectAnswer: 'GVCTXSKVETLMI',
+
+  activ2: '',
+  activ2CorrectAnswer: 'UNEVIETRANQUILLEESTUNEMERMORTE',
+
+  q4: '',
+  q4CorrectAnswer: '16',
+
+  activ4: '',
+  activ4CorrectAnswer: 'PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE',
 })
 
-function respondAnswer() {
-  if (answers.rodolphe.length === 56) {
-    if (answers.rodolphe.toUpperCase() === correctAnswer) {
+function respondAnswer(exercice, correctAnswer, maxLength){
+  if (exercice.length === maxLength) {
+    if (exercice.toUpperCase() === correctAnswer) {
       return "Bonne réponse"
-  }
-    else if (answers.rodolphe.toUpperCase() !== correctAnswer) {
+    }
+    else if (exercice.toUpperCase() !== correctAnswer) {
       return "Mauvaise réponse"
     }
   }
 
-  else if (answers.rodolphe.length !== 56) {
+  else if (exercice.length !== maxLength) {
     return "..."
   }
 }
