@@ -413,7 +413,7 @@
 
 
     <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
-      <div class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
+      <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
         Retourner au début de la page
       </div>
     </q-page-scroller>
