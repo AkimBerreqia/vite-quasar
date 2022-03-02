@@ -3,17 +3,17 @@
     <div class="q-pa-md">
       <div class="q-gutter-md">
         <q-carousel
-          v-model="slide1"
+          v-model="action.slide1"
           transition-prev="scale"
           transition-next="scale"
           swipeable
           animated
-          control-color="white"
+          control-color="primary"
           navigation
           padding
           arrows
-          height="400px"
-          class="bg-primary text-white shadow-1 rounded-borders"
+          height="500px"
+          class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="introduction" class="column no-wrap flex-center text-center">
               <h1>1.1 Introduction</h1>
@@ -29,17 +29,17 @@
         </q-carousel>
 
         <q-carousel
-          v-model="slide2"
+          v-model="action.slide2"
           transition-prev="scale"
           transition-next="scale"
           swipeable
           animated
-          control-color="white"
+          control-color="primary"
           navigation
           padding
           arrows
-          height="400px"
-          class="bg-primary text-white shadow-1 rounded-borders"
+          height="500px"
+          class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="cryptographie1" class="column no-wrap flex-center text-center">
               <h2>1.1.1 Cryptographie</h2>
@@ -65,17 +65,17 @@
         </q-carousel>
 
         <q-carousel
-          v-model="slide3"
+          v-model="action.slide3"
           transition-prev="scale"
           transition-next="scale"
           swipeable
           animated
-          control-color="white"
+          control-color="primary"
           navigation
           padding
           arrows
-          height="400px"
-          class="bg-primary text-white shadow-1 rounded-borders"
+          height="500px"
+          class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="cryptanalyse1" class="column no-wrap flex-center text-center">
               <h2>1.1.2 Cryptanalyse</h2>
@@ -125,18 +125,12 @@
     </q-page>
 </template>
 
-<script>
-import { ref } from 'vue'
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
 
-export default {
-  setup () {
-    return {
-      slide1: ref('introduction'),
-      slide2: ref('cryptographie1'),
-      slide3: ref('cryptanalyse1')
-    }
-  }
-}
+let action = reactive({
+  slide1: ref('introduction'),
+  slide2: ref('cryptographie1'),
+  slide3: ref('cryptanalyse1')
+})
 </script>
-
-<style lang="scss" scoped></style>

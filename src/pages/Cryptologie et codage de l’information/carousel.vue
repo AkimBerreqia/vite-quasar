@@ -23,6 +23,12 @@
             Les codes secrets sont utilisés depuis l’invention de l’écriture pour communiquer des informations de manière secrète et sécurisée, notamment lors des grandes campagnes militaires. 
             Le code de César est un exemple assez simple utilisé dans l’Antiquité que nous allons aborder au cours.<br><br>
             </p>
+
+            <q-input
+            v-model="text.q1"
+            filled
+            type="textarea"
+            />
         </q-carousel-slide>
 
         <q-carousel-slide name="cryptographie2" class="column no-wrap flex-center text-center">
@@ -41,9 +47,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref,reactive } from 'vue'
 
 let action = reactive({
     slide: ref('cryptographie1')
-}
+})
+
+let text = reactive({
+  q1: ref(''),
+  q3: ref(''),
+  q4: ref('')
+})
 </script>
