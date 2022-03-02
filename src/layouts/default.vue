@@ -5,7 +5,7 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          Nom du site
+          Cryptologie et codage de l’information
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -55,6 +55,7 @@
     leftDrawerOpen.value = !leftDrawerOpen.value
   }
 </script>
+
 <style lang="scss">
   .slide-fade-enter {
     transform: translateX(10px);

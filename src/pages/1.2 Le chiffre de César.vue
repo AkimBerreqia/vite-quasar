@@ -119,12 +119,12 @@
             </div>
 
             <q-btn-group>
-              <q-btn label="Indice" style="color:green;" @click="dialogVisible.indice1 = true" />
+              <q-btn label="Indices" style="color:green;" @click="dialogVisible.indice1 = true" />
 
               <q-dialog v-model="dialogVisible.indice1" @hide="onHide">
                 <q-card>
                   <q-card-section class="row items-center q-pb-none">
-                    <strong class="text-h6" style="color:green;">Q-Rodolphe: Indice</strong>
+                    <strong class="text-h6" style="color:green;">Q-Rodolphe: Indices</strong>
                     <q-space />
                   </q-card-section>
 
@@ -184,7 +184,7 @@
             <p>
             Comme vous avez sans doute pu le deviner, le chiffre de César est très simple. 
             Il suffit de décaler toutes les lettres d’un certain nombre de positions dans l’alphabet. 
-            En observant le message en clair et le message chiffré de Robert.
+            En observant le message en clair et le message chiffré de Robert...
             </p><br>
 
             <p class="Message">
@@ -193,7 +193,7 @@
             </p><br>
 
             <p>
-            On peut constater que le message chiffré n’est rien d’autre que le message en clair où chaque lettre a été “décalée de 1 position vers la droite dans l’alphabet”. 
+            ... on peut constater que le message chiffré n’est rien d’autre que le message en clair où chaque lettre a été “décalée de 1 position vers la droite dans l’alphabet”. 
             Autrement dit, le A est chiffré par B, le B par C etc jusqu’au Z qui est chiffré par A. 
             On peut représenter cela par le schéma suivant:
             </p><br>
@@ -458,10 +458,7 @@
 
             <h3>Short Answer</h3>
 
-            <h4>
-            Q-2: Commencez par décrire en gros la stratégie que vous allez utiliser. 
-            N’hésitez pas à utiliser la fonction <span style="color:red;">cesar_decrypt(text, d)</span> précédemment définie.
-            </h4>
+            <h4>Q-2: Commencez par décrire en gros la stratégie que vous allez utiliser.</h4>
 
             <q-input
               v-model="text.q2"

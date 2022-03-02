@@ -12,7 +12,7 @@
           navigation
           padding
           arrows
-          height="500px"
+          height="300px"
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="introduction" class="column no-wrap flex-center text-center">
@@ -38,7 +38,7 @@
           navigation
           padding
           arrows
-          height="500px"
+          height="300px"
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="cryptographie1" class="column no-wrap flex-center text-center">
@@ -74,7 +74,7 @@
           navigation
           padding
           arrows
-          height="500px"
+          height="300px"
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="cryptanalyse1" class="column no-wrap flex-center text-center">

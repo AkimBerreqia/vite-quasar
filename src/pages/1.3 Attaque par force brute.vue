@@ -48,34 +48,54 @@
                         <q-icon name="key" size="28px" /><br>
 
                         <p>
-                        Le programme suivant réalise une attaque par force brute sur le chiffre de César en testant successivement toutes les clés de chiffrement. 
-                        Pour cela, il fait appel à la fonction <span style="color:red;">cesar_decrypt(text, d)</span> définie dans la section précédente.
+                        Le programme suivant réalise une attaque par force brute sur le chiffre de César en testant successivement toutes les clés de chiffrement.
                         </p>
 
                         <!-- Rajouter exemple comme au 1.4 -->
                     </q-carousel-slide>
+
+                    <q-carousel-slide name="exemple2" class="column no-wrap flex-center text-center">
+                        <q-icon name="key" size="28px" /><br>
+
+                        <p>
+                        En exécutant le programme, on constate que la clé <span style="color:red;">d = 16</span> permet de décrypter correctement le texte chiffré pour obtenir le texte en clair.
+                        <br><br>
+
+                        PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE<br><br>
+
+                        Il faut bien entendu parcourir tous les essais jusqu’à ce que l’on tombe sur un texte qui a du sens en français (ou dans une autre langue connue).
+                        </p>
+                    </q-carousel-slide>
                 </q-carousel>
-                
-
-                <p>
-                En exécutant le programme, on constate que la clé <span style="color:red;">d = 16</span> permet de décrypter correctement le texte chiffré pour obtenir le texte en clair.
-                <br><br>
-
-                PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE<br><br>
-
-                Il faut bien entendu parcourir tous les essais jusqu’à ce que l’on tombe sur un texte qui a du sens en français (ou dans une autre langue connue).
-                </p>
 
 
-                <h2>1.3.2. À retenir</h2>
+                <q-carousel
+                v-model="action.slide3"
+                transition-prev="scale"
+                transition-next="scale"
+                swipeable
+                animated
+                control-color="primary"
+                navigation
+                padding
+                arrows
+                height="300px"
+                class="shadow-1 rounded-borders"
+                >
+                    <q-carousel-slide name="retenir1" class="column no-wrap flex-center text-center">
+                        <h2>1.3.2. À retenir</h2>
 
-                <p>
-                Une attaque par force brute sur un code secret consiste à essayer de déchiffrer un message en essayant systématiquement toutes les clés de chiffrement possible de manière “stupide”. 
-                Ceci est très facile à réaliser avec le chiffre de César puisqu’il ne dispose que de 25 clés de chiffrement différentes.<br><br>
+                        <q-icon name="key" size="28px" /><br>
 
-                Dans la prochaine section, nous allons aborder un cryptosystème qui résiste un peu mieux à une attaque aussi naïve. 
-                Pour cela, il suffit d’augmenter le nombre de clés possibles.
-                </p>
+                        <p>
+                        Une attaque par force brute sur un code secret consiste à essayer de déchiffrer un message en essayant systématiquement toutes les clés de chiffrement possible de manière “stupide”. 
+                        Ceci est très facile à réaliser avec le chiffre de César puisqu’il ne dispose que de 25 clés de chiffrement différentes.<br><br>
+
+                        Dans la prochaine section, nous allons aborder un cryptosystème qui résiste un peu mieux à une attaque aussi naïve. 
+                        Pour cela, il suffit d’augmenter le nombre de clés possibles.
+                        </p>
+                    </q-carousel-slide>
+                </q-carousel>
             </div>
         </div>
 
