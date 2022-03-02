@@ -440,7 +440,7 @@
           navigation
           padding
           arrows
-          height="500px"
+          height="525px"
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="cryptanalyse1" class="column no-wrap flex-center text-center">
