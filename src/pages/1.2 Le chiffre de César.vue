@@ -53,7 +53,7 @@
             Cela permet d’une part de faciliter le chiffrement et, d’autre part, de révéler moins d’information (notamment la longueur des mots formant le message).
             </p><br>
 
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             Message en clair: RENDEZVOUSAUKIOSKATROISHEURES<br>
             Message chiffré : SFOEFAWPVTBVLJPTLBUSPJTIFVSFT
             </p>
@@ -104,7 +104,7 @@
             Essayez de déchiffrer ce message:
             </p><br>
             
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             KFUJOWJUFBVDJOFNBEFNBJOTPJSBWJOHUIFVSFTSFKPJOTNPJBMBHBSF
             </p><br>
             
@@ -187,7 +187,7 @@
             En observant le message en clair et le message chiffré de Robert...
             </p><br>
 
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             Message en clair: RENDEZVOUSAUKIOSKATROISHEURES<br>
             Message chiffré : SFOEFAWPVTBVLJPTLBUSPJTIFVSFT
             </p><br>
@@ -280,7 +280,7 @@
             Le chiffre <strong>CESAR(2)</strong> décale toutes les lettres de 2 positions vers la droite dans l’alphabet.
             </p><br>
             
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
             Alphabet chiffré : C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
             </p><br>
@@ -289,7 +289,7 @@
             Et voici la correspondance pour le chiffre <strong>CESAR(24).</strong>
             </p><br>
             
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
             Alphabet chiffré : Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
             </p>
@@ -332,7 +332,7 @@
             Chiffrez à la main le message ci-dessous à l’aide de <strong>CESAR(4)</strong>:
             </p><br>
             
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             CRYPTOGRAPHIE
             </p><br>
 
@@ -389,7 +389,7 @@
             Déchiffrez à la main le message suivant qui a été chiffré avec <strong>CESAR(4)</strong>:
             </p><br>
             
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             YRIZMIXVERUYMPPIIWXYRIQIVQSVXI
             </p><br>
 
@@ -452,7 +452,7 @@
             Essayez de déchiffrer le message suivant qui a été chiffré avec un chiffre de César dont le décalage est inconnu.
             </p><br>
 
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU
             </p><br>
 
@@ -474,7 +474,7 @@
 
             <h4>Q-3: Quelle est la bonne clé de chiffrement ?</h4>
 
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU
             </p><br>
 
@@ -516,7 +516,7 @@
             Saisissez la réponse de l’exercice ci-dessous.
             </p><br>
 
-            <p class="Message">
+            <p class="text-left bg-info rounded-borders">
             FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU
             </p><br>
 

@@ -59,10 +59,13 @@
 
                         <p>
                         En exécutant le programme, on constate que la clé <span style="color:red;">d = 16</span> permet de décrypter correctement le texte chiffré pour obtenir le texte en clair.
-                        <br><br>
+                        </p><br><br>
 
-                        PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE<br><br>
+                        <p class="text-left bg-info rounded-borders">
+                        PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE
+                        </p><br><br>
 
+                        <p>
                         Il faut bien entendu parcourir tous les essais jusqu’à ce que l’on tombe sur un texte qui a du sens en français (ou dans une autre langue connue).
                         </p>
                     </q-carousel-slide>
