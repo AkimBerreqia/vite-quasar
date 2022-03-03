@@ -28,7 +28,7 @@
             <q-icon name="key" size="28px" /><br>
 
             <p>
-            Il n’est cependant pas nécessaire que le chiffrement soit le résultat d’un décalage constant dans l’alphabet. 
+            Il n’est cependant pas nécessaire que le chiffrement soit le résultat d’un décalage constant dans l’alphabet.<br> 
             En effet, au lieu d’utiliser un décalage de <i>d = 3</i> et obtenir la substitution.
             </p><br>
 
@@ -177,7 +177,7 @@
                   La clé de chiffrement est donc la permutation des lettres de l’alphabet se trouvant sur la deuxième ligne:
                   </p><br>
 
-                  <p class="text-left bg-info rounded-borders">
+                  <p class="text-center bg-info rounded-borders">
                   <strong>Clé de chiffrement</strong><br>
                   QOLWNXTMGDKBPRSEUVFZHJIYCA
                   </p><br>
@@ -194,9 +194,9 @@
           </q-carousel-slide>
 
           <q-carousel-slide name="qc2" class="column no-wrap flex-center text-center">
-            <q-icon name="key" size="28px" /><br>
-
             <h3>Short Answer</h3>
+            
+            <q-icon name="key" size="28px" /><br>
 
             <p>
             Q-3: Combien de clés de chiffrement différentes existe-t-il ?
@@ -285,9 +285,9 @@
           </q-carousel-slide>
 
           <q-carousel-slide name="permutations2" class="column no-wrap flex-center text-center">
-            <q-icon name="key" size="28px" /><br>
-
             <h3>Exemple</h3>
+            
+            <q-icon name="key" size="28px" /><br>
 
             <p>
             Pour la fonction python suivante:
@@ -317,9 +317,9 @@
           </q-carousel-slide>
 
           <q-carousel-slide name="permutations3" class="column no-wrap flex-center text-center">
-            <q-icon name="key" size="28px" /><br>
-
             <h3>Remarque</h3>
+            
+            <q-icon name="key" size="28px" /><br>
 
             <p>
             Il n’est pas nécessaire d’essayer de comprendre ce programme qui contient des éléments encore non étudiés. 
@@ -348,7 +348,7 @@
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="video" class="column no-wrap flex-center text-center">
-            <h2>1.4.5.1 Stratégie de résolution (vidéo)</h2>
+            <h2>1.4.4.1 Stratégie de résolution (vidéo)</h2>
 
             <q-icon name="key" size="28px" /><br>
 
@@ -375,7 +375,7 @@
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="aide" class="column no-wrap flex-center text-center">
-            <h2>1.4.5.2 Aide / blocs</h2>
+            <h2>1.4.4.2 Aide / blocs</h2>
 
             <q-icon name="key" size="28px" /><br>
 
@@ -408,7 +408,7 @@
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="aide" class="column no-wrap flex-center text-center">
-            <h2>1.4.9 Activité 6</h2>
+            <h2>1.4.5 Activité 6</h2>
 
             <q-icon name="key" size="28px" /><br>
 
@@ -473,7 +473,7 @@
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="retenir1" class="column no-wrap flex-center text-center">
-            <h2>1.4.10 À retenir</h2>
+            <h2>1.4.6 À retenir</h2>
 
             <q-icon name="key" size="28px" /><br>
 

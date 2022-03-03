@@ -300,7 +300,7 @@
             Le chiffre <strong>CESAR(26)</strong> n’est pas un chiffre utile puisqu’il décale toutes les lettres de 26 positions dans l’alphabet et qu’elles sont donc toutes chiffrées par elle-même (tour complet dans l’alphabet).
             </p><br>
 
-            <p class="Alphabet">
+            <p class="text-left bg-info rounded-borders">
             Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
             Alphabet chiffré : A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
             </p>
