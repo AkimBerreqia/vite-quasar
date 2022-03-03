@@ -16,8 +16,6 @@
                 class="shadow-1 rounded-borders"
                 >
                     <q-carousel-slide name="attaque" class="column no-wrap flex-center text-center">
-                        <h1>1.3 Attaque par force brute</h1>
-
                         <q-icon name="key" size="28px" /><br>
 
                         <p>
@@ -103,10 +101,10 @@
         </div>
 
 
-        <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
-        <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-            Retourner au début de la page
-        </div>
+        <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
+            <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
+                1.3 Attaque par force brute (retourner au début de la page)
+            </div>
         </q-page-scroller>
     </q-page>
 </template>

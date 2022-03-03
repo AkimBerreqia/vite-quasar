@@ -16,8 +16,6 @@
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="chifferCesar" class="column no-wrap flex-center text-center">
-            <h1>1.2 Le chiffre de César</h1>
-
             <q-icon name="key" size="28px" /><br>
 
             <p>
@@ -553,9 +551,9 @@
     </div>
 
 
-    <q-page-scroller expand position="top" :scroll-offset="150" :offset="[0, 0]">
+    <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
       <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-        Retourner au début de la page
+        1.2 Le chiffre de César
       </div>
     </q-page-scroller>
   </q-page>

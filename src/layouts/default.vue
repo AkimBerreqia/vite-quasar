@@ -1,16 +1,16 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh LpR fFf">
     <q-header elevated class="bg-primary text-white text-left">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          Cryptologie et codage de l’information
+          1 Cryptologie et codage de l’information 
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" class="bg-grey-5 text-white" bordered>
       <!-- drawer content -->
       <q-list bordered separator class="min-w-25 pa-4">
         <template v-for="(item, index) in generatedRoutes">
