@@ -37,7 +37,7 @@
                 navigation
                 padding
                 arrows
-                height="300px"
+                height="800px"
                 class="shadow-1 rounded-borders"
                 >
                     <q-carousel-slide name="exemple1" class="column no-wrap flex-center text-center">
@@ -47,13 +47,65 @@
 
                         <p>
                         Le programme suivant réalise une attaque par force brute sur le chiffre de César en testant successivement toutes les clés de chiffrement.
-                        </p>
+                        </p><br>
 
-                        <!-- Rajouter exemple comme au 1.4 -->
+                        <p class="text-left bg-info rounded-borders" style="color:black;" padding margin>
+                        <span style="color:purple;">def</span> <span style="color:blue;">cesar_decrypt</span>(text, d):<br>
+                        &emsp; alphabet = <span style="color:brown;">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span><br>
+                        &emsp; result = <span style="color:brown;">''</span><br>
+                        &emsp; <span style="color:purple;">for</span> c in text:<br>
+                        &emsp;&emsp; index = (<span style="color:blue;">ord</span>(c) - <span style="color:blue;">ord</span>(<span style="color:brown;">'A'</span>) - d) % <span style="color:green;">26</span><br>
+                        &emsp;&emsp; result += alphabet[index]<br>
+                        &emsp; <span style="color:purple;">return</span> result<br><br>
+
+                        <span style="color:purple;">def</span> <span style="color:blue;">brute_force_cesar</span>(text):<br>
+                        <span style="color:brown;">
+                        &emsp; '''<br>
+                        &emsp; teste toutes les clés possibles d = 1, 2, 3, ..., 25<br>
+                        &emsp; '''
+                        </span><br><br>
+
+                        &emsp; d = <span style="color:green;">1</span><br>
+                        &emsp; <span style="color:purple;">while</span> d &#60; <span style="color:green;">26</span>:<br>
+                        &emsp;&emsp; <span style="color:purple;">print</span>(<span style="color:brown;">"avec la clé d = "</span>, d, <span style="color:brown;">":"</span>, cesar_decrypt(text, d))<br>
+                        &emsp;&emsp; d += <span style="color:green;">1</span><br><br>
+
+
+                        cyphered_text = <span style="color:brown;">"FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU"</span><br>
+                        brute_force_cesar(cyphered_text)
+                        </p>
                     </q-carousel-slide>
 
                     <q-carousel-slide name="exemple2" class="column no-wrap flex-center text-center">
                         <q-icon name="key" size="28px" /><br>
+
+                        <p class="text-left bg-info rounded-borders" style="color:black;" padding margin>
+                        avec la clé d =  1 : EAJHDCSTHXGTJCTRWDHTEAJHTAATHTUPXIPIITCSGT<br>
+                        avec la clé d =  2 : DZIGCBRSGWFSIBSQVCGSDZIGSZZSGSTOWHOHHSBRFS<br>
+                        avec la clé d =  3 : CYHFBAQRFVERHARPUBFRCYHFRYYRFRSNVGNGGRAQER<br>
+                        avec la clé d =  4 : BXGEAZPQEUDQGZQOTAEQBXGEQXXQEQRMUFMFFQZPDQ<br>
+                        avec la clé d =  5 : AWFDZYOPDTCPFYPNSZDPAWFDPWWPDPQLTELEEPYOCP<br>
+                        avec la clé d =  6 : ZVECYXNOCSBOEXOMRYCOZVECOVVOCOPKSDKDDOXNBO<br>
+                        avec la clé d =  7 : YUDBXWMNBRANDWNLQXBNYUDBNUUNBNOJRCJCCNWMAN<br>
+                        avec la clé d =  8 : XTCAWVLMAQZMCVMKPWAMXTCAMTTMAMNIQBIBBMVLZM<br>
+                        avec la clé d =  9 : WSBZVUKLZPYLBULJOVZLWSBZLSSLZLMHPAHAALUKYL<br>
+                        avec la clé d =  10 : VRAYUTJKYOXKATKINUYKVRAYKRRKYKLGOZGZZKTJXK<br>
+                        avec la clé d =  11 : UQZXTSIJXNWJZSJHMTXJUQZXJQQJXJKFNYFYYJSIWJ<br>
+                        avec la clé d =  12 : TPYWSRHIWMVIYRIGLSWITPYWIPPIWIJEMXEXXIRHVI<br>
+                        avec la clé d =  13 : SOXVRQGHVLUHXQHFKRVHSOXVHOOHVHIDLWDWWHQGUH<br>
+                        avec la clé d =  14 : RNWUQPFGUKTGWPGEJQUGRNWUGNNGUGHCKVCVVGPFTG<br>
+                        avec la clé d =  15 : QMVTPOEFTJSFVOFDIPTFQMVTFMMFTFGBJUBUUFOESF<br>
+                        avec la clé d =  16 : PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE<br>
+                        avec la clé d =  17 : OKTRNMCDRHQDTMDBGNRDOKTRDKKDRDEZHSZSSDMCQD<br>
+                        avec la clé d =  18 : NJSQMLBCQGPCSLCAFMQCNJSQCJJCQCDYGRYRRCLBPC<br>
+                        avec la clé d =  19 : MIRPLKABPFOBRKBZELPBMIRPBIIBPBCXFQXQQBKAOB<br>
+                        avec la clé d =  20 : LHQOKJZAOENAQJAYDKOALHQOAHHAOABWEPWPPAJZNA<br>
+                        avec la clé d =  21 : KGPNJIYZNDMZPIZXCJNZKGPNZGGZNZAVDOVOOZIYMZ<br>
+                        avec la clé d =  22 : JFOMIHXYMCLYOHYWBIMYJFOMYFFYMYZUCNUNNYHXLY<br>
+                        avec la clé d =  23 : IENLHGWXLBKXNGXVAHLXIENLXEEXLXYTBMTMMXGWKX<br>
+                        avec la clé d =  24 : HDMKGFVWKAJWMFWUZGKWHDMKWDDWKWXSALSLLWFVJW<br>
+                        avec la clé d =  25 : GCLJFEUVJZIVLEVTYFJVGCLJVCCVJVWRZKRKKVEUIV
+                        </p><br>
 
                         <p>
                         En exécutant le programme, on constate que la clé <span style="color:red;">d = 16</span> permet de décrypter correctement le texte chiffré pour obtenir le texte en clair.
