@@ -1,7 +1,7 @@
 <template>
   <q-page class="pa-4 text-center">
     <h1>Exemple de quiz</h1>
-    <div v-show="index === counter" v-for="(question, index) in myQuestions" :key="question.id">
+    <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
         <h2>Question numéro {{index + 1}}</h2>
         <pre v-if="false">{{question}}</pre>
         <p class="question">
@@ -13,7 +13,7 @@
           </div>
           
           <div v-show="isClick === true">
-            <div v-if="myQuestions[index].correctAnswer === answers[index]">
+            <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
               <p class="q-px-sm" style="color:green;">Bravo</p>
             </div>
 
@@ -31,14 +31,14 @@
       <q-btn v-if="counter > 0" label="Recommencer" @click="restart()"/>
       <q-btn label="Valider" @click="changeClick()"/>
     </q-btn-group>
-    <pre>{{myQuestions.question}}</pre>
+    <pre>{{myQuizQuestions.question}}</pre>
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive } from "vue"
 
-const myQuestions = reactive([
+const myQuizQuestions = reactive([
   {
       id: ref(0),
     question: "What is 10/2?",
