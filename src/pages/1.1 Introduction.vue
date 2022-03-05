@@ -1,12 +1,11 @@
 <template>
-  <q-page class="pa-4 text-center">
-    <div class="q-pa-md">
+  <q-page class="pa-4 text-left align-center">
+    <div class="align-center">
       <div class="q-gutter-md">
         <q-carousel
           v-model="action.slide1"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -15,7 +14,7 @@
           height="300px"
           class="shadow-1 rounded-borders"
         >
-          <q-carousel-slide name="introduction" class="column no-wrap flex-center text-center">
+          <q-carousel-slide name="introduction" class="column no-wrap flex-center text-left">
             <q-icon name="key" size="28px" /><br>
 
             <p>
@@ -30,7 +29,6 @@
           v-model="action.slide2"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -39,7 +37,7 @@
           height="300px"
           class="shadow-1 rounded-borders"
         >
-          <q-carousel-slide name="cryptographie1" class="column no-wrap flex-center text-center">
+          <q-carousel-slide name="cryptographie1" class="column no-wrap flex-center text-left">
             <h2>1.1.1 Cryptographie</h2>
 
             <q-icon name="key" size="28px" /><br>
@@ -50,7 +48,7 @@
             </p>
           </q-carousel-slide>
 
-          <q-carousel-slide name="cryptographie2" class="column no-wrap flex-center text-center">
+          <q-carousel-slide name="cryptographie2" class="column no-wrap flex-center text-left">
             <q-icon name="key" size="28px" /><br>
 
             <p>
@@ -66,7 +64,6 @@
           v-model="action.slide3"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -75,7 +72,7 @@
           height="300px"
           class="shadow-1 rounded-borders"
         >
-          <q-carousel-slide name="cryptanalyse1" class="column no-wrap flex-center text-center">
+          <q-carousel-slide name="cryptanalyse1" class="column no-wrap flex-center text-left">
             <h2>1.1.2 Cryptanalyse</h2>
 
             <q-icon name="key" size="28px" /><br>
@@ -117,7 +114,7 @@
 
     <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
       <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-        1.1 Introduction
+        <font size="4">1.1 Introduction (retourner au début de la page)</font>
       </div>
     </q-page-scroller>
   </q-page>

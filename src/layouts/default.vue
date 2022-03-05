@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="HHh LpR fFf">
+  <q-layout view="hHh LpR fFf">
     <q-header elevated class="bg-primary text-white text-left">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
@@ -10,7 +10,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" class="bg-grey-5 text-white" bordered>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" overlay class="bg-grey-5 text-white" bordered>
       <!-- drawer content -->
       <q-list bordered separator class="min-w-25 pa-4">
         <template v-for="(item, index) in generatedRoutes">
@@ -73,8 +73,11 @@
   }
 
   .q-page-container {
-    max-width:1500px;
-    margin:50px;
+    background-color: #dedcdc;
+    min-width: 1500px;
+    padding-left:425px;
+    padding-right:425px;
+    margin-top:50px;
     
   }
 </style>

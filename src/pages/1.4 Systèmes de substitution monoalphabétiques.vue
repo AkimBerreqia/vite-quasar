@@ -6,7 +6,6 @@
           v-model="action.slide1"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -61,7 +60,6 @@
           v-model="action.slide2"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -135,7 +133,6 @@
           v-model="action.slide3"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -264,7 +261,6 @@
           v-model="action.slide4"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -338,7 +334,6 @@
           v-model="action.slide5"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -365,7 +360,6 @@
           v-model="action.slide6"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -398,7 +392,6 @@
           v-model="action.slide6"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -463,7 +456,6 @@
           v-model="action.slide8"
           transition-prev="scale"
           transition-next="scale"
-          swipeable
           animated
           control-color="primary"
           navigation
@@ -504,7 +496,7 @@
 
     <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
       <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-        1.4 Systèmes de substitution monoalphabétiques (retourner au début de la page)
+        <font size="4">1.4 Systèmes de substitution monoalphabétiques (retourner au début de la page)</font>
       </div>
     </q-page-scroller>
   </q-page>

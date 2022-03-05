@@ -16,13 +16,13 @@
       </template>
 
       <template v-slot:item="props">
-        <div class="card">
+        <div class="card align-center">
           <q-card>
             <q-card-section class="text-center">
               <strong>{{ props.row.titleName }}</strong>
             </q-card-section>
             <q-separator />
-            <q-card-section class="flex flex-center" :style="{ fontSize: props.row.articleName + 'px' }">
+            <q-card-section class="flex flex-left" :style="{ fontSize: props.row.articleName + 'px' }">
               <div>Signification : {{ props.row.articleName }} </div>
             </q-card-section>
           </q-card>
@@ -34,7 +34,7 @@
 
   <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
     <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-      1.5 Petit lexique de la cryptologie
+      <font size="4">1.5 Petit lexique de la cryptologie (retourner au début de la page)</font>
     </div>
   </q-page-scroller>
 </template>
