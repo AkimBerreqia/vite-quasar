@@ -39,9 +39,14 @@
   </q-page-scroller>
 </template>
 
-<script>
+<script setup lang="ts">
+
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
+
+const $q = useQuasar()
+
+const filter = ref('')
 
 const terme = [
   'Cryptographie',
@@ -75,19 +80,6 @@ const rows = []
     rows.push({ titleName: titleName, articleName: signification[terme.indexOf(titleName)] })
 })
 
-export default {
-  setup () {
-    const $q = useQuasar()
-
-    const filter = ref('')
-
-    return {
-      rows,
-
-      filter,
-    }
-  }
-}
 </script>
 
 <style lang="sass">

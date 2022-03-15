@@ -1,10 +1,19 @@
 <template>
     <q-page>
-        <q-btn label="recherche" style="color:pink;" @click="clicked()" />
+        <template v-slot:top-right>
+            <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+            <template v-slot:append>
+                <q-icon name="search" />
+            </template>
+            </q-input>
+        </template>
+
+        <q-btn label="recherche" style="color:pink;" @click="highLight(text.q1, Searchword)" />
 
         <q-input v-model="text.q1" filled type="textarea"/>
 
-        <p v-show="clicked() === true">{{highLight(Title, Searchword)}}</p>
+        <p>{{text.q1}} {{highLight(text.q1, Searchword)}}</p>
+        <p>Exemple singe : {{highLight(Searchword, Title)}}</p>
     </q-page>
 </template>
 
@@ -23,21 +32,22 @@ let Title = "five hundred years ago, the monkey king caused havoc in heaven"
 
 function clicked() {
     Searchword = text.q1
-    toShow = true
-    return toShow, Searchword
+    return Searchword
 }
 
 function highLight(title, searchWord){
 
-    if(title.includes(this.searchWord)) {
+    title.toLowerCase()
+    searchWord.toLowerCase()
 
-    title = this.searchWord
+    if(title.includes(searchWord)) {
+
     return title
     }
 
     else {
 
-    return title
+    return "aucun résultat"
     }
 }
 </script>
