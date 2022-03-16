@@ -10,9 +10,9 @@
 
         <q-input v-model="SearchWord.text" onKeyPress="isClick = false" filled/>
 
-        <q-btn filled label="recherche" style="color:accent;" @click="trigger()" />
+        <q-btn filled label="rechercher" style="color:accent;" @click="trigger()" />
 
-        <p v-show="isClick === true"><strong>Résultats pour <strong>{{SearchWord.text}}</strong> :</strong> <i v-show="visible.find = true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p>
+        <p v-show="isClick === true">{{researchSmth(Titles, SearchWord.text)}}<strong>{{SearchWord.text}}</strong> <i v-show="visible.find === true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p>
     
         <div class="q-pa-md">
             <q-ajax-bar
@@ -41,9 +41,15 @@ let SearchWord = reactive({
 
 const Titles = [
     "five hundred years ago, the monkey king caused havoc in heaven",
-    "I love sushi !",
+    "I love you colonel Sanders",
     "le chiffrement"
 ]
+
+function researchSmth(title, searchWord) {
+    if (highLight(title, searchWord) !== "aucun résultat") {
+        return "Résultat pour "
+    }
+}
 
 function highLight(title, searchWord){
 
@@ -52,25 +58,15 @@ function highLight(title, searchWord){
     if (visible.find = true) {
         research += ""
         for (let i = 0; i < title.length; i++) {
-            if (title[i].includes(searchWord)) {
+            if (title[i].toLowerCase().includes(searchWord)) {
                 
             research += title[i]
-            }            
+            }
         }
 
-        if (title.length < 0) {
-            
-        }
-
-        else {
-        
-            research += "aucun résultat"
-        }
-    }
-    
-
-    else if(searchWord.length === 0) {
-        research += 'tik tak'
+        if (searchWord.length === 0) {
+            research = "aucun résultat"
+        }        
     }
 
     return research
