@@ -8,11 +8,11 @@
             </q-input>
         </template>
 
-        <q-input v-model="SearchWord.text" filled type="textarea"/>
+        <q-input v-model="SearchWord.text" onKeyPress="isClick = false" filled/>
 
-        <q-btn filled label="recherche" style="color:pink;" @click="trigger()" />
+        <q-btn filled label="recherche" style="color:accent;" @click="trigger()" />
 
-        <p>Résultats pour <strong style="color:red;">{{SearchWord.text}}</strong> : <i v-show="visible.find = true" style="color:green;">{{highLight(Titles, SearchWord.text)}}</i></p>
+        <p v-show="isClick === true"><strong>Résultats pour <strong>{{SearchWord.text}}</strong> :</strong> <i v-show="visible.find = true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p>
     
         <div class="q-pa-md">
             <q-ajax-bar
@@ -41,49 +41,46 @@ let SearchWord = reactive({
 
 const Titles = [
     "five hundred years ago, the monkey king caused havoc in heaven",
-    "I love sushi !"
+    "I love sushi !",
+    "le chiffrement"
 ]
 
 function highLight(title, searchWord){
 
-    let research = "<ul>"
+    let research = ""
 
     if (visible.find = true) {
+        research += ""
         for (let i = 0; i < title.length; i++) {
             if (title[i].includes(searchWord)) {
                 
-            research += "<li>" + title[i] + "</li>"
+            research += title[i]
             }            
         }
 
-        if (research.length < 0) {
+        if (title.length < 0) {
             
         }
 
-        else if (research.length === 0) {
+        else {
         
             research += "aucun résultat"
         }
-
-        research += "</ul>";
-
-        document.getElementById("list").innerHTML = research;
     }
     
 
-    else if(visible.find = false) {
-        return 'tik tak'
+    else if(searchWord.length === 0) {
+        research += 'tik tak'
     }
 
     return research
 }
 
 
-
 const bar = ref(null)
 
 function trigger () {
-    visible.find = !visible.find
+    changeClick()
     const barRef = bar.value
     barRef.start()
 
@@ -93,5 +90,11 @@ function trigger () {
         barRef.stop()
     }
     })
+}
+
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
 }
 </script>
