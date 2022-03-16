@@ -8,12 +8,21 @@
             </q-input>
         </template>
 
-        <q-btn label="recherche" style="color:pink;" @click="highLight(text.q1, Searchword)" />
+        <q-input v-model="SearchWord.text" filled type="textarea"/>
 
-        <q-input v-model="text.q1" filled type="textarea"/>
+        <q-btn filled label="recherche" style="color:pink;" @click="trigger()" />
 
-        <p>{{text.q1}} {{highLight(text.q1, Searchword)}}</p>
-        <p>Exemple singe : {{highLight(Searchword, Title)}}</p>
+        <p>Résultats pour <strong style="color:red;">{{SearchWord.text}}</strong> : <i v-show="visible.find = true" style="color:green;">{{highLight(Titles, SearchWord.text)}}</i></p>
+    
+        <div class="q-pa-md">
+            <q-ajax-bar
+            ref="bar"
+            position="bottom"
+            color="accent"
+            size="10px"
+            skip-hijack
+            />
+        </div>
     </q-page>
 </template>
 
@@ -22,32 +31,67 @@
 
 import { ref, reactive } from 'vue'
 
-let text = reactive({
-  q1: ref('')
+let visible = reactive ({
+    find: ref(false)
 })
 
-let Searchword = "Monkey King"
+let SearchWord = reactive({
+  text: ref('')
+})
 
-let Title = "five hundred years ago, the monkey king caused havoc in heaven"
-
-function clicked() {
-    Searchword = text.q1
-    return Searchword
-}
+const Titles = [
+    "five hundred years ago, the monkey king caused havoc in heaven",
+    "I love sushi !"
+]
 
 function highLight(title, searchWord){
 
-    title.toLowerCase()
-    searchWord.toLowerCase()
+    let research = "<ul>"
 
-    if(title.includes(searchWord)) {
+    if (visible.find = true) {
+        for (let i = 0; i < title.length; i++) {
+            if (title[i].includes(searchWord)) {
+                
+            research += "<li>" + title[i] + "</li>"
+            }            
+        }
 
-    return title
+        if (research.length < 0) {
+            
+        }
+
+        else if (research.length === 0) {
+        
+            research += "aucun résultat"
+        }
+
+        research += "</ul>";
+
+        document.getElementById("list").innerHTML = research;
+    }
+    
+
+    else if(visible.find = false) {
+        return 'tik tak'
     }
 
-    else {
+    return research
+}
 
-    return "aucun résultat"
+
+
+const bar = ref(null)
+
+function trigger () {
+    visible.find = !visible.find
+    const barRef = bar.value
+    barRef.start()
+
+    setTimeout(() => {
+    const barRef = bar.value
+    if (barRef) {
+        barRef.stop()
     }
+    })
 }
 </script>
