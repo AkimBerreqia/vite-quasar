@@ -13,7 +13,7 @@
         <q-btn filled label="rechercher" style="color:accent;" @click="trigger()" />
 
         <p v-show="isClick === true">{{researchSmth(Titles, SearchWord.text)}}<strong>{{SearchWord.text}}</strong> <i v-show="visible.find === true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p>
-    
+        
         <div class="q-pa-md">
             <q-ajax-bar
             ref="bar"
@@ -56,22 +56,27 @@ function highLight(title, searchWord){
     let research = ""
 
     if (visible.find = true) {
+
         research += ""
-        for (let i = 0; i < title.length; i++) {
-            if (title[i].toLowerCase().includes(searchWord)) {
-                
-            research += title[i]
+        
+        if (searchWord.length > 0) {
+            for (let i = 0; i < title.length; i++) {
+
+                if (title[i].toLowerCase().includes(searchWord)) {
+                    
+                research += title[i] + " // "
+                }
             }
         }
+        
 
         if (searchWord.length === 0) {
-            research = "aucun résultat"
-        }        
+            research += "aucun résultat"
+        }   
     }
 
     return research
 }
-
 
 const bar = ref(null)
 
