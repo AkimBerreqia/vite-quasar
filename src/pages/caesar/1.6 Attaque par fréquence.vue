@@ -10,6 +10,9 @@ Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequ
         <strong>{{text[2]}}</strong><br><br>
         {{text[3]}}<br><br>
         {{text[4]}}<br><br>
+        {{text[5]}}<br><br>
+        {{text[6]}}<br>
+        {{text[7]}}<br><br>
         </p>
 
         <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
@@ -33,6 +36,15 @@ Il faut savoir que dans chaque langue, il y a des fréquences au niveau des suit
 
 "Pour un chiffre de substitution monalphabétique, il est possible d'essayer plusieurs clés pour trouver celle qui correspond. \
 L'inconvénient est que cette méthode n'est pas très efficace pour la plupart des chiffrements, mais pour César, cela fera l'affaire. \
-Etant donné que le nombre de clés pour César est limité, le nombre d'essaies est limité au nombre de clés César."
+Etant donné que le nombre de clés pour César est limité, le nombre d'essaies est limité au nombre de clés César.",
+
+"Une manière de procéder serait d'essayer chaque clé, jusqu'à avoir trouver le texte cliar. \
+Pour le texte suivant, cherchez le texte en clair avec l'attaque par fréquence.",
+
+"YNCERFRAPRQRXSPQNAFYRZBAQRSNVGQRY'RAFRVTARHAQRFPURSFQRSVYRVAGREANGVBANHKQNAFY'VAQHFGEVRQRYNERFGNHENGVBAENCVQR.",
+"FNFCRPVSVPVGRRFGQRCEBCBFREHAVDHRZRAGQRFCERCNENGVBAFNONFRQRCBHYRG.",
+
+"Réponse : LAPRESENCEDEKFCDANSLEMONDEFAITDEL'ENSEIGNEUNDESCHEFSDEFILEINTERNATIONAUXDANSL'INDUSTRIEDELARESTAURATIONRAPIDE.\
+SASPECIFICITEESTDEPROPOSERUNIQUEMENTDESPREPARATIONSABASEDEPOULET."
 ]
 </script>

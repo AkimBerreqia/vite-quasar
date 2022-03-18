@@ -1,13 +1,5 @@
 <template>
     <q-page>
-        <template v-slot:top-right>
-            <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
-            <template v-slot:append>
-                <q-icon name="search" />
-            </template>
-            </q-input>
-        </template>
-
         <q-input v-model="SearchWord.text" onKeyPress="isClick = false" filled/>
 
         <q-btn filled label="rechercher" style="color:accent;" @click="trigger()" />
