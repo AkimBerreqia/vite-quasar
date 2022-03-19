@@ -1,5 +1,5 @@
 <template>
-    <q-page class="pa-4 text-center">
+    <q-page class="pa-4 text-left">
         <div class="q-pa-md">
             <div class="q-gutter-md">
                 <p>

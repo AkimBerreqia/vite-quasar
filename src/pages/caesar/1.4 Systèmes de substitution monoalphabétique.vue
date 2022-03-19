@@ -12,7 +12,7 @@
         En effet, au lieu d’utiliser un décalage de <i>d = 3</i> et obtenir la substitution.
         </p><br>
 
-        <p class="text-left bg-info rounded-borders">
+        <p class="text-center bg-info rounded-borders">
         Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
         Alphabet chiffré : D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
         </p><br>
@@ -21,7 +21,7 @@
         On peut très bien mélanger complètement les lettres de l’alphabet chiffré.
         </p><br>
 
-        <p class="text-left bg-info rounded-borders">
+        <p class="text-center bg-info rounded-borders">
         Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
         Alphabet chiffré : Q O L W N X T M G D K B P R S E U V F Z H J I Y C A
         </p><br>
@@ -40,7 +40,7 @@
         Q-1: Cindy utilise la substitution...
         </p><br>
 
-        <p class="text-left bg-info rounded-borders">
+        <p class="text-center bg-info rounded-borders">
         Alphabet en clair: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
         Alphabet chiffré : Q O L W N X T M G D K B P R S E U V F Z H J I Y C A
         </p><br>
@@ -49,7 +49,7 @@
         ... pour chiffrer un message. Voici le message chiffré par Cindy.
         </p><br>
 
-        <p class="text-left bg-info rounded-borders">
+        <p class="text-center bg-info rounded-borders">
         DQGPNBNUHGZQZGSR
         </p><br>
 
@@ -163,7 +163,7 @@
                 Pour “essayer” toutes les clés (force brute), il faut imaginer des cases vides.
                 </p><br>
 
-                <p class="text-left bg-info rounded-borders">
+                <p class="text-center bg-info rounded-borders">
                 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
                 </p><br>
 
@@ -171,7 +171,7 @@
                 Pour la première “case” vide, on a 26 possibilités.
                 </p><br>
 
-                <p class="text-left bg-info rounded-borders">
+                <p class="text-center bg-info rounded-borders">
                 A _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br>
                 B _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br>
                 C _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br>
@@ -248,7 +248,7 @@
 
         <h2>1.4.4.1 Stratégie de résolution (vidéo)</h2>
 
-        <iframe width="560" height="315"
+        <iframe class="align-center" width="560" height="315"
         src="https://www.youtube.com/embed/aPo5WKqB74U"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write;
@@ -326,7 +326,9 @@
         Dès que la clé de chiffrement est une permutation d’un alphabet donné, le nombre de clés possibles devient très grand, même avec un alphabet relativement modeste. 
         Si l’alphabet contient <i>n</i> caractères, le nombre de clé qu’il est possible de créer à partir de cet alphabet est donné par le produit.<br><br>
 
-        <strong>n * (n - 1) * (n - 2) * ... * 2 * 1 = n!</strong><br><br>
+        <p class="text-center bg-info rounded-borders">
+            <strong>n * (n - 1) * (n - 2) * ... * 2 * 1 = n!</strong>
+        </p><br><br>
 
         Le nombre <strong>n!</strong> s’appelle en mathématiques “n factorielle” ou “la factorielle de n”. 
         Vos calculatrices disposent d’une touche <span style="color:red;">n!</span> pour calculer facilement ce produit sans devoir écrire un programme comme nous l’avons fait plus haut.
