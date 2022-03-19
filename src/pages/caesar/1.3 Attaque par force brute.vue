@@ -8,6 +8,11 @@
                 Le procédé consistant à essayer bêtement toutes les clés possibles est appelé <strong>attaque par force brute</strong> (brute force attack en anglais).
                 </p>
 
+                <q-btn unelevated rounded label="Valider la section" v-if="section.first === false" class="align-right" color="primary" @click="section.first = !section.first"/>
+                <q-btn unelevated rounded label="Section validée" v-if="section.first === true" class="align-right" color="green" @click="section.first = !section.first"/>
+                
+                <q-separator inset />
+
 
 
                 <h2>1.3.1 Exemple (casser César par la force brute)</h2>
@@ -82,6 +87,11 @@
                 Il faut bien entendu parcourir tous les essais jusqu’à ce que l’on tombe sur un texte qui a du sens en français (ou dans une autre langue connue).
                 </p>
 
+                <q-btn unelevated rounded label="Valider la section" v-if="section.second === false" class="align-right" color="primary" @click="section.second = !section.second"/>
+                <q-btn unelevated rounded label="Section validée" v-if="section.second === true" class="align-right" color="green" @click="section.second = !section.second"/>
+                
+                <q-separator inset />
+
 
 
                 <h2>1.3.2. À retenir</h2>
@@ -93,6 +103,8 @@
                 Dans la prochaine section, nous allons aborder un cryptosystème qui résiste un peu mieux à une attaque aussi naïve. 
                 Pour cela, il suffit d’augmenter le nombre de clés possibles.
                 </p>
+                <q-btn unelevated rounded label="Valider la section" v-if="section.third === false" class="align-right" color="primary" @click="section.third = !section.third"/>
+                <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
             </div>
         </div>
 
@@ -106,4 +118,11 @@
 </template>
 
 <script setup lang="ts">
+import {ref, reactive} from 'vue'
+
+let section = reactive ({
+    first: ref(false),
+    second: ref(false),
+    third: ref(false)
+})
 </script><style lang="scss" scoped></style>

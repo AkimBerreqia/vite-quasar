@@ -46,7 +46,7 @@
                 type="textarea"
             /><br>
 
-            <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond1 = true" />
+            <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond1 = true" />
 
             <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
                 <q-card>
@@ -87,18 +87,18 @@
                 </div>
             </div>
 
-            <q-btn-group>
-                <q-btn label="Indices" color="green" @click="dialogVisible.indice1 = true" />
+            <q-btn-group unelevated rounded>
+                <q-btn label="Indices" color="accent" @click="dialogVisible.indice1 = true" />
 
                 <q-dialog v-model="dialogVisible.indice1" @hide="onHide">
                 <q-card>
                     <q-card-section class="row items-center q-pb-none">
-                    <strong class="text-h6" style="color:green;">Q-Rodolphe: Indices</strong>
+                    <strong class="text-h6" style="color:accent;">Q-Rodolphe: Indices</strong>
                     <q-space />
                     </q-card-section>
 
-                    <q-card-section style="color:green;">
-                    <ul style="color:green;">
+                    <q-card-section style="color:accent;">
+                    <ul style="color:accent;">
                         <li>Toutes les lettres se suivent sans espace.</li><br>
                         <li>Il te sera plus simple de décrypter cette phrase en te servant d'une feuille et d'un crayon.</li><br>
                         <li>Le début du texte en clair est : "<strong>JETINVITE</strong>".</li>
@@ -259,7 +259,7 @@
                 </div>
             </div>
 
-            <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond3 = true" />
+            <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond3 = true" />
 
             <q-dialog v-model="dialogVisible.respond3" @hide="onHide">
                 <q-card>
@@ -304,7 +304,7 @@
                 </div>
             </div>
 
-            <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond4 = true" />
+            <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond4 = true" />
 
             <q-dialog v-model="dialogVisible.respond4" @hide="onHide">
                 <q-card>
@@ -373,7 +373,7 @@
                 </div>
             </div>
 
-            <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond5 = true" />
+            <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond5 = true" />
 
             <q-dialog v-model="dialogVisible.respond5" @hide="onHide">
                 <q-card>
@@ -411,7 +411,7 @@
                 </div>
             </div>
 
-            <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond6 = true" />
+            <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond6 = true" />
 
             <q-dialog v-model="dialogVisible.respond6" @hide="onHide">
                 <q-card>
@@ -431,8 +431,6 @@
             
             <q-btn unelevated rounded label="Valider la section" v-if="section.seventh === false" class="align-right" color="primary" @click="section.seventh = !section.seventh"/>
             <q-btn unelevated rounded label="Section validée" v-if="section.seventh === true" class="align-right" color="green" @click="section.seventh = !section.seventh"/>
-            
-            <q-separator inset />
         </div>
         </div>
 
