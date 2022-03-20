@@ -1,42 +1,55 @@
 <template>
-  <div class="q-pa-md">
-    <q-table
-      grid
-      title="Termes"
-      :rows="rows"
-      row-key="name"
-      :filter="filter"
-    >
-      <template v-slot:top-right>
-        <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
-          <template v-slot:append>
-            <q-icon name="search" />
-          </template>
-        </q-input>
-      </template>
-
-      <template v-slot:item="props">
-        <div class="card align-center">
-          <q-card>
-            <q-card-section class="text-center">
-              <strong>{{ props.row.titleName }}</strong>
-            </q-card-section>
-            <q-separator />
-            <q-card-section class="flex flex-left" :style="{ fontSize: props.row.articleName + 'px' }">
-              <div>Signification : {{ props.row.articleName }} </div>
-            </q-card-section>
-          </q-card>
-        </div>
-      </template>
-    </q-table>
-  </div>
-
-
-  <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
-    <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-      <font size="4">1.5 Petit lexique de la cryptologie (retourner au début de la page)</font>
+  <q-page class="pa-4 text-left">
+    <div class="q-pa-md q-gutter-sm">
+      <q-breadcrumbs unelevated rounded>
+      <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
+      <q-breadcrumbs-el label="1.1 Introduction"/>
+      <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
+      <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
+      <q-breadcrumbs-el label="1.4 Systèmes de substitution monoalphabétique"/>
+      <q-breadcrumbs-el label="1.5 Petit lexique de la cryptologie"/>
+      </q-breadcrumbs>
     </div>
-  </q-page-scroller>
+    <div class="q-pa-md">
+      <q-table
+        grid
+        title="Termes"
+        :rows="rows"
+        row-key="name"
+        :filter="filter"
+      >
+        <template v-slot:top-right>
+          <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+            <template v-slot:append>
+              <q-icon name="search" />
+            </template>
+          </q-input>
+        </template>
+
+        <template v-slot:item="props">
+          <div class="card align-center">
+            <q-card>
+              <q-card-section class="text-center">
+                <strong>{{ props.row.titleName }}</strong>
+              </q-card-section>
+              <q-separator />
+              <q-card-section class="flex flex-left" :style="{ fontSize: props.row.articleName + 'px' }">
+                <div>Signification : {{ props.row.articleName }} </div>
+              </q-card-section>
+            </q-card>
+          </div>
+        </template>
+      </q-table>
+    </div>
+
+
+    <q-page-scroller :scroll-offset="-1">
+      <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
+        <font size="4">Retourner au début de la page</font>
+      </div>
+    </q-page-scroller>
+  </q-page>
+  
 </template>
 
 <script setup lang="ts">

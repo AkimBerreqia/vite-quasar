@@ -1,12 +1,11 @@
 <template>
-    <div class="q-pa-md q-gutter-sm">
-        <q-breadcrumbs unelevated rounded>
-        <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
-        <q-breadcrumbs-el label="1.1 Introduction"/>
-        </q-breadcrumbs>
-    </div>
-
     <q-page class="pa-4 text-left align-left">
+        <div class="q-pa-md q-gutter-sm">
+            <q-breadcrumbs unelevated rounded>
+            <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
+            <q-breadcrumbs-el label="1.1 Introduction"/>
+            </q-breadcrumbs>
+        </div>
         <div>
         <div class="q-gutter-md">
             <p>

@@ -1,5 +1,13 @@
 <template>
     <q-page class="pa-4 text-left">
+        <div class="q-pa-md q-gutter-sm">
+            <q-breadcrumbs unelevated rounded>
+            <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
+            <q-breadcrumbs-el label="1.1 Introduction"/>
+            <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
+            <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
+            </q-breadcrumbs>
+        </div>
         <div class="q-pa-md">
             <div class="q-gutter-md">
                 <p>
@@ -109,9 +117,9 @@
         </div>
 
 
-        <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
+        <q-page-scroller :scroll-offset="-1">
             <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-                <font size="4">1.3 Attaque par force brute (retourner au début de la page)</font>
+                <font size="4">Retourner au début de la page</font>
             </div>
         </q-page-scroller>
     </q-page>

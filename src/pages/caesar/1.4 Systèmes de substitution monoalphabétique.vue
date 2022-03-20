@@ -1,5 +1,14 @@
 <template>
   <q-page class="pa-4 text-left">
+    <div class="q-pa-md q-gutter-sm">
+      <q-breadcrumbs unelevated rounded>
+      <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
+      <q-breadcrumbs-el label="1.1 Introduction"/>
+      <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
+      <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
+      <q-breadcrumbs-el label="1.4 Systèmes de substitution monoalphabétique"/>
+      </q-breadcrumbs>
+    </div>
     <div class="q-pa-md">
       <div class="q-gutter-md">
         <p>
@@ -30,6 +39,12 @@
         Ce chiffre remplace tous les A par des Q, les B par des O etc. Pour créer l’alphabet chiffré, on a mélangé l’alphabet dans un ordre totalement aléatoire.
         </p>
 
+        <q-btn unelevated rounded label="Valider la section" v-if="section.first === false" class="align-right" color="primary" @click="section.first = !section.first"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.first === true" class="align-right" color="green" @click="section.first = !section.first"/>
+
+
+
+        <q-separator inset />
 
 
         <h2>1.4.1 Énigme 2</h2>
@@ -67,7 +82,7 @@
             </div>
         </div>
 
-        <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond1 = true" />
+        <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond1 = true" />
 
         <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
             <q-card>
@@ -85,7 +100,12 @@
                 <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond1 = false" />
                 </q-card-actions>
             </q-card>
-        </q-dialog>
+        </q-dialog><br><br>
+
+        <q-btn unelevated rounded label="Valider la section" v-if="section.second === false" class="align-right" color="primary" @click="section.second = !section.second"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.second === true" class="align-right" color="green" @click="section.second = !section.second"/>
+        
+        <q-separator inset />
 
 
 
@@ -103,7 +123,7 @@
             type="textarea"
         /><br>
 
-        <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond2 = true" />
+        <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond2 = true" />
 
         <q-dialog v-model="dialogVisible.respond2" @hide="onHide">
             <q-card>
@@ -146,7 +166,7 @@
             type="textarea"
         /><br>
 
-        <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond3 = true" />
+        <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond3 = true" />
 
         <q-dialog v-model="dialogVisible.respond3" @hide="onHide">
             <q-card>
@@ -193,7 +213,12 @@
                 <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond3 = false" />
             </q-card-actions>
             </q-card>
-        </q-dialog>
+        </q-dialog><br><br>
+
+        <q-btn unelevated rounded label="Valider la section" v-if="section.third === false" class="align-right" color="primary" @click="section.third = !section.third"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
+        
+        <q-separator inset />
 
 
 
@@ -240,6 +265,11 @@
         Dans le chapitre sur les listes, nous reviendrons sur ce programme.
         </p>
 
+        <q-btn unelevated rounded label="Valider la section" v-if="section.fourth === false" class="align-right" color="primary" @click="section.fourth = !section.fourth"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.fourth === true" class="align-right" color="green" @click="section.fourth = !section.fourth"/>
+        
+        <q-separator inset />
+
         <!-- 
         <h2>1.4.4 Activité 1</h2>
         <h2>1.4.5 Activité 2</h2>
@@ -255,6 +285,11 @@
         encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
 
+        <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
+        
+        <q-separator inset />
+
 
         <h2>1.4.4.2 Aide / blocs</h2>
 
@@ -264,6 +299,11 @@
         </p>
 
         <!-- Faire cartes que l'on peut bouger -->
+        <q-btn unelevated rounded label="Valider la section" v-if="section.sixth === false" class="align-right" color="primary" @click="section.sixth = !section.sixth"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.sixth === true" class="align-right" color="green" @click="section.sixth = !section.sixth"/>
+        
+        <q-separator inset />
+
 
         <!--
         <h2>1.4.6 Activité 3</h2>
@@ -286,7 +326,7 @@
             type="textarea"
         /><br>
 
-        <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond6 = true" />
+        <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond6 = true" />
 
         <q-dialog v-model="dialogVisible.respond6" @hide="onHide">
             <q-card>
@@ -317,7 +357,13 @@
                 <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond6 = false" />
             </q-card-actions>
             </q-card>
-        </q-dialog>
+        </q-dialog><br><br>
+
+        <q-btn unelevated rounded label="Valider la section" v-if="section.seventh === false" class="align-right" color="primary" @click="section.seventh = !section.seventh"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.seventh === true" class="align-right" color="green" @click="section.seventh = !section.seventh"/>
+        
+        <q-separator inset />
+
 
 
         <h2>1.4.6 À retenir</h2>
@@ -339,13 +385,16 @@
         Il faut faire preuve d’astuce et utiliser des informations supplémentaire sur le message codé. 
         Dans la prochaine section, nous allons voir comment casser des chiffres de substitution monoalphabétique par une attaque fréquentielle qui tient compte des spécificités de la langue dans lequel le message en clair est écrite.
         </p>
+
+        <q-btn unelevated rounded label="Valider la section" v-if="section.eighth === false" class="align-right" color="primary" @click="section.eighth = !section.eighth"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.eighth === true" class="align-right" color="green" @click="section.eighth = !section.eighth"/>
       </div>
     </div>
 
 
-    <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
+    <q-page-scroller :scroll-offset="-1">
       <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-        <font size="4">1.4 Systèmes de substitution monoalphabétiques (retourner au début de la page)</font>
+        <font size="4">Retourner au début de la page</font>
       </div>
     </q-page-scroller>
   </q-page>
@@ -393,6 +442,16 @@ function respondAnswer(exercice, correctAnswer, maxLength){
   }
 }
 
+let section = reactive ({
+    first: ref(false),
+    second: ref(false),
+    third: ref(false),
+    fourth: ref(false),
+    fifth: ref(false),
+    sixth: ref(false),
+    seventh: ref(false),
+    eighth: ref(false)
+})
 </script>
 
 <style lang="scss" scoped></style>
