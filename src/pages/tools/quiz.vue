@@ -17,11 +17,11 @@
         
         <div v-show="isClick === true">
           <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
-            <p class="q-px-sm" style="color:green;">Bravo</p>
+            <p class="q-px-sm" style="color:green;">Bonne réponse</p>
           </div>
 
           <div v-else>
-            <p class="q-px-sm" style="color:red;">Dommage</p>
+            <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
           </div>
         </div>   
       </div>  

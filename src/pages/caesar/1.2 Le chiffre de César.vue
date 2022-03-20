@@ -438,7 +438,7 @@
         <h2>1.2.7 Quiz 1</h2>
         <div class="text-center">
             <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
-                <h2>Question numéro {{index + 1}}</h2>
+                <h3>Question numéro {{index + 1}}</h3>
                 
                 <pre v-if="false">{{question}}</pre>
 
@@ -453,11 +453,11 @@
                     
                     <div v-show="isClick === true">
                         <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
-                            <p class="q-px-sm" style="color:green;">Bravo</p>
+                            <p class="q-px-sm" style="color:green;">Bonne réponse</p>
                         </div>
 
                         <div v-else>
-                            <p class="q-px-sm" style="color:red;">Dommage</p>
+                            <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
                         </div>
                     </div>   
                 </div>  
@@ -475,7 +475,7 @@
         <q-btn unelevated rounded label="Section validée" v-if="section.eighth === true" class="align-right" color="green" @click="section.eighth = !section.eighth"/>
 
 
-        <q-page-scroller :scroll-offset="0">
+        <q-page-scroller position="top-right" :scroll-offset="0">
             <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
                 <font size="4">Retourner au début de la page</font>
             </div>

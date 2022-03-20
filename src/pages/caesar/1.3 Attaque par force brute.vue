@@ -11,7 +11,7 @@
     <div class="q-pa-md">
       <div class="q-gutter-md">
         <p>
-        Comme vous avez pu le constater dans le dernier exercice de la section <a href="http://localhost:3001/cryptologie%20et%20codage%20de%20l%E2%80%99information/1.2%20le%20chiffre%20de%20c%C3%A9sar" style="color:darkblue;">Le chiffre de César</a>, il est très facile de casser le chiffre de César avec un ordinateur en essayant tour à tour chaqune des clés possibles. 
+        Comme vous avez pu le constater dans le dernier exercice de la section <a href="http://localhost:3001/cryptologie%20et%20codage%20de%20l%E2%80%99information/1.2%20le%20chiffre%20de%20c%C3%A9sar" style="color:darkblue;">Le chiffre de César</a>, il est très facile de casser le chiffre de César avec un ordinateur en essayant tour à tour chacune des clés possibles. 
         Dans le cas du chiffre de César, très rudimentaire, il n’y a que 25 clés de chiffrement à tester (les 25 décalages possibles dans l’alphabet). 
         Le procédé consistant à essayer bêtement toutes les clés possibles est appelé <strong>attaque par force brute</strong> (brute force attack en anglais).
         </p>
@@ -124,26 +124,48 @@
           </q-input>
           </div>
         </div>
+        <q-btn-group unelevated rounded>
 
-        <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond1 = true" />
+          <q-btn label="Indices" color="accent" @click="dialogVisible.indice1 = true" />
 
-        <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
+          <q-dialog v-model="dialogVisible.indice1" @hide="onHide">
           <q-card>
-          <q-card-section class="row items-center q-pb-none">
-            <strong class="text-h6" style="color:orange;">Activité 1: Réponse</strong>
-            <q-space />
-          </q-card-section>
+              <q-card-section class="row items-center q-pb-none">
+              <strong class="text-h6" style="color:accent;">Q-Rodolphe: Indices</strong>
+              <q-space />
+              </q-card-section>
 
-          <q-card-section style="color:orange;">
-            <strong>
-            CENDREDELUNEPETITEBULLEDECUMEPOUSSEEPARLEVENTJEBRULEETJEMENRHUMEENTREMESDUNESREPOSENTMESINFORTUNESCESTNUEQUEJAPPRENDSLAVERTU
-            </strong>
-          </q-card-section>
-          <q-card-actions align="right">
-            <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond1 = false" />
-            </q-card-actions>
+              <q-card-section style="color:accent;">
+              <p style="color:accent;">
+              Après avoir trouvé la clé de chiffrement pour ce texte, vous pouvez toujours recopier le programme d'attaque par force brute de la section précédente dans Thonny, pour vérifier votre réponse.
+              </p>
+              </q-card-section>
+              <q-card-actions align="right">
+                  <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.indice1 = false" />
+              </q-card-actions>
           </q-card>
-        </q-dialog><br><br>
+          </q-dialog>
+
+          <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond1 = true" />
+
+          <q-dialog v-model="dialogVisible.respond1" @hide="onHide">
+            <q-card>
+            <q-card-section class="row items-center q-pb-none">
+              <strong class="text-h6" style="color:orange;">Activité 1: Réponse</strong>
+              <q-space />
+            </q-card-section>
+
+            <q-card-section style="color:orange;">
+              <strong>
+              CENDREDELUNEPETITEBULLEDECUMEPOUSSEEPARLEVENTJEBRULEETJEMENRHUMEENTREMESDUNESREPOSENTMESINFORTUNESCESTNUEQUEJAPPRENDSLAVERTU
+              </strong>
+            </q-card-section>
+            <q-card-actions align="right">
+              <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond1 = false" />
+              </q-card-actions>
+            </q-card>
+          </q-dialog>
+        </q-btn-group><br><br>
 
         <q-btn unelevated rounded label="Valider la section" v-if="section.third === false" class="align-right" color="primary" @click="section.third = !section.third"/>
         <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
@@ -164,11 +186,46 @@
         
         <q-btn unelevated rounded label="Valider la section" v-if="section.fourth === false" class="align-right" color="primary" @click="section.fourth = !section.fourth"/>
         <q-btn unelevated rounded label="Section validée" v-if="section.fourth === true" class="align-right" color="green" @click="section.fourth = !section.fourth"/>
+
+        <q-separator inset />
       </div>
     </div>
 
+    <h2>1.3.4 Quiz 2</h2>
+    <div class="text-center">
+      <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
+        <h3>Question numéro {{index + 1}}</h3>
+        
+        <pre v-if="false">{{question}}</pre>
 
-    <q-page-scroller :scroll-offset="0">
+        <p class="question">
+        {{question.question}}
+        </p>
+
+        <div class="q-pa-md">
+          <div v-for="(value, key) in question.answers" class="q-gutter-sm">
+            <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
+          </div>
+          
+          <div v-show="isClick === true">
+            <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
+              <p class="q-px-sm" style="color:green;">Bonne réponse</p>
+            </div>
+
+            <div v-else>
+              <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
+            </div>
+          </div>   
+        </div>  
+      </div>
+      <q-btn rounded label="Valider" @click="changeClick()"/>
+      <pre>{{myQuizQuestions.question}}</pre><br>
+    </div>
+
+    <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
+    <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
+
+    <q-page-scroller position="top-right" :scroll-offset="0">
         <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
             <font size="4">Retourner au début de la page</font>
         </div>
@@ -179,8 +236,34 @@
 <script setup lang="ts">
 import {ref, reactive} from 'vue'
 
+const myQuizQuestions = reactive([
+  {
+      id: ref(0),
+    question: "En quoi consiste l'attaque par force brute ?",
+    answers: {
+      a: "L'attaque par force brute consiste à prouver que le chiffre choisi n'est pas déchiffrable.",
+      b: "L'attaque par force brute consiste à submerger l'ordinateur, avec un surplus de données pour trouver le texte en clair.",
+      c: "L'attaque par force brute consiste à essayer chaque possibilité de déchiffrement, jusqu'à trouver le texte en clair."
+
+    },
+    choice: ref(''),
+    correctAnswer: "L'attaque par force brute consiste à essayer chaque possibilité de déchiffrement, jusqu'à trouver le texte en clair."
+  }
+])
+
+const answers = reactive([])
+
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
+}
+
+const counter = ref(0)
+
 let dialogVisible = reactive({
-  respond1: ref(false)
+  respond1: ref(false),
+  indice1: ref(false)
 })
 
 function onHide(order) {
@@ -213,6 +296,7 @@ let section = reactive ({
     first: ref(false),
     second: ref(false),
     third: ref(false),
-    fourth: ref(false)
+    fourth: ref(false),
+    fifth: ref(false)
 })
 </script><style lang="scss" scoped></style>
