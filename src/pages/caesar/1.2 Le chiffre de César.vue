@@ -430,11 +430,52 @@
             
             <q-btn unelevated rounded label="Valider la section" v-if="section.seventh === false" class="align-right" color="primary" @click="section.seventh = !section.seventh"/>
             <q-btn unelevated rounded label="Section validée" v-if="section.seventh === true" class="align-right" color="green" @click="section.seventh = !section.seventh"/>
+            
+            <q-separator inset /> 
         </div>
         </div>
 
+        <h2>1.2.7 Quiz 1</h2>
+        <div class="text-center">
+            <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
+                <h2>Question numéro {{index + 1}}</h2>
+                
+                <pre v-if="false">{{question}}</pre>
 
-        <q-page-scroller :scroll-offset="-1">
+                <p class="question">
+                {{question.question}}
+                </p>
+
+                <div class="q-pa-md">
+                    <div v-for="(value, key) in question.answers" class="q-gutter-sm">
+                        <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
+                    </div>
+                    
+                    <div v-show="isClick === true">
+                        <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
+                            <p class="q-px-sm" style="color:green;">Bravo</p>
+                        </div>
+
+                        <div v-else>
+                            <p class="q-px-sm" style="color:red;">Dommage</p>
+                        </div>
+                    </div>   
+                </div>  
+            </div>
+            <q-btn-group rounded>
+                <q-btn :disable="counter === 0" label="Précédent" @click="previous()"/>
+                <q-btn :disable="counter === 1" label="Suivant" @click="next()"/>
+                <q-btn v-if="counter > 0" label="Recommencer" @click="restart()"/>
+                <q-btn label="Valider" @click="changeClick()"/>
+            </q-btn-group>
+            <pre>{{myQuizQuestions.question}}</pre><br>
+        </div>
+        
+        <q-btn unelevated rounded label="Valider la section" v-if="section.eighth === false" class="align-right" color="primary" @click="section.eighth = !section.eighth"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.eighth === true" class="align-right" color="green" @click="section.eighth = !section.eighth"/>
+
+
+        <q-page-scroller :scroll-offset="0">
             <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
                 <font size="4">Retourner au début de la page</font>
             </div>
@@ -444,6 +485,57 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+
+const myQuizQuestions = reactive([
+  {
+      id: ref(0),
+    question: "Qu'est-ce qu'une clé de chiffrement ?",
+    answers: {
+      a: "C'est une clé qui sert à maintenir un serveur actif.",
+      b: "C'est une clé qui donne le décalage entre les deux alphabets (clair et chiffré).",
+      c: "C'est une clé que Jules César utilisait pour faire des calculs."
+
+    },
+    choice: ref(''),
+    correctAnswer: "C'est une clé qui donne le décalage entre les deux alphabets (clair et chiffré)."
+  },
+  {
+      id: ref(1),
+    question: "Combien de chiffres de César existe-t-il ?",
+    answers: {
+      a: "25",
+      b: "26",
+      c: "Une infinité."
+    },
+    choice: ref(''),
+    correctAnswer: "25"
+  }
+])
+
+const answers = reactive([])
+
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
+}
+
+const counter = ref(0)
+
+function restart() {
+  counter.value = 0
+  isClick.value = false
+}
+
+function next() {
+  counter.value++
+  isClick.value = false
+}
+
+function previous() {
+  counter.value--
+  isClick.value = false
+}
 
 let dialogVisible = reactive({
   respond1: ref(false),
@@ -506,7 +598,8 @@ let section = reactive ({
     fourth: ref(false),
     fifth: ref(false),
     sixth: ref(false),
-    seventh: ref(false)
+    seventh: ref(false),
+    eighth: ref(false)
 })
 </script>
 

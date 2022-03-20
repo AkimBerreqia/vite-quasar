@@ -161,13 +161,14 @@
         Dans la prochaine section, nous allons aborder un cryptosystème qui résiste un peu mieux à une attaque aussi naïve. 
         Pour cela, il suffit d’augmenter le nombre de clés possibles.
         </p>
+        
         <q-btn unelevated rounded label="Valider la section" v-if="section.fourth === false" class="align-right" color="primary" @click="section.fourth = !section.fourth"/>
         <q-btn unelevated rounded label="Section validée" v-if="section.fourth === true" class="align-right" color="green" @click="section.fourth = !section.fourth"/>
       </div>
     </div>
 
 
-    <q-page-scroller :scroll-offset="-1">
+    <q-page-scroller :scroll-offset="0">
         <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
             <font size="4">Retourner au début de la page</font>
         </div>
