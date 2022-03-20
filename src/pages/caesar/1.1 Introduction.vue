@@ -6,7 +6,6 @@
             <q-breadcrumbs-el label="1.1 Introduction"/>
             </q-breadcrumbs>
         </div>
-        <div>
         <div class="q-gutter-md">
             <p>
             La cryptologie est la science des codes secrets et utlise des techniques propres à l’informatique et aux mathématiques. 
@@ -55,13 +54,49 @@
             </p>
 
             <p>
-            Dans ce cours, vous allez découvrir quelques-uns des codes secrets les plus célèbres inventés dans l’Antiquité et vous allez également chercher à casser ces codes secrets à l’aide de vos compétences en Python lors de travaux pratiques. 
+            Dans ce cours, vous allez découvrir quelques-uns des codes secrets les plus célèbres inventés dans l’Antiquité. 
             Vous pourrez ainsi renforcer les compétences de programmation avec les chaînes de caractères.
             </p>
 
             <q-btn unelevated rounded label="Valider la section" v-if="section.third === false" class="align-right" color="primary" @click="section.third = !section.third"/>
             <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
-        </div>
+
+            <q-separator inset />
+
+
+            <h2>1.1.3 Quiz 1</h2>
+            <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
+                <h2>Question numéro {{index + 1}}</h2>
+                
+                <pre v-if="false">{{question}}</pre>
+
+                <p class="question">
+                {{question.question}}
+                </p>
+
+                <div class="q-pa-md">
+                    <div v-for="(value, key) in question.answers" class="q-gutter-sm">
+                        <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
+                    </div>
+                    
+                    <div v-show="isClick === true">
+                        <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
+                            <p class="q-px-sm" style="color:green;">Bravo</p>
+                        </div>
+
+                        <div v-else>
+                            <p class="q-px-sm" style="color:red;">Dommage</p>
+                        </div>
+                    </div>   
+                </div>  
+            </div>
+            <q-btn-group>
+                <q-btn :disable="counter === 0" label="Précédent" @click="previous()"/>
+                <q-btn :disable="counter === 1" label="Suivant" @click="next()"/>
+                <q-btn v-if="counter > 0" label="Recommencer" @click="restart()"/>
+                <q-btn label="Valider" @click="changeClick()"/>
+            </q-btn-group>
+            <pre>{{myQuizQuestions.question}}</pre>
         </div>
 
         <q-page-scroller :scroll-offset="-1">
@@ -74,6 +109,57 @@
 
 <script setup lang="ts">
 import {ref, reactive} from 'vue'
+
+const myQuizQuestions = reactive([
+  {
+      id: ref(0),
+    question: "What is 10/2?",
+    answers: {
+      a: '3',
+      b: '5',
+      c: '115',
+
+    },
+    choice: ref(''),
+    correctAnswer: '5'
+  },
+  {
+      id: ref(1),
+    question: "What is 30/3?",
+    answers: {
+      a: '3',
+      b: '5',
+      c: '10'
+    },
+    choice: ref(''),
+    correctAnswer: '10'
+  }
+])
+
+const answers = reactive([])
+
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
+}
+
+const counter = ref(0)
+
+function restart() {
+  counter.value = 0
+  isClick.value = false
+}
+
+function next() {
+  counter.value++
+  isClick.value = false
+}
+
+function previous() {
+  counter.value--
+  isClick.value = false
+}
 
 let section = reactive ({
     first: ref(false),
