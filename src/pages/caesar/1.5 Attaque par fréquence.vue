@@ -2,8 +2,17 @@
 Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequence-de-lettres-sur-un-chiffrement-de-substitution-monoalphabetique/
 -->
 <template>
-
     <q-page class="pa-4 text-left align-center">
+        <div class="q-pa-md q-gutter-sm">
+            <q-breadcrumbs unelevated rounded>
+            <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
+            <q-breadcrumbs-el label="1.1 Introduction"/>
+            <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
+            <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
+            <q-breadcrumbs-el label="1.4 Systèmes de substitution monoalphabétique"/>
+            <q-breadcrumbs-el label="1.5 Attaque par fréquence"/>
+            </q-breadcrumbs>
+        </div>
         <p>
         {{text[0]}}<br><br>
         {{text[1]}}
@@ -15,9 +24,9 @@ Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequ
         {{text[7]}}<br><br>
         </p>
 
-        <q-page-scroller expand position="top" :scroll-offset="-1" :offset="[0, 0]">
+        <q-page-scroller :scroll-offset="-1">
             <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-                <font size="4">1.6 Attaque par fréquence (retourner au début de la page)</font>
+                <font size="4">Retourner au début de la page</font>
             </div>
         </q-page-scroller>
     </q-page>

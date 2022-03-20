@@ -80,8 +80,4 @@ let section = reactive ({
     second: ref(false),
     third: ref(false)
 })
-
-function changebtn(btn) {
-    btn.value = !btn.value
-}
 </script>

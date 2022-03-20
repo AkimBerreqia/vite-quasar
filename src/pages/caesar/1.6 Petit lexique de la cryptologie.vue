@@ -7,7 +7,8 @@
       <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
       <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
       <q-breadcrumbs-el label="1.4 Systèmes de substitution monoalphabétique"/>
-      <q-breadcrumbs-el label="1.5 Petit lexique de la cryptologie"/>
+      <q-breadcrumbs-el label="1.5 Attaque par fréquence"/>
+      <q-breadcrumbs-el label="1.6 Petit lexique de la cryptologie"/>
       </q-breadcrumbs>
     </div>
     <div class="q-pa-md">

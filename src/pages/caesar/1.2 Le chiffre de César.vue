@@ -452,10 +452,7 @@ let dialogVisible = reactive({
   respond4: ref(false),
   respond5: ref(false),
   respond6: ref(false),
-  indice1: ref(false),
-  remarque: ref(false),
-  nouvelleNotion: ref(false),
-  indications: ref(false)
+  indice1: ref(false)
 })
 
 function onHide(order) {
@@ -484,7 +481,7 @@ const myQuestions = reactive({
   q3CorrectAnswer: '16',
 
   activ4: '',
-  activ4CorrectAnswer: 'PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE',
+  activ4CorrectAnswer: 'PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE'
 })
 
 function respondAnswer(exercice, correctAnswer, maxLength){
@@ -511,10 +508,6 @@ let section = reactive ({
     sixth: ref(false),
     seventh: ref(false)
 })
-
-function changebtn(btn) {
-    btn.value = !btn.value
-}
 </script>
 
 <style lang="scss" scoped>
