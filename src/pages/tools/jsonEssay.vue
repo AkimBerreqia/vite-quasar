@@ -1,9 +1,10 @@
 <template>
-{{mydata}}
+{{object}}
+hello
 </template>
 
 <script>
+import {first} from '../../json/exemple.json'
 
-const mydata = JSON.parse("../../json/exemple.json");
-
+const object = JSON.parse(first);
 </script>
