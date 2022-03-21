@@ -1,0 +1,13 @@
+{
+    "first": {
+        "id": "0",
+        "name": "french fries",
+        "type": "food"
+    },
+
+    "second": {
+        "id": "1",
+        "name": "Iphone",
+        "type": "smartphone"
+    }
+}
