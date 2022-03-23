@@ -1,5 +1,6 @@
 <template>
     <q-page class="pa-4 text-left align-left">
+        {{ contentData.title }}
         <div class="q-pa-md q-gutter-sm">
             <q-breadcrumbs unelevated rounded>
             <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
@@ -72,6 +73,9 @@
 
 <script setup lang="ts">
 import {ref, reactive} from 'vue'
+import content from '~/json/test.json'
+
+const contentData = ref(content)
 
 let section = reactive ({
     first: ref(false),
