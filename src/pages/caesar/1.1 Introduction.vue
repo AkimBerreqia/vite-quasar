@@ -63,6 +63,8 @@
             <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
         </div>
 
+        <q-btn>{{next}}</q-btn>
+        <router-link to="https://3001-akimberreqia-vitequasar-luci01irjg5.ws-eu38.gitpod.io/#/caesar/1.2%20le%20chiffre%20de%20c%C3%A9sar">page suivante</router-link>
         <q-page-scroller position="top-right" :scroll-offset="0">
             <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
                 <font size="4">Retourner au début de la page</font>
@@ -74,6 +76,8 @@
 <script setup lang="ts">
 import {ref, reactive} from 'vue'
 import content from '~/json/test.json'
+
+const next = this.$router.push({path: '/1.2 Le chiffre de Céssar'});
 
 const contentData = ref(content)
 
