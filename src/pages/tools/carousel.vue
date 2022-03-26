@@ -12,7 +12,7 @@
         padding
         arrows
         height="400px"
-        class="bg-info text-white shadow-1 rounded-borders"
+        class="bg-primary text-white shadow-1 rounded-borders"
       >
         <q-carousel-slide name="cryptographie1" class="column no-wrap flex-center text-center">
             <h2>1.1.1 Cryptographie</h2>

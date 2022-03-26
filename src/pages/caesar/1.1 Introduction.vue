@@ -35,7 +35,7 @@
 
 
         <q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#e0e0e0cc">
-            <q-btn icon="arrow_forward" class="rotate-180"><router-link to="/"><p class="rotate-180">Page d'accueil</p></router-link></q-btn>
+            <q-btn icon="home" to="/"><router-link to="/"></router-link></q-btn>
             <q-btn icon="arrow_forward"><router-link to="/caesar/1.2 Le chiffre de César"><p>1.2 Le chiffre de César</p></router-link></q-btn>
         </q-page-sticky>
         
