@@ -16,17 +16,19 @@
       <p>Bienvenue au cours interctif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous.</p><br>
       <q-btn elevated rounded><router-link to="/caesar/1.1 Introduction">Commencer le cours</router-link></q-btn>
       
-      <q-separator inset />
+      
 
       <h2>Sommaire</h2>
+
+      <q-separator inset />
     
       <ul>
         <li><router-link to="/caesar/1.1 Introduction">1.1 Introduction</router-link></li>
         <li><router-link to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</router-link></li>
         <li><router-link to="/caesar/1.3 Attaque par force brute">1.3 Attaque par force brute</router-link></li>
-        <li><router-link to="/caesar/1.4 Introduction">1.1 Introduction</router-link></li>
-        <li><router-link to="/caesar/1.5 Introduction">1.1 Introduction</router-link></li>
-        <li><router-link to="/caesar/1.6 Introduction">1.1 Introduction</router-link></li>
+        <li><router-link to="/caesar/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</router-link></li>
+        <li><router-link to="/caesar/1.5 Attaque par fréquence">1.5 Attaque par fréquence</router-link></li>
+        <li><router-link to="/caesar/1.6 Petit lexique de la cryptologie">1.6 Petit lexique de la cryptologie</router-link></li>
       </ul>
     </div>
   </q-page>

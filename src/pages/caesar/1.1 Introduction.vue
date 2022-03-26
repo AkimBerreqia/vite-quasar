@@ -31,13 +31,14 @@
 
             <q-btn unelevated rounded label="Valider la section" v-if="section.third === false" class="align-right" color="primary" @click="section.third = !section.third"/>
             <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
-        </div><br>
+        </div><br><br>
 
-        <q-btn-group unelevated rounded class="text-white bg-black">
-            <q-btn><router-link to="/">Page d'accueil</router-link></q-btn>
-            <q-btn><router-link to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</router-link></q-btn>
-        </q-btn-group>
 
+        <q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#e0e0e0cc">
+            <q-btn icon="arrow_forward" class="rotate-180"><router-link to="/"><p class="rotate-180">Page d'accueil</p></router-link></q-btn>
+            <q-btn icon="arrow_forward"><router-link to="/caesar/1.2 Le chiffre de César"><p>1.2 Le chiffre de César</p></router-link></q-btn>
+        </q-page-sticky>
+        
         <q-page-sticky position="top" expand class="bg-positive text-white">
             <q-toolbar>
                 <q-toolbar-title>1.1 Introduction</q-toolbar-title>

@@ -23,12 +23,6 @@ Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequ
         {{text[6]}}<br>
         {{text[7]}}<br><br>
         </p>
-
-        <q-page-scroller position="top-right" :scroll-offset="0">
-            <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-                <font size="4">Retourner au début de la page</font>
-            </div>
-        </q-page-scroller>
     </q-page>
 </template>
 

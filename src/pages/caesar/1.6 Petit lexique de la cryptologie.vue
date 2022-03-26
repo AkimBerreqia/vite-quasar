@@ -1,16 +1,5 @@
 <template>
   <q-page class="pa-4">
-    <div class="q-pa-md q-gutter-sm">
-      <q-breadcrumbs unelevated rounded>
-      <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
-      <q-breadcrumbs-el label="1.1 Introduction"/>
-      <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
-      <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
-      <q-breadcrumbs-el label="1.4 Systèmes de substitution monoalphabétique"/>
-      <q-breadcrumbs-el label="1.5 Attaque par fréquence"/>
-      <q-breadcrumbs-el label="1.6 Petit lexique de la cryptologie"/>
-      </q-breadcrumbs>
-    </div>
     <div class="q-pa-md">
       <q-table
         grid
@@ -42,13 +31,6 @@
         </template>
       </q-table>
     </div>
-
-
-    <q-page-scroller position="top-right" :scroll-offset="0">
-      <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-        <font size="4">Retourner au début de la page</font>
-      </div>
-    </q-page-scroller>
   </q-page>
   
 </template>

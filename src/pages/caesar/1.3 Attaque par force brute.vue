@@ -224,12 +224,6 @@
 
     <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
     <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
-
-    <q-page-scroller position="top-right" :scroll-offset="0">
-        <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-            <font size="4">Retourner au début de la page</font>
-        </div>
-    </q-page-scroller>
   </q-page>
 </template>
 
