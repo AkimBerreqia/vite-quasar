@@ -2,7 +2,7 @@
 Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequence-de-lettres-sur-un-chiffrement-de-substitution-monoalphabetique/
 -->
 <template>
-    <q-page class="pa-4 text-left align-center">
+    <q-page class="pa-4 align-center">
         <div class="q-pa-md q-gutter-sm">
             <q-breadcrumbs unelevated rounded>
             <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />

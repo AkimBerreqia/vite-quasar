@@ -1,11 +1,5 @@
 <template>
-    <q-page class="pa-4 text-left align-left">
-        <div class="q-pa-md q-gutter-sm">
-            <q-breadcrumbs unelevated rounded>
-            <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
-            <q-breadcrumbs-el label="1.1 Introduction"/>
-            </q-breadcrumbs>
-        </div>
+    <q-page class="pa-4">
         <div class="q-gutter-md">
             <p v-html="contentData.presentation"></p>
             
@@ -39,13 +33,16 @@
             <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
         </div><br>
 
-        <q-btn unelevated rounded label="1.2 le chiffre de César (page suivante)" href="#/caesar/1.2 le chiffre de césar" color="black" class="text-white"></q-btn>
+        <q-btn-group unelevated rounded class="text-white bg-black">
+            <q-btn><router-link to="/">Page d'accueil</router-link></q-btn>
+            <q-btn><router-link to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</router-link></q-btn>
+        </q-btn-group>
 
-        <q-page-scroller position="top-right" :scroll-offset="0">
-            <div class="col cursor-pointer q-pa-sm bg-secondary text-white text-center">
-                <font size="4">Retourner au début de la page</font>
-            </div>
-        </q-page-scroller>
+        <q-page-sticky position="top" expand class="bg-positive text-white">
+            <q-toolbar>
+                <q-toolbar-title>1.1 Introduction</q-toolbar-title>
+            </q-toolbar>
+      </q-page-sticky>
     </q-page>
 </template>
 

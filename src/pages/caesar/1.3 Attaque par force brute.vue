@@ -1,5 +1,5 @@
 <template>
-  <q-page class="pa-4 text-left">
+  <q-page class="pa-4">
     <div class="q-pa-md q-gutter-sm">
       <q-breadcrumbs unelevated rounded>
       <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
@@ -29,7 +29,7 @@
         Le programme suivant réalise une attaque par force brute sur le chiffre de César en testant successivement toutes les clés de chiffrement.
         </p><br>
 
-        <p class="text-left bg-info rounded-borders" style="color:black;" padding margin>
+        <p class="bg-info rounded-borders" style="color:black;" padding margin>
         <span style="color:purple;">def</span> <span style="color:blue;">cesar_decrypt</span>(text, d):<br>
         &emsp; alphabet = <span style="color:brown;">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span><br>
         &emsp; result = <span style="color:brown;">''</span><br>
@@ -55,7 +55,7 @@
         brute_force_cesar(cyphered_text)
         </p>
 
-        <p class="text-left bg-info rounded-borders" style="color:black;" padding margin>
+        <p class="bg-info rounded-borders" style="color:black;" padding margin>
         avec la clé d =  1 : EAJHDCSTHXGTJCTRWDHTEAJHTAATHTUPXIPIITCSGT<br>
         avec la clé d =  2 : DZIGCBRSGWFSIBSQVCGSDZIGSZZSGSTOWHOHHSBRFS<br>
         avec la clé d =  3 : CYHFBAQRFVERHARPUBFRCYHFRYYRFRSNVGNGGRAQER<br>
@@ -87,7 +87,7 @@
         En exécutant le programme, on constate que la clé <span style="color:red;">d = 16</span> permet de décrypter correctement le texte chiffré pour obtenir le texte en clair.
         </p><br><br>
 
-        <p class="text-left bg-info rounded-borders">
+        <p class=" bg-info rounded-borders">
         PLUSONDESIREUNECHOSEPLUSELLESEFAITATTENDRE
         </p><br><br>
 

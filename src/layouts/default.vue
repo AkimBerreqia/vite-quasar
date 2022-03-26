@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh LpR fFf">
+  <q-layout view="hHh lpr fFf">
     <q-header elevated class="bg-primary text-white text-left">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
@@ -33,6 +33,12 @@
           <component :is="Component" />
         </transition>
       </router-view>
+
+      <q-page-scroller position="bottom-right" :offset="[0, 0]" :scroll-offset="0">
+        <div class="col cursor-pointer q-pa-sm text-white text-center">
+          <q-btn round icon="arrow_forward" class="rotate-270" color="positive"></q-btn>
+        </div>
+      </q-page-scroller>
     </q-page-container>
   </q-layout>
 </template>
@@ -57,6 +63,11 @@
 </script>
 
 <style lang="scss">
+
+  html { 
+    background-color: #e6e6e6;
+    }
+
   .slide-fade-enter {
     transform: translateX(10px);
     opacity: 0;
@@ -73,11 +84,11 @@
   }
 
   .q-page-container {
+    margin: auto;
+    text-align: left;
+    align: center;
     background-color: #dedcdc;
-    min-width: 1500px;
-    padding-left:425px;
-    padding-right:425px;
-    margin-top:50px;
+    max-width:40em;
     
   }
 </style>

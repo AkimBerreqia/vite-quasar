@@ -1,5 +1,5 @@
 <template>
-  <q-page class="pa-4 text-left">
+  <q-page class="pa-4 ">
     <div class="q-pa-md q-gutter-sm">
       <q-breadcrumbs unelevated rounded>
       <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
@@ -235,7 +235,7 @@
         Pour la fonction python suivante:
         </p><br><br>
 
-        <p class="text-left bg-info rounded-borders" style="color:black;" padding margin>
+        <p class=" bg-info rounded-borders" style="color:black;" padding margin>
         <span style="color:purple;">from</span> random <span style="color:purple;">import</span> shuffle<br>
         <br>
         alphabet = <span style="color:brown;">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span><br>
@@ -249,7 +249,7 @@
         Les résultats du code peuvent varier, par exemple:
         </p><br><br>
 
-        <p class="text-left bg-info rounded-borders" style="color:black;">
+        <p class=" bg-info rounded-borders" style="color:black;">
         Permutation aléatoire: MOAFGNYRJVXCSHQWUIPKTBEDLZ<br>
         Permutation aléatoire: GLVNZMROSAHFQWCKDTYXIPBEUJ<br>
         Permutation aléatoire: KFZSUDHMQYVXBNRAEGLJTIPOWC<br>
