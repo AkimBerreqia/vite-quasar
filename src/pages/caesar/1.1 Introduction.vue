@@ -34,16 +34,16 @@
         </div><br><br>
 
 
-        <q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#e0e0e0cc">
-            <q-btn icon="home" to="/"><router-link to="/"></router-link></q-btn>
-            <q-btn icon="arrow_forward"><router-link to="/caesar/1.2 Le chiffre de César"><p>1.2 Le chiffre de César</p></router-link></q-btn>
+        <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
+            <q-btn icon="home" to="/"></q-btn>
+            <q-btn icon="keyboard_arrow_right" to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</q-btn>
         </q-page-sticky>
         
-        <q-page-sticky position="top" expand class="bg-positive text-white">
+        <q-page-sticky position="top" expand class="bg-positive text-white text-center">
             <q-toolbar>
                 <q-toolbar-title>1.1 Introduction</q-toolbar-title>
             </q-toolbar>
-      </q-page-sticky>
+        </q-page-sticky>
     </q-page>
 </template>
 

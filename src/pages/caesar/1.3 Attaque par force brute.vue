@@ -1,17 +1,9 @@
 <template>
   <q-page class="pa-4">
-    <div class="q-pa-md q-gutter-sm">
-      <q-breadcrumbs unelevated rounded>
-      <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
-      <q-breadcrumbs-el label="1.1 Introduction"/>
-      <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
-      <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
-      </q-breadcrumbs>
-    </div>
     <div class="q-pa-md">
       <div class="q-gutter-md">
         <p>
-        Comme vous avez pu le constater dans le dernier exercice de la section <a href="http://localhost:3001/cryptologie%20et%20codage%20de%20l%E2%80%99information/1.2%20le%20chiffre%20de%20c%C3%A9sar" style="color:darkblue;">Le chiffre de César</a>, il est très facile de casser le chiffre de César avec un ordinateur en essayant tour à tour chacune des clés possibles. 
+        Comme vous avez pu le constater dans le dernier exercice de la section <router-link style="color:darkblue;" to="1.2 Le chiffre de César">Le chiffre de César</router-link>, il est très facile de casser le chiffre de César avec un ordinateur en essayant tour à tour chacune des clés possibles. 
         Dans le cas du chiffre de César, très rudimentaire, il n’y a que 25 clés de chiffrement à tester (les 25 décalages possibles dans l’alphabet). 
         Le procédé consistant à essayer bêtement toutes les clés possibles est appelé <strong>attaque par force brute</strong> (brute force attack en anglais).
         </p>
@@ -224,6 +216,19 @@
 
     <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
     <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
+  
+  
+    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
+      <q-btn icon="home" to="/"></q-btn>
+      <q-btn icon="keyboard_arrow_left" to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</q-btn>
+      <q-btn icon="keyboard_arrow_right" to="/caesar/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</q-btn>
+    </q-page-sticky>
+    
+    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
+      <q-toolbar>
+        <q-toolbar-title>1.3 Attaque par force brute</q-toolbar-title>
+      </q-toolbar>
+    </q-page-sticky>
   </q-page>
 </template>
 

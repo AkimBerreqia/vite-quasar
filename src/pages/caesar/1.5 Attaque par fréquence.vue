@@ -3,16 +3,6 @@ Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequ
 -->
 <template>
     <q-page class="pa-4 align-center">
-        <div class="q-pa-md q-gutter-sm">
-            <q-breadcrumbs unelevated rounded>
-            <q-breadcrumbs-el icon="home" label="1 Cryptologie et codage de l'informatation" to="/" />
-            <q-breadcrumbs-el label="1.1 Introduction"/>
-            <q-breadcrumbs-el label="1.2 Le chiffre de César"/>
-            <q-breadcrumbs-el label="1.3 Attaque par force brute"/>
-            <q-breadcrumbs-el label="1.4 Systèmes de substitution monoalphabétique"/>
-            <q-breadcrumbs-el label="1.5 Attaque par fréquence"/>
-            </q-breadcrumbs>
-        </div>
         <p>
         {{text[0]}}<br><br>
         {{text[1]}}
@@ -22,7 +12,20 @@ Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequ
         {{text[5]}}<br><br>
         {{text[6]}}<br>
         {{text[7]}}<br><br>
-        </p>
+        </p><br><br>
+
+
+        <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
+            <q-btn icon="home" to="/"></q-btn>
+            <q-btn icon="keyboard_arrow_left" to="/caesar/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</q-btn>
+            <q-btn icon="keyboard_arrow_right" to="/caesar/1.6 Petit lexique de la cryptologie">1.6 Petit lexique de la cryptologie</q-btn>
+        </q-page-sticky>
+        
+        <q-page-sticky position="top" expand class="bg-positive text-white text-center">
+            <q-toolbar>
+                <q-toolbar-title>1.5 Attaque par fréquence</q-toolbar-title>
+            </q-toolbar>
+        </q-page-sticky>
     </q-page>
 </template>
 

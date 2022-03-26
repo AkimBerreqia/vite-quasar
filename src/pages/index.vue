@@ -40,7 +40,7 @@
           <q-carousel-slide name="cryptographie1" class="column no-wrap">
               <h2>1.0.2 Sommaire</h2>
 
-              <ul class="text-blue">
+              <ul style="color:darkblue;">
                 <li><router-link to="/caesar/1.1 Introduction">1.1 Introduction</router-link></li>
                 <li><router-link to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</router-link></li>
                 <li><router-link to="/caesar/1.3 Attaque par force brute">1.3 Attaque par force brute</router-link></li>
@@ -52,6 +52,17 @@
         </q-carousel>
       </div>
     </div>
+
+
+    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
+      <q-btn icon="keyboard_arrow_right" to="/caesar/1.1 Introduction">1.1 Introduction</q-btn>
+    </q-page-sticky>
+    
+    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
+      <q-toolbar>
+        <q-toolbar-title>1.0 Index</q-toolbar-title>
+      </q-toolbar>
+    </q-page-sticky>
   </q-page>
 </template>
 

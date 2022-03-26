@@ -35,7 +35,7 @@
       </router-view>
 
       <q-page-scroller position="bottom-right" :offset="[0, 0]" :scroll-offset="0">
-        <div class="col cursor-pointer q-pa-sm text-white text-center">
+        <div class="col cursor-pointer q-pa-sm text-white">
           <q-btn round icon="arrow_forward" class="rotate-270" color="positive"></q-btn>
         </div>
       </q-page-scroller>
@@ -85,6 +85,7 @@
 
   .q-page-container {
     margin: auto;
+    margin-top: 50px;
     text-align: left;
     align: center;
     background-color: #dedcdc;

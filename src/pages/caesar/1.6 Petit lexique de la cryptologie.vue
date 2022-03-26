@@ -9,7 +9,7 @@
         :filter="filter"
       >
         <template v-slot:top-right>
-          <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+          <q-input borderless dense debounce="300" v-model="filter" placeholder="Chercher">
             <template v-slot:append>
               <q-icon name="search" />
             </template>
@@ -30,7 +30,19 @@
           </div>
         </template>
       </q-table>
-    </div>
+    </div><br><br>
+
+
+    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
+      <q-btn icon="home" to="/"></q-btn>
+      <q-btn icon="keyboard_arrow_left" to="/caesar/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
+    </q-page-sticky>
+    
+    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
+      <q-toolbar>
+        <q-toolbar-title>1.6 Petit lexique de la cryptologie</q-toolbar-title>
+      </q-toolbar>
+    </q-page-sticky>
   </q-page>
   
 </template>
