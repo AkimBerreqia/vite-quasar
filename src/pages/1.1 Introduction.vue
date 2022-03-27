@@ -33,10 +33,9 @@
             <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
         </div><br><br>
 
-
         <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
             <q-btn icon="home" to="/"></q-btn>
-            <q-btn icon="keyboard_arrow_right" to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</q-btn>
+            <q-btn icon="keyboard_arrow_right" to="/1.2 Le chiffre de César">1.2 Le chiffre de César</q-btn>
         </q-page-sticky>
         
         <q-page-sticky position="top" expand class="bg-positive text-white text-center">

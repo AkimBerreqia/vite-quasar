@@ -212,16 +212,15 @@
       </div>
       <q-btn rounded label="Valider" @click="changeClick()"/>
       <pre>{{myQuizQuestions.question}}</pre><br>
-    </div>
 
-    <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
-    <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
-  
+      <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
+      <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
+    </div><br><br>
   
     <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
       <q-btn icon="home" to="/"></q-btn>
-      <q-btn icon="keyboard_arrow_left" to="/caesar/1.2 Le chiffre de César">1.2 Le chiffre de César</q-btn>
-      <q-btn icon="keyboard_arrow_right" to="/caesar/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</q-btn>
+      <q-btn icon="keyboard_arrow_left" to="/1.2 Le chiffre de César">1.2 Le chiffre de César</q-btn>
+      <q-btn icon="keyboard_arrow_right" to="/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</q-btn>
     </q-page-sticky>
     
     <q-page-sticky position="top" expand class="bg-positive text-white text-center">

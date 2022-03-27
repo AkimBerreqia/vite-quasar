@@ -269,7 +269,7 @@
 
         <h2>1.4.4.1 Stratégie de résolution (vidéo)</h2>
 
-        <iframe class="align-center" width="560" height="315"
+        <iframe class="align-center" width="500" height="315"
         src="https://www.youtube.com/embed/aPo5WKqB74U"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write;
@@ -385,8 +385,8 @@
 
     <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
       <q-btn icon="home" to="/"></q-btn>
-      <q-btn icon="keyboard_arrow_left" to="/caesar/1.3 Attaque par force brute">1.3 Attaque par force brute</q-btn>
-      <q-btn icon="keyboard_arrow_right" to="/caesar/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
+      <q-btn icon="keyboard_arrow_left" to="/1.3 Attaque par force brute">1.3 Attaque par force brute</q-btn>
+      <q-btn icon="keyboard_arrow_right" to="/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
     </q-page-sticky>
     
     <q-page-sticky position="top" expand class="bg-positive text-white text-center">

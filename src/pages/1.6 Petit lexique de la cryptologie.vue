@@ -35,7 +35,7 @@
 
     <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
       <q-btn icon="home" to="/"></q-btn>
-      <q-btn icon="keyboard_arrow_left" to="/caesar/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
+      <q-btn icon="keyboard_arrow_left" to="/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
     </q-page-sticky>
     
     <q-page-sticky position="top" expand class="bg-positive text-white text-center">

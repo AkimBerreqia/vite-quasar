@@ -17,8 +17,8 @@ Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequ
 
         <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
             <q-btn icon="home" to="/"></q-btn>
-            <q-btn icon="keyboard_arrow_left" to="/caesar/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</q-btn>
-            <q-btn icon="keyboard_arrow_right" to="/caesar/1.6 Petit lexique de la cryptologie">1.6 Petit lexique de la cryptologie</q-btn>
+            <q-btn icon="keyboard_arrow_left" to="/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</q-btn>
+            <q-btn icon="keyboard_arrow_right" to="/1.6 Petit lexique de la cryptologie">1.6 Petit lexique de la cryptologie</q-btn>
         </q-page-sticky>
         
         <q-page-sticky position="top" expand class="bg-positive text-white text-center">

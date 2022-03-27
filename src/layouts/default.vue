@@ -2,15 +2,14 @@
   <q-layout view="hHh lpr fFf">
     <q-header elevated class="bg-primary text-white text-left">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
+        <q-btn dense flat round icon="menu" @click="drawerLeft = !drawerLeft" />
         <q-toolbar-title>
-          1 Cryptologie et codage de l’information 
+          <router-link to="/">1 Cryptologie et codage de l’information</router-link>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" overlay class="bg-grey-5 text-white" bordered>
+    <q-drawer show-if-above v-model="drawerLeft" side="left" overlay class="bg-grey-5 text-white" bordered>
       <!-- drawer content -->
       <q-list bordered separator class="min-w-25 pa-4">
         <template v-for="(item, index) in generatedRoutes">
@@ -56,10 +55,7 @@
     }
   })
 
-  const leftDrawerOpen = ref<boolean>(false)
-  const toggleLeftDrawer = () => {
-    leftDrawerOpen.value = !leftDrawerOpen.value
-  }
+  const drawerLeft = ref<boolean>(false)
 </script>
 
 <style lang="scss">
@@ -88,6 +84,7 @@
     margin-top: 50px;
     text-align: left;
     align: center;
+    color: #33abd6;
     background-color: #dedcdc;
     max-width:40em;
     
