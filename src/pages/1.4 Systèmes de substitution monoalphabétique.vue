@@ -308,21 +308,21 @@
         <h3>Short Answer</h3>
 
         <p>
-        Q-6: En admettant que l’ordinateur soit assez puissant pour essayer 100 millions (108) de clés par seconde dans une attaque par force brute, combien de temps faudrait-il pour tester toutes les clés possibles ?
+        Q-5: En admettant que l’ordinateur soit assez puissant pour essayer 100 millions (108) de clés par seconde dans une attaque par force brute, combien de temps faudrait-il pour tester toutes les clés possibles ?
         </p>
 
         <q-input
-            v-model="text.q6"
+            v-model="text.q5"
             filled
             type="textarea"
         /><br>
 
-        <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond6 = true" />
+        <q-btn unelevated rounded label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond4 = true" />
 
-        <q-dialog v-model="dialogVisible.respond6" @hide="onHide">
+        <q-dialog v-model="dialogVisible.respond4" @hide="onHide">
             <q-card>
             <q-card-section class="row items-center q-pb-none">
-                <strong class="text-h6" style="color:orange;">Q-2: Réponse</strong>
+                <strong class="text-h6" style="color:orange;">Q-5: Réponse</strong>
                 <q-space />
             </q-card-section>
 
@@ -345,7 +345,7 @@
                 </ul>
             </q-card-section>
             <q-card-actions align="right">
-                <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond6 = false" />
+                <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond4 = false" />
             </q-card-actions>
             </q-card>
         </q-dialog><br><br>
@@ -411,10 +411,10 @@
       </div>
       <q-btn rounded label="Valider" @click="changeClick()"/>
       <pre>{{myQuizQuestions.question}}</pre><br>
+    </div>
 
-      <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
-      <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
-    </div><br><br>
+    <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
+    <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/><br><br><br>
 
 
     <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
@@ -440,13 +440,13 @@ const myQuizQuestions = reactive([
       id: ref(0),
     question: "En quoi consiste le système de substitution monoalphabétique ?",
     answers: {
-      a: "L'attaque par force brute consiste à prouver que le chiffre choisi n'est pas déchiffrable.",
-      b: "L'attaque par force brute consiste à submerger l'ordinateur, avec un surplus de données pour trouver le texte en clair.",
-      c: "L'attaque par force brute consiste à essayer chaque possibilité de déchiffrement, jusqu'à trouver le texte en clair."
+      a: "Il consiste à mélanger les lettres de l'alphabet chiffré.",
+      b: "Il consiste à se servir d'un mot, par lequel le texte chiffré sera fait à partir du décalage entre la lettre de la clé qui correspond à la lettre en clair.",
+      c: "Il consiste à se servir d'un baton autour ducoup une tranche de cuir est enroulée pour former le texte en clair."
 
     },
     choice: ref(''),
-    correctAnswer: "L'attaque par force brute consiste à essayer chaque possibilité de déchiffrement, jusqu'à trouver le texte en clair."
+    correctAnswer: "Il consiste à mélanger les lettres de l'alphabet chiffré."
   }
 ])
 
@@ -463,9 +463,8 @@ const counter = ref(0)
 let dialogVisible = reactive({
   respond1: ref(false),
   respond2: ref(false),
-  respond6: ref(false),
-  exemple1: ref(false),
-  remarque: ref(false)
+  respond3: ref(false),
+  respond4: ref(false)
 })
 
 function onHide(order) {
@@ -474,7 +473,7 @@ function onHide(order) {
 
 let text = reactive({
   q2: ref(''),
-  q6: ref('')
+  q5: ref('')
 })
 
 const dense = ref(false)
