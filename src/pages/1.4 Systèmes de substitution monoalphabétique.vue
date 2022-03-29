@@ -380,6 +380,40 @@
         <q-btn unelevated rounded label="Valider la section" v-if="section.eighth === false" class="align-right" color="primary" @click="section.eighth = !section.eighth"/>
         <q-btn unelevated rounded label="Section validée" v-if="section.eighth === true" class="align-right" color="green" @click="section.eighth = !section.eighth"/>
       </div>
+    </div>
+
+    <h2>1.3.4 Quiz 2</h2>
+    <div class="text-center">
+      <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
+        <h3>Question numéro {{index + 1}}</h3>
+        
+        <pre v-if="false">{{question}}</pre>
+
+        <p class="question">
+        {{question.question}}
+        </p>
+
+        <div class="q-pa-md">
+          <div v-for="(value, key) in question.answers" class="q-gutter-sm">
+            <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
+          </div>
+          
+          <div v-show="isClick === true">
+            <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
+              <p class="q-px-sm" style="color:green;">Bonne réponse</p>
+            </div>
+
+            <div v-else>
+              <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
+            </div>
+          </div>   
+        </div>  
+      </div>
+      <q-btn rounded label="Valider" @click="changeClick()"/>
+      <pre>{{myQuizQuestions.question}}</pre><br>
+
+      <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
+      <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/>
     </div><br><br>
 
 
@@ -399,6 +433,32 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+
+//Changer contenu
+const myQuizQuestions = reactive([
+  {
+      id: ref(0),
+    question: "En quoi consiste le système de substitution monoalphabétique ?",
+    answers: {
+      a: "L'attaque par force brute consiste à prouver que le chiffre choisi n'est pas déchiffrable.",
+      b: "L'attaque par force brute consiste à submerger l'ordinateur, avec un surplus de données pour trouver le texte en clair.",
+      c: "L'attaque par force brute consiste à essayer chaque possibilité de déchiffrement, jusqu'à trouver le texte en clair."
+
+    },
+    choice: ref(''),
+    correctAnswer: "L'attaque par force brute consiste à essayer chaque possibilité de déchiffrement, jusqu'à trouver le texte en clair."
+  }
+])
+
+const answers = reactive([])
+
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
+}
+
+const counter = ref(0)
 
 let dialogVisible = reactive({
   respond1: ref(false),
