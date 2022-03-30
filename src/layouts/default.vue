@@ -23,10 +23,6 @@
     </q-drawer>
 
     <q-page-container>
-      <div v-if="false" class="py-2 mx-auto text-center text-sm">[Default Layout]</div>
-      <pre v-if="false">
-      {{generatedRoutes}}
-      </pre>
       <router-view v-slot="{ Component }">
         <transition name="slide-fade" mode="out-in">
           <component :is="Component" />
@@ -48,12 +44,6 @@
 
   import generatedRoutes from 'virtual:generated-pages'
   const router = useRouter()
-
-  const pages = generatedRoutes.sort((p1, p2) => {
-    if (p1.name < p2.name) {
-      
-    }
-  })
 
   const drawerLeft = ref<boolean>(false)
 </script>
