@@ -52,7 +52,7 @@
 
   html { 
     background-color: #e6e6e6;
-    }
+  }
 
   .slide-fade-enter {
     transform: translateX(10px);
@@ -77,6 +77,5 @@
     color: #33abd6;
     background-color: #dedcdc;
     max-width:40em;
-    
   }
 </style>
