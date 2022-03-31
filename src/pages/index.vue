@@ -5,14 +5,13 @@
 
       <div class="q-gutter-md">
         <q-carousel
-          v-model="action.slide"
+          v-model="action.slide1"
           animated
           padding
-          arrows
           height="250px"
           class="shadow-1 rounded-borders"
         >
-          <q-carousel-slide name="cryptographie1" class="column no-wrap">
+          <q-carousel-slide name="presentation" class="column no-wrap">
               <h2>1.0.1 Présentation</h2>
 
               <p>Bienvenue au cours interctif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
@@ -22,14 +21,13 @@
         </q-carousel>
 
         <q-carousel
-          v-model="action.slide"
+          v-model="action.slide2"
           animated
           padding
-          arrows
           height="250px"
           class="shadow-1 rounded-borders"
         >
-          <q-carousel-slide name="cryptographie1" class="column no-wrap">
+          <q-carousel-slide name="sommaire" class="column no-wrap">
               <h2>1.0.2 Sommaire</h2>
 
               <ul style="color:darkblue;">
@@ -59,16 +57,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref,reactive } from 'vue'
+import { ref, reactive } from 'vue'
 
 let action = reactive({
-    slide: ref('cryptographie1')
-})
-
-let text = reactive({
-  q1: ref(''),
-  q3: ref(''),
-  q4: ref('')
+  slide1: ref('presentation'),
+  slide2: ref('sommaire')
 })
 </script>
 
