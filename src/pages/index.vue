@@ -14,7 +14,7 @@
           <q-carousel-slide name="presentation" class="column no-wrap">
               <h2>1.0.1 Présentation</h2>
 
-              <p>Bienvenue au cours interctif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
+              <p>Bienvenue au cours interctif de cryptologie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
       
               <q-btn elevated rounded><router-link to="/1.1 Introduction">Commencer le cours</router-link></q-btn>
           </q-carousel-slide>
