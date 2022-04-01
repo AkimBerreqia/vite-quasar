@@ -99,7 +99,7 @@
 
 <script setup lang="ts">
 import {ref, reactive} from 'vue'
-import content from '~/json/exemple.json'
+import content from 'src/json/introContent.json'
 
 const contentData = ref(content.introduction)
 
