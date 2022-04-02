@@ -21,7 +21,7 @@
     </div>
     
     <q-btn-group unelevated rounded>
-      <q-btn label="Indices" color="accent" @click="dialogVisible.indice1 = true" />
+      <q-btn label="INDICES" color="accent" @click="dialogVisible.indice1 = true" />
 
       <q-dialog v-model="dialogVisible.indice1" @hide="onHide">
       <q-card>
