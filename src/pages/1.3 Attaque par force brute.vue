@@ -187,8 +187,6 @@
     <div class="text-center">
       <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
         <h3>Question numéro {{index + 1}}</h3>
-        
-        <pre v-if="false">{{question}}</pre>
 
         <p class="question">
         {{question.question}}
@@ -211,8 +209,7 @@
         </div>  
       </div>
       <q-btn rounded label="Valider" @click="changeClick()"/>
-      <pre>{{myQuizQuestions.question}}</pre><br>
-    </div>
+    </div><br>
     
     <q-btn unelevated rounded label="Valider la section" v-if="section.fifth === false" class="align-right" color="primary" @click="section.fifth = !section.fifth"/>
     <q-btn unelevated rounded label="Section validée" v-if="section.fifth === true" class="align-right" color="green" @click="section.fifth = !section.fifth"/><br><br><br>
