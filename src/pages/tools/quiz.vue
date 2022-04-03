@@ -46,8 +46,7 @@ const myQuizQuestions = reactive([
     answers: {
       a: '3',
       b: '5',
-      c: '115',
-
+      c: '115'
     },
     choice: ref(''),
     correctAnswer: '5'
