@@ -1,11 +1,11 @@
 <template>
     <q-page>
-        <q-input v-model="SearchWord.text" onKeyPress="isClick = false" filled/>
+        <p v-show="isClick === true">{{researchSmth(Titles, SearchWord.text)}}<strong>{{SearchWord.text}}</strong> <i v-show="visible.find === true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p><br>
+
+        <q-input v-model="SearchWord.text" onKeyPress="isClick = false" filled/><br>
 
         <q-btn filled label="rechercher" style="color:accent;" @click="trigger()" />
 
-        <p v-show="isClick === true">{{researchSmth(Titles, SearchWord.text)}}<strong>{{SearchWord.text}}</strong> <i v-show="visible.find === true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p>
-        
         <div class="q-pa-md">
             <q-ajax-bar
             ref="bar"
