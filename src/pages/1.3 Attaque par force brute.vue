@@ -233,7 +233,7 @@ import {ref, reactive} from 'vue'
 
 const myQuizQuestions = reactive([
   {
-      id: ref(0),
+    id: ref(0),
     question: "En quoi consiste l'attaque par force brute ?",
     answers: {
       a: "L'attaque par force brute consiste à prouver que le chiffre choisi n'est pas déchiffrable.",

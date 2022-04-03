@@ -1,5 +1,5 @@
 <template>
-  <q-page class="pa-4 text-center">
+  <q-page class="pa-4 text-left">
     <h1>Exemple de quiz</h1>
     <div class="text-center">
       <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
@@ -40,7 +40,7 @@ import { ref, reactive } from "vue"
 
 const myQuizQuestions = reactive([
   {
-      id: ref(0),
+    id: ref(0),
     question: "What is 10/2?",
     answers: {
       a: '3',
@@ -51,7 +51,7 @@ const myQuizQuestions = reactive([
     correctAnswer: '5'
   },
   {
-      id: ref(1),
+    id: ref(1),
     question: "What is 30/3?",
     answers: {
       a: '3',

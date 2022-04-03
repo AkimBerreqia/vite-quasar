@@ -434,7 +434,7 @@ import { ref, reactive } from 'vue'
 //Changer contenu
 const myQuizQuestions = reactive([
   {
-      id: ref(0),
+    id: ref(0),
     question: "En quoi consiste le système de substitution monoalphabétique ?",
     answers: {
       a: "Il consiste à mélanger les lettres de l'alphabet chiffré.",

@@ -483,7 +483,7 @@ import { ref, reactive } from 'vue'
 
 const myQuizQuestions = reactive([
   {
-      id: ref(0),
+    id: ref(0),
     question: "Qu'est-ce qu'une clé de chiffrement ?",
     answers: {
       a: "C'est une clé qui sert à maintenir un serveur actif.",
@@ -495,7 +495,7 @@ const myQuizQuestions = reactive([
     correctAnswer: "C'est une clé qui donne le décalage entre les deux alphabets (clair et chiffré)."
   },
   {
-      id: ref(1),
+    id: ref(1),
     question: "Combien de chiffres de César existe-t-il ?",
     answers: {
       a: "25",
