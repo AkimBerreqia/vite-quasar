@@ -1,4 +1,8 @@
 {
+    "index": {
+        "presentation": "Bienvenue au cours interactif de cryptologie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections."
+    },
+
     "introduction": {
         "presentation": "La cryptologie est la science des codes secrets et utlise des techniques propres à l’informatique et aux mathématiques. Dans ce cours, nous n’aborderons pas les aspects mathématiques des techniques de cryptographie modernes. La cryptologie englobe d’une part la <b>cryptographie</b> qui consiste à développer des codes secrets permettant de chiffrer des messages pour qu’ils soient incompréhensibles pour les personnes à qui ils ne sont pas destinés et la <b>cryptanalyse</b> qui consiste à <i>casser les codes secrets</i> utilisés par d’autres personnes pour tenter d’accéder aux informations chiffrées.",
 
@@ -13,5 +17,9 @@
         "cryptanalyse3": "Les techniques de cryptographie modernes permettent de créer des codes secrets beaucoup plus difficiles à casser. C’est la raison pour laquelle toutes les grandes puissances commerciales et militaires actuelles dépensent des sommes colossales pour engager les meilleurs mathématiciens, physiciens et informaticiens du monde et financer les services secrets responsables de percer les codes secrets utilisés par les adversaires pour en tirer un avantage commercial ou militaire.",
 
         "cryptanalyse4": "Dans ce cours, vous allez découvrir quelques-uns des codes secrets les plus célèbres inventés dans l’Antiquité. Vous pourrez ainsi renforcer les compétences de programmation avec les chaînes de caractères."
+    },
+
+    "chiffreCesar": {
+        "presentation": "Le premier code secret que l’on va aborder est le <strong>chiffre de César</strong>. En cryptographie, un <strong>chiffre</strong> est en réalité un synonyme de <strong>code secret</strong>. Il s’agit d’une <strong>méthode de chiffrement</strong> qui permet de transformer un message intelligible et facilement lisible (<b>texte en clair</b>) en un <b>texte chiffré</b> inintelligible."
     }
 }

@@ -2,11 +2,7 @@
     <q-page class="pa-4">
         <div class="q-pa-md">
         <div class="q-gutter-md">
-            <p>
-            Le premier code secret que l’on va aborder est le <strong>chiffre de César</strong>. 
-            En cryptographie, un <strong>chiffre</strong> est en réalité un synonyme de <strong>code secret</strong>. 
-            Il s’agit d’une <strong>méthode de chiffrement</strong> qui permet de transformer un message intelligible et facilement lisible (<b>texte en clair</b>) en un <b>texte chiffré</b> inintelligible.
-            </p>
+            <p v-html="contentData.presentation"></p>
 
             
             <q-btn unelevated rounded label="Valider la section" v-if="section.first === false" class="align-right" color="primary" @click="section.first = !section.first"/>
@@ -480,6 +476,9 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+import content from 'src/json/introContent.json'
+
+const contentData = ref(content.chiffreCesar)
 
 const myQuizQuestions = reactive([
   {
