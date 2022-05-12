@@ -462,15 +462,13 @@
         <q-btn unelevated rounded label="Valider la section" v-if="section.eighth === false" class="align-right" color="primary" @click="section.eighth = !section.eighth"/>
         <q-btn unelevated rounded label="Section validée" v-if="section.eighth === true" class="align-right" color="green" @click="section.eighth = !section.eighth"/><br><br><br>
         
-        <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
-            <q-btn icon="home" to="/"></q-btn>
-            <q-btn icon="keyboard_arrow_left" to="/1.1 Introduction">1.1 Introduction</q-btn>
-            <q-btn icon="keyboard_arrow_right" to="/1.3 Attaque par force brute">1.3 Attaque par force brute</q-btn>
-        </q-page-sticky>
-        
         <q-page-sticky position="top" expand class="bg-positive text-white text-center">
+            <q-toolbar-title>1.2 Le chiffre de César</q-toolbar-title>
+            
             <q-toolbar>
-                <q-toolbar-title>1.2 Le chiffre de César</q-toolbar-title>
+                <q-btn icon="home" to="/"></q-btn>
+                <q-btn icon="keyboard_arrow_left" to="/1.1 Introduction">1.1 Introduction</q-btn>
+                <q-btn icon="keyboard_arrow_right" to="/1.3 Attaque par force brute">1.3 Attaque par force brute</q-btn>
             </q-toolbar>
         </q-page-sticky>
     </q-page>

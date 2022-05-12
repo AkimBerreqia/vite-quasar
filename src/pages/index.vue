@@ -44,7 +44,7 @@
     </div>
 
 
-    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#cccccccc">
+    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
       <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
     </q-page-sticky>
     
