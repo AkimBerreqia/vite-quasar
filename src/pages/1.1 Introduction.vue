@@ -48,8 +48,8 @@ import navigatorBtn from 'src/components/navigatorOneToolbar.vue'
 const contentData = ref(content.introduction)
 
 let section = reactive ({
-    first: ref(false),
-    second: ref(false),
-    third: ref(false)
+    first: false,
+    second: false,
+    third: false
 })
 </script>

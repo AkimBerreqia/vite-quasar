@@ -475,7 +475,7 @@ const contentData = ref(content.chiffreCesar)
 
 const myQuizQuestions = reactive([
   {
-    id: ref(0),
+    id: 0,
     question: "Qu'est-ce qu'une clé de chiffrement ?",
     answers: {
       a: "C'est une clé qui sert à maintenir un serveur actif.",
@@ -487,7 +487,7 @@ const myQuizQuestions = reactive([
     correctAnswer: "C'est une clé qui donne le décalage entre les deux alphabets (clair et chiffré)."
   },
   {
-    id: ref(1),
+    id: 1,
     question: "Combien de chiffres de César existe-t-il ?",
     answers: {
       a: "25",
@@ -509,7 +509,7 @@ function changeClick() {
 
 const counter = ref(0)
 
-function restart() {
+function restart(): void {
   counter.value = 0
   isClick.value = false
 }
@@ -525,13 +525,13 @@ function previous() {
 }
 
 let dialogVisible = reactive({
-  respond1: ref(false),
-  respond2: ref(false),
-  respond3: ref(false),
-  respond4: ref(false),
-  respond5: ref(false),
-  respond6: ref(false),
-  indice1: ref(false)
+  respond1: false,
+  respond2: false,
+  respond3: false,
+  respond4: false,
+  respond5: false,
+  respond6: false,
+  indice1: false
 })
 
 function onHide(order) {
@@ -544,7 +544,7 @@ let text = reactive({
   q3: ref('')
 })
 
-const dense = ref(false)
+const dense = false
 
 const myQuestions = reactive({
   rodolphe: '',
@@ -579,13 +579,13 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 }
 
 let section = reactive ({
-    first: ref(false),
-    second: ref(false),
-    third: ref(false),
-    fourth: ref(false),
-    fifth: ref(false),
-    sixth: ref(false),
-    seventh: ref(false),
-    eighth: ref(false)
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false,
+    sixth: false,
+    seventh: false,
+    eighth: false
 })
 </script>
