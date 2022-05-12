@@ -1,3 +1,5 @@
+<!-- Source : COURSES.21-LEARNING.COM, « Contenu de l'attaque par force brute », 2019, consulté le 12 mai 2022, <https://courses.21-learning.com/runestone/books/published/doi-2gy-20-21/crypto/crypto-brute-force.html> -->
+
 <template>
   <q-page class="pa-4">
     <div class="q-pa-md">
@@ -21,7 +23,7 @@
         Le programme suivant réalise une attaque par force brute sur le chiffre de César en testant successivement toutes les clés de chiffrement.
         </p><br>
 
-        <p class="bg-info rounded-borders" style="color:black;" padding margin>
+        <p class="bg-info rounded-borders" style="color:black; font-family:'Courier New', Courier, monospace;" padding margin>
         <span style="color:purple;">def</span> <span style="color:blue;">cesar_decrypt</span>(text, d):<br>
         &emsp; alphabet = <span style="color:brown;">'ABCDEFGHIJKLMNOPQRSTUVWXYZ'</span><br>
         &emsp; result = <span style="color:brown;">''</span><br>
@@ -47,7 +49,7 @@
         brute_force_cesar(cyphered_text)
         </p>
 
-        <p class="bg-info rounded-borders" style="color:black;" padding margin>
+        <p class="bg-info rounded-borders" style="color:black; font-family:'Courier New', Courier, monospace;" padding margin>
         avec la clé d =  1 : EAJHDCSTHXGTJCTRWDHTEAJHTAATHTUPXIPIITCSGT<br>
         avec la clé d =  2 : DZIGCBRSGWFSIBSQVCGSDZIGSZZSGSTOWHOHHSBRFS<br>
         avec la clé d =  3 : CYHFBAQRFVERHARPUBFRCYHFRYYRFRSNVGNGGRAQER<br>

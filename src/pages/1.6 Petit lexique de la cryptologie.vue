@@ -1,3 +1,5 @@
+<!-- COURSES.21-LEARNING.COM, « contenu du petit lexique de la cryptologie », 2019, consulté le 12 mai 2022, <https://courses.21-learning.com/runestone/books/published/doi-2gy-20-21/crypto/crypto-lexique.html> -->
+
 <template>
   <q-page class="pa-4">
     <div class="q-pa-md">

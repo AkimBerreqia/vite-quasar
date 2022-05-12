@@ -1,6 +1,5 @@
-<!--
-Source : https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequence-de-lettres-sur-un-chiffrement-de-substitution-monoalphabetique/
--->
+<!-- Source : ACERVO LIMA, « Contenu du programme pour effectuer une attaque de fréquence de lettres sur un chiffrement de substitution monoalphabétique », 2019, consulté le 12 mai 2022, <https://fr.acervolima.com/programme-pour-effectuer-une-attaque-de-frequence-de-lettres-sur-un-chiffrement-de-substitution-monoalphabetique/> -->
+
 <template>
     <q-page class="pa-4 align-center">
         <p>

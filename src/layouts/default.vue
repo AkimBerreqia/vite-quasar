@@ -74,8 +74,12 @@
     margin-top: 50px;
     text-align: left;
     align: center;
-    color: #33abd6;
+    color: #4d443a;
     background-color: #dedcdc;
     max-width:40em;
+  }
+
+  h1 {
+    
   }
 </style>
