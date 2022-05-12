@@ -427,7 +427,7 @@ import navigatorBtn from 'src/components/navigatorFourToolbar.vue'
 //Changer contenu
 const myQuizQuestions = reactive([
   {
-    id: ref(0),
+    id: 0,
     question: "En quoi consiste le système de substitution monoalphabétique ?",
     answers: {
       a: "Il consiste à mélanger les lettres de l'alphabet chiffré.",
@@ -451,10 +451,10 @@ function changeClick() {
 const counter = ref(0)
 
 let dialogVisible = reactive({
-  respond1: ref(false),
-  respond2: ref(false),
-  respond3: ref(false),
-  respond4: ref(false)
+  respond1: false,
+  respond2: false,
+  respond3: false,
+  respond4: false
 })
 
 function onHide(order) {
@@ -466,7 +466,7 @@ let text = reactive({
   q5: ref('')
 })
 
-const dense = ref(false)
+const dense = false
 
 const myQuestions = reactive({
     q1: '',
@@ -489,15 +489,13 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 }
 
 let section = reactive ({
-    first: ref(false),
-    second: ref(false),
-    third: ref(false),
-    fourth: ref(false),
-    fifth: ref(false),
-    sixth: ref(false),
-    seventh: ref(false),
-    eighth: ref(false)
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false,
+    sixth: false,
+    seventh: false,
+    eighth: false
 })
 </script>
-
-<style lang="scss" scoped></style>

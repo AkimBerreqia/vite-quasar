@@ -47,12 +47,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 
 import navigatorBtn from 'src/components/navigatorIndexToolbar.vue'
 
 let action = reactive({
-  slide1: ref('presentation'),
-  slide2: ref('sommaire')
+  slide1: 'presentation',
+  slide2: 'sommaire'
 })
 </script>

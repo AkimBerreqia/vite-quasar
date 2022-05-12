@@ -226,7 +226,7 @@ import navigatorBtn from 'src/components/navigatorThreeToolbar.vue'
 
 const myQuizQuestions = reactive([
   {
-    id: ref(0),
+    id: 0,
     question: "En quoi consiste l'attaque par force brute ?",
     answers: {
       a: "L'attaque par force brute consiste à prouver que le chiffre choisi n'est pas déchiffrable.",
@@ -250,15 +250,15 @@ function changeClick() {
 const counter = ref(0)
 
 let dialogVisible = reactive({
-  respond1: ref(false),
-  indice1: ref(false)
+  respond1: false,
+  indice1: false
 })
 
 function onHide(order) {
   dialogVisible.order.value = false
 }
 
-const dense = ref(false)
+const dense = false
 
 const myQuestions = reactive({
   libertine: '',
@@ -281,10 +281,10 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 }
 
 let section = reactive ({
-    first: ref(false),
-    second: ref(false),
-    third: ref(false),
-    fourth: ref(false),
-    fifth: ref(false)
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false
 })
-</script><style lang="scss" scoped></style>
+</script>
