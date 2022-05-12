@@ -41,11 +41,11 @@
 </template>
 
 <script setup lang="ts">
-import {ref, reactive} from 'vue'
+import { reactive } from 'vue'
 import content from 'src/json/introContent.json'
 import navigatorBtn from 'src/components/navigatorOneToolbar.vue'
 
-const contentData = ref(content.introduction)
+const contentData = content.introduction
 
 let section = reactive ({
     first: false,
