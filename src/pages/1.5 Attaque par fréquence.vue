@@ -14,21 +14,14 @@
         </p><br><br>
 
 
-        <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
-            <q-btn icon="home" to="/"></q-btn>
-            <q-btn icon="keyboard_arrow_left" to="/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</q-btn>
-            <q-btn icon="keyboard_arrow_right" to="/1.6 Petit lexique de la cryptologie">1.6 Petit lexique de la cryptologie</q-btn>
-        </q-page-sticky>
-        
-        <q-page-sticky position="top" expand class="bg-positive text-white text-center">
-            <q-toolbar>
-                <q-toolbar-title>1.5 Attaque par fréquence</q-toolbar-title>
-            </q-toolbar>
-        </q-page-sticky>
+        <navigatorBtn />
     </q-page>
 </template>
 
 <script setup lang="ts">
+
+import navigatorBtn from 'src/components/navigatorFiveToolbar.vue'
+
 const text = [
 "L'attaque par fréquence est l'une des attaque les plus connues dans le domaine de la cryptanalyse pour le chiffrement de substitution monoalphabétique. \
 Il faut savoir que dans chaque langue, il y a des fréquences au niveau des suites de lettre.",

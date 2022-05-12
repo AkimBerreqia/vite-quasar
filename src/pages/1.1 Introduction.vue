@@ -30,27 +30,20 @@
             <p v-html="contentData.cryptanalyse3"></p>
 
             <p v-html="contentData.cryptanalyse4"></p>
-
-            <q-btn unelevated rounded label="Valider la section" v-if="section.third === false" class="align-right" color="primary" @click="section.third = !section.third"/>
-            <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
         </div><br><br>
 
-        <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
-            <q-btn icon="home" to="/"></q-btn>
-            <q-btn icon="keyboard_arrow_right" to="/1.2 Le chiffre de César">1.2 Le chiffre de César</q-btn>
-        </q-page-sticky>
-        
-        <q-page-sticky position="top" expand class="bg-positive text-white text-center">
-            <q-toolbar>
-                <q-toolbar-title>1.1 Introduction</q-toolbar-title>
-            </q-toolbar>
-        </q-page-sticky>
+        <q-btn unelevated rounded label="Valider la section" v-if="section.third === false" class="align-right" color="primary" @click="section.third = !section.third"/>
+        <q-btn unelevated rounded label="Section validée" v-if="section.third === true" class="align-right" color="green" @click="section.third = !section.third"/>
+
+
+        <navigatorBtn />
     </q-page>
 </template>
 
 <script setup lang="ts">
 import {ref, reactive} from 'vue'
 import content from 'src/json/introContent.json'
+import navigatorBtn from 'src/components/navigatorOneToolbar.vue'
 
 const contentData = ref(content.introduction)
 

@@ -16,7 +16,7 @@
 
               <p>Bienvenue au cours interactif de cryptologie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
       
-              <q-btn elevated rounded><router-link to="/1.1 Introduction">Commencer le cours</router-link></q-btn>
+              <q-btn elevated rounded><router-link style="color:#33abd6;" to="/1.1 Introduction">Commencer le cours</router-link></q-btn>
           </q-carousel-slide>
         </q-carousel>
 
@@ -44,20 +44,14 @@
     </div>
 
 
-    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
-      <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
-    </q-page-sticky>
-    
-    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
-      <q-toolbar>
-        <q-toolbar-title>1.0 Index</q-toolbar-title>
-      </q-toolbar>
-    </q-page-sticky>
+    <navigatorBtn />
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+
+import navigatorBtn from 'src/components/navigatorIndexToolbar.vue'
 
 let action = reactive({
   slide1: ref('presentation'),

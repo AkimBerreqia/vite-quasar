@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-import testComp from 'src/components/firstNavigatorBtn.vue'
+import testComp from 'src/components/navigatorOneToolbar.vue'
 </script>

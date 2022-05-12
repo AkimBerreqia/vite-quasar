@@ -35,16 +35,7 @@
     </div><br><br>
 
 
-    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
-      <q-btn icon="home" to="/"></q-btn>
-      <q-btn icon="keyboard_arrow_left" to="/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
-    </q-page-sticky>
-    
-    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
-      <q-toolbar>
-        <q-toolbar-title>1.6 Petit lexique de la cryptologie</q-toolbar-title>
-      </q-toolbar>
-    </q-page-sticky>
+    <navigatorBtn />
   </q-page>
   
 </template>
@@ -53,6 +44,7 @@
 
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
+import navigatorBtn from 'src/components/navigatorSixToolbar.vue'
 
 const filter = ref('')
 
