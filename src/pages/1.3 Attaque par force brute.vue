@@ -17,7 +17,7 @@
 
 
 
-        <h2>1.3.1 Exemple (casser César par la force brute)</h2>
+        <h1>1.3.1 Exemple (casser César par la force brute)</h1>
 
         <p>
         Le programme suivant réalise une attaque par force brute sur le chiffre de César en testant successivement toutes les clés de chiffrement.
@@ -96,7 +96,7 @@
 
 
 
-        <h2>1.3.2 Activité 4</h2>
+        <h1>1.3.2 Activité 4</h1>
 
         <p>
         Déchiffrez ce message en vous servant de l'attaque par force brute.
@@ -168,7 +168,7 @@
 
 
 
-        <h2>1.3.3 À retenir</h2>
+        <h1>1.3.3 À retenir</h1>
 
         <p>
         Une attaque par force brute sur un code secret consiste à essayer de déchiffrer un message en essayant systématiquement toutes les clés de chiffrement possible de manière “stupide”. 
@@ -185,10 +185,10 @@
       </div>
     </div>
 
-    <h2>1.3.4 Quiz 2</h2>
+    <h1>1.3.4 Quiz 2</h1>
     <div class="text-center">
       <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
-        <h3>Question numéro {{index + 1}}</h3>
+        <h2>Question numéro {{index + 1}}</h2>
 
         <p class="question">
         {{question.question}}

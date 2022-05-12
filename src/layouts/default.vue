@@ -53,6 +53,12 @@
   html { 
     background-color: #e6e6e6;
   }
+  
+  h1 {
+    font-style: oblique;
+    color: rgb(50, 50, 50); 
+    background-color: #c0c0c0;
+  }
 
   .slide-fade-enter {
     transform: translateX(10px);
@@ -73,13 +79,13 @@
     margin: auto;
     margin-top: 50px;
     text-align: left;
-    align: center;
+    align-content: center;
     color: #4d443a;
     background-color: #dedcdc;
     max-width:40em;
   }
 
-  h1 {
-    
+  .img {
+    max-width: 50%;
   }
 </style>

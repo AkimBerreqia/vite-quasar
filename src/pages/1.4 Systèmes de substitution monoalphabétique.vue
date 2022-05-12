@@ -40,9 +40,9 @@
         <q-separator inset />
 
 
-        <h2>1.4.1 Énigme 2</h2>
+        <h1>1.4.1 Énigme 2</h1>
 
-        <h3>Short Answer</h3>
+        <h2>Short Answer</h2>
 
         <p>
         Q-1: Cindy utilise la substitution...
@@ -102,9 +102,9 @@
 
 
 
-        <h2>1.4.2 Question de compréhension</h2>
+        <h1>1.4.2 Question de compréhension</h1>
 
-        <h3>Short Answer</h3>
+        <h2>Short Answer</h2>
 
         <p>
         Q-2: Quelle est la clé de chiffrement du message dans ce cas ?
@@ -147,7 +147,7 @@
             </q-card>
         </q-dialog>
 
-        <h3>Short Answer</h3>
+        <h2>Short Answer</h2>
 
         <p>
         Q-3: Combien de clés de chiffrement différentes existe-t-il ?
@@ -215,14 +215,14 @@
 
 
 
-        <h2>1.4.3 Génération de permutations aléatoires</h2>
+        <h1>1.4.3 Génération de permutations aléatoires</h1>
 
         <p>
         Pour exploiter cette méthode de chiffrement, vous aurez besoin de générer des clés de chiffrement aléatoires. 
         Vous pouvez utiliser le programme ci-dessous pour générer des permutations de l’alphabet latin (ou tout autre alphabet en cas de besoin).
         </p>
 
-        <h3>Exemple</h3>
+        <h2>Exemple</h2>
 
         <p>
         Pour la fonction python suivante:
@@ -250,7 +250,7 @@
         ...
         </p>
 
-        <h3>Remarque</h3>
+        <h2>Remarque</h2>
 
         <p>
         Il n’est pas nécessaire d’essayer de comprendre ce programme qui contient des éléments encore non étudiés. 
@@ -264,12 +264,12 @@
         <q-separator inset />
 
         <!-- 
-        <h2>1.4.4 Activité 1</h2>
-        <h2>1.4.5 Activité 2</h2>
+        <h1>1.4.4 Activité 1</h1>
+        <h1>1.4.5 Activité 2</h1>
         -->
 
 
-        <h2>1.4.4.1 Stratégie de résolution (vidéo)</h2>
+        <h1>1.4.4.1 Stratégie de résolution (vidéo)</h1>
 
         <iframe class="align-center" width="500" height="315"
         src="https://www.youtube.com/embed/aPo5WKqB74U"
@@ -284,7 +284,7 @@
         <q-separator inset />
 
 
-        <h2>1.4.4.2 Aide / blocs</h2>
+        <h1>1.4.4.2 Aide / blocs</h1>
 
         <p>
         Q-4: Si vous ne parvenez pas à implémenter le décryptage, vous pouvez vous aider des blocs ci-dessous qu'il faut choisir et réorganiser. 
@@ -299,15 +299,15 @@
 
 
         <!--
-        <h2>1.4.6 Activité 3</h2>
-        <h2>1.4.7 Activité 4 (factorielle)</h2>
-        <h2>1.4.8 Activité 5 (number_permutations)</h2>
+        <h1>1.4.6 Activité 3</h1>
+        <h1>1.4.7 Activité 4 (factorielle)</h1>
+        <h1>1.4.8 Activité 5 (number_permutations)</h1>
         -->
 
 
-        <h2>1.4.5 Activité 5</h2>
+        <h1>1.4.5 Activité 5</h1>
 
-        <h3>Short Answer</h3>
+        <h2>Short Answer</h2>
 
         <p>
         Q-5: En admettant que l’ordinateur soit assez puissant pour essayer 100 millions (108) de clés par seconde dans une attaque par force brute, combien de temps faudrait-il pour tester toutes les clés possibles ?
@@ -359,7 +359,7 @@
 
 
 
-        <h2>1.4.6 À retenir</h2>
+        <h1>1.4.6 À retenir</h1>
 
         <p>
         Dès que la clé de chiffrement est une permutation d’un alphabet donné, le nombre de clés possibles devient très grand, même avec un alphabet relativement modeste. 
@@ -384,10 +384,10 @@
       </div>
     </div>
 
-    <h2>1.3.4 Quiz 2</h2>
+    <h1>1.3.4 Quiz 2</h1>
     <div class="text-center">
       <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
-        <h3>Question numéro {{index + 1}}</h3>
+        <h2>Question numéro {{index + 1}}</h2>
 
         <p class="question">
         {{question.question}}

@@ -12,7 +12,7 @@
             
             <q-separator inset />
         
-            <h2>1.2.1 Énigme 1</h2>
+            <h1>1.2.1 Énigme 1</h1>
 
             <p>
             Robert utilise le chiffre de César pour chiffrer le message <span style="color:red;">RENDEZVOUSAUKIOSKATROISHEURES</span> et obtient le message chiffré <span style="color:red;">SFOEFAWPVTBVLJPTLBUSPJTIFVSFT</span>. 
@@ -25,9 +25,9 @@
             Message chiffré : SFOEFAWPVTBVLJPTLBUSPJTIFVSFT
             </p>
 
-            <h3>Short Answer</h3>
+            <h2>Short Answer</h2>
 
-            <h4>Q-1: Sauriez-vous expliquer comment fonctionne cette méthode de chiffrement?</h4>
+            <h3>Q-1: Sauriez-vous expliquer comment fonctionne cette méthode de chiffrement?</h3>
             <!-- Stoquer la réponse -->
             
             <q-input
@@ -126,7 +126,7 @@
             <q-separator inset />
 
 
-            <h2>1.2.2 Fonctionnement</h2>
+            <h1>1.2.2 Fonctionnement</h1>
 
             <p>
             Comme vous avez sans doute pu le deviner, le chiffre de César est très simple. 
@@ -152,14 +152,14 @@
             La première ligne correspond à l’alphabet en clair et la deuxième ligne montre par quelle lettre chaque lettre de la première ligne est chiffrée.
             </p>
 
-            <h3>Remarque</h3>
+            <h2>Remarque</h2>
 
             <p>
             Vous remarquerez qu’une fois arrivé à la fin de l’alphabet, on recommence au début. 
             Ainsi, le Z est chiffré par le A.
             </p>
 
-            <h3>Nouvelle notion</h3>
+            <h2>Nouvelle notion</h2>
 
             <p>
             Le chiffre de César est un exemple typique de <strong>chiffre monoalphabétique</strong>. 
@@ -183,7 +183,7 @@
 
 
 
-            <h2>1.2.3 Cryptosystèmes et clés de chiffrement</h2>
+            <h1>1.2.3 Cryptosystèmes et clés de chiffrement</h1>
 
             <p>
             Il existe en réalité 25 chiffres de César différents correspondant aux 25 décalages possibles dans l’alphabet. 
@@ -229,7 +229,7 @@
             <q-separator inset />
 
 
-            <h2>1.2.4 Activité 1</h2>
+            <h1>1.2.4 Activité 1</h1>
 
             <p>
             Chiffrez à la main le message ci-dessous à l’aide de <strong>CESAR(4)</strong>:
@@ -274,7 +274,7 @@
             <q-separator inset />
 
 
-            <h2>1.2.5 Activité 2</h2>
+            <h1>1.2.5 Activité 2</h1>
 
             <p>
             Déchiffrez à la main le message suivant qui a été chiffré avec <strong>CESAR(4)</strong>:
@@ -319,13 +319,13 @@
             <q-separator inset />
 
         <!--
-        <h2>1.2.6 Activité 3A (Implémentation du chiffrement de César)</h2>
-        <h2>1.2.7 Activité 3B (Implémentation du déchiffrement de César)</h2>
+        <h1>1.2.6 Activité 3A (Implémentation du chiffrement de César)</h1>
+        <h1>1.2.7 Activité 3B (Implémentation du déchiffrement de César)</h1>
         -->
 
 
 
-            <h2>1.2.6. Activité 3 (Cryptanalyse)</h2>
+            <h1>1.2.6. Activité 3 (Cryptanalyse)</h1>
 
             <p>
             Essayez de déchiffrer le message suivant qui a été chiffré avec un chiffre de César dont le décalage est inconnu.
@@ -335,9 +335,9 @@
             FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU
             </p><br>
 
-            <h3>Short Answer</h3>
+            <h2>Short Answer</h2>
 
-            <h4>Q-2: Commencez par décrire en gros la stratégie que vous allez utiliser.</h4>
+            <h3>Q-2: Commencez par décrire en gros la stratégie que vous allez utiliser.</h3>
 
             <q-input
                 v-model="text.q2"
@@ -345,9 +345,9 @@
                 type="textarea"
             />
 
-            <h3>Short Answer</h3>
+            <h2>Short Answer</h2>
 
-            <h4>Q-3: Quelle est la bonne clé de chiffrement ?</h4>
+            <h3>Q-3: Quelle est la bonne clé de chiffrement ?</h3>
 
             <p class="text-center bg-info rounded-borders">
             FBKIEDTUIYHUKDUSXEIUFBKIUBBUIUVQYJQJJUDTHU
@@ -426,10 +426,10 @@
         </div>
         </div>
 
-        <h2>1.2.7 Quiz 1</h2>
+        <h1>1.2.7 Quiz 1</h1>
         <div class="text-center">
             <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
-                <h3>Question numéro {{index + 1}}</h3>
+                <h2>Question numéro {{index + 1}}</h2>
 
                 <p class="question">
                 {{question.question}}
@@ -589,9 +589,3 @@ let section = reactive ({
     eighth: ref(false)
 })
 </script>
-
-<style lang="scss" scoped>
-.img {
-    max-width: 50%;
-  }
-</style>

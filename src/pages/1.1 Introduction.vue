@@ -10,7 +10,7 @@
             
             <q-separator inset />
 
-            <h2>1.1.1 Cryptographie</h2>
+            <h1>1.1.1 Cryptographie</h1>
             
             <p v-html="contentData.cryptographie1"></p>
 
@@ -21,7 +21,7 @@
             
             <q-separator inset />
 
-            <h2>1.1.2 Cryptanalyse</h2>
+            <h1>1.1.2 Cryptanalyse</h1>
 
             <p v-html="contentData.cryptanalyse1"></p>
 

@@ -1,8 +1,6 @@
 <template>
   <q-page>    
     <div class="column flex-center pa-4">
-      <h2></h2>
-
       <div class="q-gutter-md">
         <q-carousel
           v-model="action.slide1"
@@ -12,7 +10,7 @@
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="presentation" class="column no-wrap">
-              <h2>1.0.1 Présentation</h2>
+              <h1>1.0.1 Présentation</h1>
 
               <p>Bienvenue au cours interactif de cryptologie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
       
@@ -28,7 +26,7 @@
           class="shadow-1 rounded-borders"
         >
           <q-carousel-slide name="sommaire" class="column no-wrap">
-              <h2>1.0.2 Sommaire</h2>
+              <h1>1.0.2 Sommaire</h1>
 
               <ul style="color:darkblue;">
                 <li><router-link to="/1.1 Introduction">1.1 Introduction</router-link></li>
@@ -58,5 +56,3 @@ let action = reactive({
   slide2: ref('sommaire')
 })
 </script>
-
-<style lang="scss" scoped></style>
